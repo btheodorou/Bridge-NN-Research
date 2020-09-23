@@ -141,7 +141,8 @@ function evaluate_network(contender, baseline, params, handler)
   gamma = params.self_play.mcts.gamma
   avgz = pit(contender, baseline, ngames; gamma=gamma,
       reset_every=params.arena.reset_mcts_every,
-      flip_probability=params.arena.flip_probability) do i, z, t
+      flip_probability=params.arena.flip_probability, 
+      play_swiss_style=params.arena.play_swiss_style) do i, z, t
     Handlers.checkpoint_game_played(handler)
     append!(states, t.states)
   end

@@ -75,6 +75,7 @@ the current neural network with the best one seen so far
 | `flip_probability`   | `Float64`             | `0.`           |
 | `reset_mcts_every`   | `Union{Int, Nothing}` | `nothing`      |
 | `update_threshold`   | `Float64`             |  -             |
+| `play_swiss_style`   | `Bool`                | `false`             |
 
 # Explanation
 
@@ -104,6 +105,7 @@ and the `update_threshold` parameter is set to a value that corresponds to a
   flip_probability :: Float64 = 0.
   mcts :: MctsParams
   update_threshold :: Float64
+  play_swiss_style :: Bool = false
 end
 
 """

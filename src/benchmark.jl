@@ -82,13 +82,14 @@ struct Duel
   reset_every :: Union{Nothing, Int}
   flip_probability :: Float64
   color_policy :: ColorPolicy
+  play_swiss_style :: Bool
   player :: Player
   baseline :: Player
   function Duel(player, baseline;
       num_games, reset_every=nothing,
-      color_policy=ALTERNATE_COLORS, flip_probability=0.)
+      color_policy=ALTERNATE_COLORS, flip_probability=0., play_swiss_style=false)
     return new(
-      num_games, reset_every, flip_probability, color_policy, player, baseline)
+      num_games, reset_every, flip_probability, color_policy, play_swiss_style, player, baseline)
   end
 end
 
@@ -110,7 +111,8 @@ function run(env::Env{G}, duel::Duel, progress=nothing) where G
         gamma=env.params.self_play.mcts.gamma,
         flip_probability=duel.flip_probability,
         reset_every=duel.reset_every,
-        color_policy=duel.color_policy) do i, z, t
+        color_policy=duel.color_policy,
+        play_swiss_style=duel.play_swiss_style) do i, z, t
       push!(outcomes, z)
       append!(states, t.states)
       isnothing(progress) || next!(progress)

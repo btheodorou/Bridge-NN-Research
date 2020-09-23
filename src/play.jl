@@ -319,13 +319,18 @@ Simulate a game by an [`AbstractPlayer`](@ref) and return a trace.
   is _flipped_ randomly at every turn with probability ``p``,
   using [`GI.apply_random_symmetry`](@ref).
 """
-function play_game(player; flip_probability=0.)
+function play_game(player; flip_probability=0. initial_state=nothing)
   Game = GameType(player)
-  game = Game()
+  if initial_state == nothing
+    game = Game()
+  else
+    game = Game(initial_state)
+  end
+  initial_state = GI.current_state(game)
   trace = Trace{Game}(GI.current_state(game))
   while true
     if GI.game_terminated(game)
-      return trace
+      return initial_state, trace
     end
     if !iszero(flip_probability) && rand() < flip_probability
       game = GI.apply_random_symmetry(game)
@@ -369,10 +374,11 @@ Note that this function can only be used with two-player games.
   - `color_policy`: determines the [`ColorPolicy`](@ref),
      which is `ALTERNATE_COLORS` by default
   - `flip_probability=0.`: see [`play_game`](@ref)
+  - `play_swiss_style=false`: if true, the tournament is played Swiss Style
 """
 function pit(
     handler, contender, baseline, num_games; gamma,
-    reset_every=nothing, color_policy=ALTERNATE_COLORS, flip_probability=0.)
+    reset_every=nothing, color_policy=ALTERNATE_COLORS, flip_probability=0., play_swiss_style=false)
   Game = GameType(contender)
   @assert GI.two_players(Game)
   baseline_white = (color_policy != CONTENDER_WHITE)
@@ -380,8 +386,13 @@ function pit(
   for i in 1:num_games
     white = baseline_white ? baseline : contender
     black = baseline_white ? contender : baseline
-    trace =
-      play_game(TwoPlayers(white, black), flip_probability=flip_probability)
+    if i % 2 == 0
+      initial_state, trace =
+        play_game(TwoPlayers(white, black), flip_probability=flip_probability, initial_state=initial_state)
+    else
+      initial_state, trace =
+        play_game(TwoPlayers(white, black), flip_probability=flip_probability)
+    end
     z = total_reward(trace, gamma)
     baseline_white && (z = -z)
     zsum += z

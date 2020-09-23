@@ -29,6 +29,7 @@ arena = ArenaParams(
   reset_mcts_every=1,
   flip_probability=0.1,
   update_threshold=1.0,
+  play_swiss_style=true,
   mcts=MctsParams(
     self_play.mcts,
     temperature=ConstSchedule(0.2),
@@ -90,6 +91,7 @@ make_duel(player, baseline) =
     baseline,
     num_games=200,
     flip_probability=0.1,
-    color_policy=ALTERNATE_COLORS)
+    color_policy=ALTERNATE_COLORS,
+    play_swiss_style=true)
 
 benchmark = [make_duel(p, b) for (p, b) in zip(players, baselines)]
