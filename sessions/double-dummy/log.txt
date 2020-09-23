@@ -3222,3 +3222,54 @@ Starting iteration 66
   Running benchmark: Network Only against MCTS (1000 rollouts)
   
     Average reward: -0.85 (win rate of 8%), redundancy: 1.8%
+
+Starting iteration 67
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 6 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.84MB
+    Experience buffer size: 728,000 (727,577 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.9505   5.6685  0.1793  0.1000  0.0027  1.2843  1.1291  727,995  727,577  728,000  all samples
+     5.9549   5.6703  0.1819  0.1000  0.0027  1.2829  1.1276   52,000   51,997   52,000  latest batch
+     1.1056   0.9289  0.0749  0.1000  0.0019  0.4930  0.4266  181,995  181,577  182,000  1 to 13 turns left
+     4.4819   4.1647  0.2141  0.1000  0.0030  1.2172  1.0309  182,000  182,000  182,000  14 to 26 turns left
+     7.4802   7.1526  0.2244  0.1000  0.0031  1.5727  1.3767  182,000  182,000  182,000  27 to 39 turns left
+    10.7324  10.4257  0.2039  0.1000  0.0028  1.8542  1.6823  182,000  182,000  182,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.9583   5.6752   0.1805   0.1000   0.0026   1.1292   1.2860
+       5.9763   5.6914   0.1821   0.1003   0.0026   1.1292   1.2831
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -0.14 (win rate of 43%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.72 (win rate of 14%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.18 (win rate of 209%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -1.17 (win rate of -8%), redundancy: 1.8%
+
+Starting iteration 68
+
+  Starting self-play
+  
