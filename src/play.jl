@@ -383,6 +383,7 @@ function pit(
   @assert GI.two_players(Game)
   baseline_white = (color_policy != CONTENDER_WHITE)
   zsum = 0.
+  initial_state = nothing
   for i in 1:num_games
     white = baseline_white ? baseline : contender
     black = baseline_white ? contender : baseline
