@@ -319,7 +319,7 @@ Simulate a game by an [`AbstractPlayer`](@ref) and return a trace.
   is _flipped_ randomly at every turn with probability ``p``,
   using [`GI.apply_random_symmetry`](@ref).
 """
-function play_game(player; flip_probability=0. initial_state=nothing)
+function play_game(player; flip_probability=0., initial_state=nothing)
   Game = GameType(player)
   if initial_state == nothing
     game = Game()
@@ -383,7 +383,7 @@ function pit(
   @assert GI.two_players(Game)
   baseline_white = (color_policy != CONTENDER_WHITE)
   zsum = 0.
-  initial_state = nothing
+  initial_state = nothing 
   for i in 1:num_games
     white = baseline_white ? baseline : contender
     black = baseline_white ? contender : baseline
