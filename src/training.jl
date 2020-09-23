@@ -224,7 +224,7 @@ function self_play_step!(env::Env{G}, handler) where G
   mem_footprint = 0
   elapsed = @elapsed begin
     for i in 1:params.num_games
-      trace = play_game(player)
+      _, trace = play_game(player)
       push_game!(env.memory, trace, gamma)
       Handlers.game_played(handler)
       reset_every = params.reset_mcts_every
