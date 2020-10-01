@@ -174,6 +174,10 @@ function Base.copy(g::Game)
   Game(g.board, g.curplayer, g.finished, g.trick_winner, copy(g.amask), history)
 end
 
+function Base.copy(state)
+  return (board=copy(state.board), curplayer=state.curplayer, trick_winner=state.trick_winner)
+end
+
 #####
 ##### Simple heuristic for minmax
 #####

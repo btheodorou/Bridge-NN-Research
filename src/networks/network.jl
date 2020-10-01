@@ -279,6 +279,10 @@ function MCTS.evaluate_batch(nn::AbstractNetwork{Game}, batch) where Game
   return [(P[A[:,i],i], V[1,i]) for i in eachindex(batch)]
 end
 
+function MCTS.accepts_masking(nn::AbstractNetwork{Game}) where Game
+  return true
+end
+
 """
     copy(::AbstractNetwork; on_gpu, test_mode)
 

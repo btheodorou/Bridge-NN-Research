@@ -246,3 +246,18 @@ end
 function GI.read_state(::Type{Game})
   return nothing
 end
+
+#####
+##### Imperfect Information
+#####
+
+function GI.is_imperfect_information()
+    return true
+end
+
+function GI.mask_state(state)
+  maskedState = copy(state)
+  maskedState.board[:,:,2] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+  maskedState.board[:,:,4] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+  return maskedState
+end
