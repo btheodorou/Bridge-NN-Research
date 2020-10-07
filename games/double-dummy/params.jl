@@ -84,9 +84,9 @@ players = [
   Benchmark.NetworkOnly(τ=0.5, use_gpu=true)]
 
 baselines = [
+  solver_baseline,
   mcts_baseline,
   minmax_baseline,
-  solver_baseline,
   mcts_baseline]
 
 make_duel(player, baseline) =

@@ -5,10 +5,10 @@
 
 module Solver
 
-import ..Game, ..history, ..WHITE, ..NUM_CELLS
+import ..Game, ..history, ..WHITE
 import AlphaZero: GI, GameInterface, Benchmark, AbstractPlayer, think
 
-const DEFAULT_SOLVER_DIR = joinpath(@__DIR__, "solver", "dds")
+const DEFAULT_SOLVER_DIR = joinpath(@__DIR__, "solver", "dds") # TODO
 
 struct Player <: AbstractPlayer{Game}
   process :: Base.Process
@@ -32,7 +32,7 @@ end
 
 function hand_string(p::Player, g)
     board = GI.current_state(g).board
-    return ""
+    return "" # TODO
 end
 
 function query_solver(p::Player, g)
@@ -49,12 +49,13 @@ end
 
 function think(p::Player, g)
   as = GI.available_actions(g)
-  opt = query_solver(g)
+  opt_moves = query_solver(p, g)
+  opt_mask = findall(x -> x in opt_moves, as)
   π = zeros(length(as))
-  π[opt] .= 1 / length(opt)
+  π[opt_mask] .= 1 / length(opt_mask)
   return as, π
 end
 
-Benchmark.Solver(::Type{Game}) = Player
+Benchmark.PerfectPlayer(::Type{Game}) = Player
 
 end
