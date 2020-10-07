@@ -65,7 +65,7 @@ function hand_string(p::Player, g)
 end
 
 function query_solver(p::Player, g)
-  hstr = hand_string(g)
+  hstr = hand_string(p, g)
   Base.lock(p.lock)
   println(p.process, hstr)
   l = readline(p.process)
