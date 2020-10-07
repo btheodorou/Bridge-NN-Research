@@ -84,7 +84,7 @@ players = [
   Benchmark.NetworkOnly(τ=0.5, use_gpu=true)]
 
 baselines = [
-  solver_baseline,
+  #solver_baseline,
   mcts_baseline,
   minmax_baseline,
   mcts_baseline]
