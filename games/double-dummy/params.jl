@@ -75,7 +75,10 @@ mcts_baseline =
 
 minmax_baseline = Benchmark.MinMaxTS(depth=5, amplify_rewards=true, τ=0.2)
 
+solver_baseline = Benchmark.Solver()
+
 players = [
+  Benchmark.Full(arena.mcts),
   Benchmark.Full(arena.mcts),
   Benchmark.Full(arena.mcts),
   Benchmark.NetworkOnly(τ=0.5, use_gpu=true)]
@@ -83,6 +86,7 @@ players = [
 baselines = [
   mcts_baseline,
   minmax_baseline,
+  solver_baseline,
   mcts_baseline]
 
 make_duel(player, baseline) =
