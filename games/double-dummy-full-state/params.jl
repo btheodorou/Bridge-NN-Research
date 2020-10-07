@@ -39,7 +39,7 @@ learning = LearningParams(
   use_gpu=true,
   use_position_averaging=true,
   samples_weighing_policy=LOG_WEIGHT,
-  batch_size=256,
+  batch_size=64,
   loss_computation_batch_size=256,
   optimiser=Adam(lr=1e-3),
   l2_regularization=1e-4,
@@ -59,7 +59,7 @@ params = Params(
     num_game_stages=4),
   mem_buffer_size=PLSchedule(
   [      0,        100],
-  [200_000, 1_000_000]))
+  [200_000,    750_000]))
 
 #####
 ##### Benchmarks
