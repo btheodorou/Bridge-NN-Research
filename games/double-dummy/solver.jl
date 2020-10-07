@@ -52,21 +52,17 @@ function hand_string(p::Player, g)
   if first > 0
     for i in 1:first
       card = findfirst(x -> x == i, board[:,:,6])
-      ct_ranks[i] = card[1]
-      ct_suits[i] = card[2]
+      ct_ranks[i] = card[1] + 1
+      ct_suits[i] = card[2] - 1
     end
   end
 
   # Create the PBN representation of the remaining hands
-  pbn = string("$(get(leader_dict, first, "")):$(join([join([join([get(rank_dict, index[2], "") for index in findall(board[:,i,j])]) for i in 1:4], ".") for j in 1:4], " "))")
+  pbn = string("$(get(leader_dict, first, "")):$(join([join([join(reverse([get(rank_dict, index[1], "") for index in findall(x -> x == 0x01, board[:,i,j])])) for i in 1:4], ".") for j in 1:4], " "))")
 
   # Return the string in the proper format
   return "$pbn-$trump-$first-$(ct_suits[1])-$(ct_ranks[1])-$(ct_suits[2])-$(ct_ranks[2])-$(ct_suits[3])-$(ct_ranks[3])"
 end
-
-card1 = findfirst(x -> x == 1, board[:,:,6])
-winning_value = leading_card[1]
-winning_suit = leading_card[2]
 
 function query_solver(p::Player, g)
   hstr = hand_string(g)
