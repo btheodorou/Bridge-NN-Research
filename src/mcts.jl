@@ -55,6 +55,18 @@ end
 
 GameType(::Oracle{Game}) where Game = Game
 
+"""
+    MCTS.accepts_masking(oracle::Oracle)
+
+Returns whether the Oracle type accepts masked states
+
+This will typically correspond to whether the oracle looks only at 
+the given state or performs some form of rollout/looks into the future
+"""
+function accepts_masking(::Oracle)
+  return false
+end
+
 #####
 ##### Some Example Oracles
 #####
@@ -260,7 +272,11 @@ function state_info_sync(env, worker, state)
   if haskey(env.tree, state)
     return (env.tree[state], false)
   else
-    (P, V), time = @timed evaluate(env.oracle, state)
+    if GI.is_imperfect_information() && accepts_masking(env.oracle)
+      (P, V), time = @timed evaluate(env.oracle, GI.mask_state(state))
+    else 
+      (P, V), time = @timed evaluate(env.oracle, state)
+    end
     env.inference_time += time
     info = init_state_info(P, V, env.prior_temperature)
     env.tree[state] = info
@@ -400,6 +416,9 @@ function inference_server(env::Env{G, S, A}) where {G, S, A}
     if isempty(batch)
       answers, time = EvaluationResult{Float32}[], 0.
     else
+      if GI.is_imperfect_information() && accepts_masking(env.oracle)
+        batch = [GI.mask_state(state) for state in batch]
+      end
       if env.fill_batches
         nmissing = length(env.workers) - length(batch)
         if nmissing > 0

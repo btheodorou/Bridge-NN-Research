@@ -102,7 +102,7 @@ If a `progress` is provided, `next!(progress)` is called
 after each simulated game.
 """
 function run(env::Env{G}, duel::Duel, progress=nothing) where G
-  player = instantiate(duel.player, env.bestnn)
+  player = instantiate(duel.player, env.curnn)
   baseline = instantiate(duel.baseline, env.bestnn)
   outcomes = []
   states = []

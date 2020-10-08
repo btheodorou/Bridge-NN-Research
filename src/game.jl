@@ -265,6 +265,28 @@ function state_memsize(::Type{G}) where G
   return Base.summarysize(current_state(G()))
 end
 
+#####
+##### Imperfect Information Methods
+#####
+
+"""
+    is_imperfect_information()
+
+Return whether the given game is an imperfect information game. Defaults to false.
+"""
+function is_imperfect_information()
+    return false
+end
+
+"""
+    mask_state(env::AbstractGame)
+
+Masks the current game state to represent any imperfect information
+"""
+function mask_state(state)
+  return state
+end
+
 end
 
 """
