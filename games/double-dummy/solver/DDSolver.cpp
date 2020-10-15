@@ -45,13 +45,25 @@ int main()
     std::cout << dlPBN.trump << std::endl;
     std::getline(std::cin, dealEncoding, '-');
     dlPBN.first = std::stoi(dealEncoding, nullptr);
-    dlPBN.currentTrickSuit[0] = std::stoi(strtok(NULL, "-"), nullptr);
-    dlPBN.currentTrickRank[0] = std::stoi(strtok(NULL, "-"), nullptr);
-    dlPBN.currentTrickSuit[1] = std::stoi(strtok(NULL, "-"), nullptr);
-    std::cout << dlPBN.currentTrickSuit[1];
-    dlPBN.currentTrickRank[1] = std::stoi(strtok(NULL, "-"), nullptr);
-    dlPBN.currentTrickSuit[2] = std::stoi(strtok(NULL, "-"), nullptr);
-    dlPBN.currentTrickRank[2] = std::stoi(strtok(NULL, "-"), nullptr);
+    std::cout << dlPBN.first << std::endl;
+    std::getline(std::cin, dealEncoding, '-');
+    dlPBN.currentTrickSuit[0] = std::stoi(dealEncoding, nullptr);
+    std::cout << dlPBN.currentTrickSuit[0] << std::endl;
+    std::getline(std::cin, dealEncoding, '-');
+    dlPBN.currentTrickRank[0] = std::stoi(dealEncoding, nullptr);
+    std::cout << dlPBN.currentTrickRank[0] << std::endl;
+    std::getline(std::cin, dealEncoding, '-');
+    dlPBN.currentTrickSuit[1] = std::stoi(dealEncoding, nullptr);
+    std::cout << dlPBN.currentTrickSuit[1] << std::endl;
+    std::getline(std::cin, dealEncoding, '-');
+    dlPBN.currentTrickRank[1] = std::stoi(dealEncoding, nullptr);
+    std::cout << dlPBN.currentTrickRank[1] << std::endl;
+    std::getline(std::cin, dealEncoding, '-');
+    dlPBN.currentTrickSuit[2] = std::stoi(dealEncoding, nullptr);
+    std::cout << dlPBN.currentTrickSuit[2] << std::endl;
+    std::getline(std::cin, dealEncoding, '-');
+    dlPBN.currentTrickRank[2] = std::stoi(dealEncoding, nullptr);
+    std::cout << dlPBN.currentTrickRank[2] << std::endl;
 
     // Solve the board
     SolveBoardPBN(dlPBN, target, solutions, mode, &fut, threadIndex);
