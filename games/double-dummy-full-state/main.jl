@@ -5,4 +5,5 @@ module DoubleDummyFullState
     using AlphaZero
     include("params.jl")
   end
+  include("solver.jl")
 end
