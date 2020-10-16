@@ -88,7 +88,7 @@ function ResNet{G}(hyper::ResNetHP) where G
     BatchNorm(nvf, relu, momentum=bnmom),
     flatten,
     Dense(bsize[1] * bsize[2] * nvf, nf, relu),
-    Dense(nf, 1, tanh))
+    Dense(nf, 1))
   ResNet{G}(hyper, common, vhead, phead)
 end
 

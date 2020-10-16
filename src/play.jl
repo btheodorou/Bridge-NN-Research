@@ -321,7 +321,7 @@ Simulate a game by an [`AbstractPlayer`](@ref) and return a trace.
 """
 function play_game(player; flip_probability=0., initial_state=nothing)
   Game = GameType(player)
-  if initial_state == nothing
+  if initial_state === nothing
     game = Game()
   else
     game = Game(initial_state)
