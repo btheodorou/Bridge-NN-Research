@@ -240,14 +240,14 @@ function GI.parse_action(g::Game, str)
 end
 
 function GI.render(g::Game)
-  if isnothing(findfirst(iszero, board[:,:,5]))
+  if isnothing(findfirst(iszero, g.board[:,:,5]))
     trump_suit = 5
   else
-    trump_suit = findfirst(x -> x == 1, board[:,:,5])[2]
+    trump_suit = findfirst(x -> x == 1, g.board[:,:,5])[2]
   end
   println("Trump:" + trump_suit)
   println("Previous Reward: " + GI.white_reward(g))
-  println("Current Trick: " + findfirst(x -> x == 1, board[:,:,6]) + ", " + findfirst(x -> x == 2, board[:,:,6]) + ", " + findfirst(x -> x == 3, board[:,:,6]) + ", " + findfirst(x -> x == 4, board[:,:,6]))
+  println("Current Trick: " + findfirst(x -> x == 1, g.board[:,:,6]) + ", " + findfirst(x -> x == 2, g.board[:,:,6]) + ", " + findfirst(x -> x == 3, g.board[:,:,6]) + ", " + findfirst(x -> x == 4, g.board[:,:,6]))
   println("Hand 1:" + findall(x -> x == 0x01, g.board[:,:,1]))
   println("Hand 2:" + findall(x -> x == 0x01, g.board[:,:,2]))
   println("Hand 3:" + findall(x -> x == 0x01, g.board[:,:,3]))
