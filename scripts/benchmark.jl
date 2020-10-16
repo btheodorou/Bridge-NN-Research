@@ -7,32 +7,25 @@
 using AlphaZero
 
 include("games.jl")
-GAME = get(ENV, "GAME", "connect-four")
+GAME = get(ENV, "GAME", "double-dummy-full-state")
 SelectedGame = GAME_MODULE[GAME]
 using .SelectedGame: Game, Training
 
 SESSION_DIR = "sessions/$GAME"
 
-
-# Examples: run a network-only benchmark
-
-netonly = Benchmark.NetworkOnly(τ=0.5, use_gpu=true)
 alphazero = Benchmark.Full(Training.arena.mcts)
-baselines = [Training.mcts_baseline, Training.minmax_baseline]
+baselines = [Benchmark.Solver(ϵ=0), Training.minmax_baseline]
 
 make_duel(player, baseline) =
   Benchmark.Duel(
     player,
     baseline,
-    num_games=200,
-    reset_every=40,
-    flip_probability=0.5,
+    num_games=1,
+    reset_every=1,
+    flip_probability=0.0,
     color_policy=CONTENDER_WHITE)
 
-netonly_benchmark   = [make_duel(netonly, b) for b in baselines]
-alphazero_benchmark = [make_duel(alphazero, b) for b in baselines]
-
-benchmark = alphazero_benchmark
+benchmark = [make_duel(alphazero, Benchmark.Solver(ϵ=0))]
 label = "full"
 
 AlphaZero.UserInterface.run_new_benchmark(

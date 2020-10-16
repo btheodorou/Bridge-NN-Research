@@ -394,6 +394,7 @@ function pit(
       initial_state, trace =
         play_game(TwoPlayers(white, black), flip_probability=flip_probability)
     end
+    debug_trace(trace)
     z = total_reward(trace, gamma)
     baseline_white && (z = -z)
     zsum += z
