@@ -12,7 +12,7 @@ netparams = ResNetHP(
   batch_norm_momentum=0.1)
 
 self_play = SelfPlayParams(
-  num_games=1000,
+  num_games=1,
   reset_mcts_every=1,
   mcts=MctsParams(
     use_gpu=true,
