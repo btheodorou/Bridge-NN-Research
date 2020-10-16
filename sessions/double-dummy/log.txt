@@ -3273,3 +3273,43 @@ Starting iteration 68
 
   Starting self-play
   
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting interactive exploration
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting interactive exploration
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting interactive exploration
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting interactive exploration
+

@@ -3020,3 +3020,257 @@ Starting iteration 63
   Running benchmark: Network Only against MCTS (1000 rollouts)
   
     Average reward: -2.00 (win rate of -50%), redundancy: 1.0%
+
+Starting iteration 64
+
+  Starting self-play
+  
+    Time spent on inference: 56%
+    Generating 5 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 79.23MB
+    Experience buffer size: 546,500 (546,500 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.5467  5.0403  0.2641  0.2401  0.0021  1.3433  1.0929  546,500  546,500  546,500  all samples
+     5.4894  4.9803  0.2669  0.2401  0.0021  1.3428  1.0923   52,000   52,000   52,000  latest batch
+     1.2362  0.8712  0.1201  0.2401  0.0048  0.5299  0.4119  136,625  136,625  136,625  1 to 14 turns left
+     3.7911  3.2608  0.2884  0.2401  0.0018  1.3435  1.0510  136,625  136,625  136,625  14 to 27 turns left
+     6.7648  6.2018  0.3218  0.2401  0.0011  1.6549  1.3452  136,625  136,625  136,625  27 to 40 turns left
+    10.3914  9.8245  0.3262  0.2401  0.0006  1.8448  1.5636  136,625  136,625  136,625  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.5522   5.0449   0.2651   0.2401   0.0021   1.0929   1.3436
+       5.5084   4.9992   0.2659   0.2412   0.0022   1.0929   1.3166
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.36 (win rate of 68%), redundancy: 1.7%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.85 (win rate of 8%), redundancy: 1.1%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.04 (win rate of 102%), redundancy: 1.2%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -1.87 (win rate of -44%), redundancy: 1.0%
+
+Starting iteration 65
+
+  Starting self-play
+  
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Starting iteration 65
+
+  Starting self-play
+  
+    Time spent on inference: 55%
+    Generating 5 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 79.27MB
+    Experience buffer size: 552,000 (552,000 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.5545  5.0456  0.2654  0.2412  0.0022  1.3177  1.0926  552,000  552,000  552,000  all samples
+     5.7531  5.2398  0.2699  0.2412  0.0022  1.3172  1.0890   52,000   52,000   52,000  latest batch
+     1.2433  0.8760  0.1209  0.2412  0.0052  0.5184  0.4118  138,000  138,000  138,000  1 to 14 turns left
+     3.7935  3.2627  0.2877  0.2412  0.0019  1.3083  1.0506  138,000  138,000  138,000  14 to 27 turns left
+     6.7781  6.2105  0.3252  0.2412  0.0012  1.6143  1.3448  138,000  138,000  138,000  27 to 40 turns left
+    10.4025  9.8328  0.3279  0.2412  0.0006  1.8299  1.5631  138,000  138,000  138,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.5584   5.0486   0.2664   0.2412   0.0022   1.0926   1.3164
+       5.5195   5.0138   0.2639   0.2396   0.0022   1.0926   1.3423
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.10 (win rate of 55%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Starting interactive exploration
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Starting iteration 65
+
+  Starting self-play
+  
+    Time spent on inference: 55%
+    Generating 5 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 78.94MB
+    Experience buffer size: 552,000 (552,000 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.5694  5.0605  0.2655  0.2412  0.0022  1.3178  1.0928  552,000  552,000  552,000  all samples
+     5.9084  5.3947  0.2703  0.2412  0.0022  1.3180  1.0913   52,000   52,000   52,000  latest batch
+     1.2405  0.8731  0.1210  0.2412  0.0052  0.5184  0.4116  138,000  138,000  138,000  1 to 14 turns left
+     3.7995  3.2689  0.2875  0.2412  0.0019  1.3082  1.0510  138,000  138,000  138,000  14 to 27 turns left
+     6.8030  6.2351  0.3255  0.2412  0.0012  1.6145  1.3447  138,000  138,000  138,000  27 to 40 turns left
+    10.4339  9.8643  0.3278  0.2412  0.0006  1.8303  1.5638  138,000  138,000  138,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.5723   5.0625   0.2665   0.2412   0.0022   1.0928   1.3164
+       5.5269   5.0208   0.2641   0.2399   0.0021   1.0928   1.3376
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.16 (win rate of 58%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: +3.79 (win rate of 240%), redundancy: 1.1%
+  
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.07 (win rate of -4%), redundancy: 1.1%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +0.89 (win rate of 94%), redundancy: 1.2%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.00 (win rate of -50%), redundancy: 1.0%
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Starting interactive exploration
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Starting interactive exploration
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Starting iteration 65
+
+  Starting self-play
+  
+    Time spent on inference: 63%
+    Generating 3 samples per second on average
+    Average exploration depth: 5.5
+    MCTS memory footprint: 74.68MB
+    Experience buffer size: 552,000 (552,000 distinct boards)
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Starting iteration 65
+
+  Starting self-play
+  
+    Time spent on inference: 64%
+    Generating 3 samples per second on average
+    Average exploration depth: 5.6
+    MCTS memory footprint: 74.00MB
+    Experience buffer size: 552,000 (552,000 distinct boards)
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Starting iteration 65
+
+  Starting self-play
+  
+
+Loading environment
+
+  Loading network from: sessions/double-dummy-full-state/bestnn.data
+  Loading network from: sessions/double-dummy-full-state/curnn.data
+  Loading memory from: sessions/double-dummy-full-state/mem.data
+  Loaded iteration counter from: sessions/double-dummy-full-state/iter.txt
+
+Starting iteration 65
+
+  Starting self-play
+  

@@ -330,9 +330,6 @@ function play_game(player; flip_probability=0., initial_state=nothing)
   trace = Trace{Game}(GI.current_state(game))
   while true
     if GI.game_terminated(game)
-      println("Completed Trace:")
-      println(trace)
-      println()
       return initial_state, trace
     end
     if !iszero(flip_probability) && rand() < flip_probability
