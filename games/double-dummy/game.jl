@@ -245,13 +245,13 @@ function GI.render(g::Game)
   else
     trump_suit = findfirst(x -> x == 1, g.board[:,:,5])[2]
   end
-  println("Trump:" + trump_suit)
-  println("Previous Reward: " + GI.white_reward(g))
-  println("Current Trick: " + findfirst(x -> x == 1, g.board[:,:,6]) + ", " + findfirst(x -> x == 2, g.board[:,:,6]) + ", " + findfirst(x -> x == 3, g.board[:,:,6]) + ", " + findfirst(x -> x == 4, g.board[:,:,6]))
-  println("Hand 1:" + findall(x -> x == 0x01, g.board[:,:,1]))
-  println("Hand 2:" + findall(x -> x == 0x01, g.board[:,:,2]))
-  println("Hand 3:" + findall(x -> x == 0x01, g.board[:,:,3]))
-  println("Hand 4:" + findall(x -> x == 0x01, g.board[:,:,4]))
+  println("Trump:" * string(trump_suit))
+  println("Previous Reward: " * string(GI.white_reward(g)))
+  println("Current Trick: " * string(findfirst(x -> x == 1, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 2, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 3, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 4, g.board[:,:,6])))
+  println("Hand 1:" * string(findall(x -> x == 0x01, g.board[:,:,1])))
+  println("Hand 2:" * string(findall(x -> x == 0x01, g.board[:,:,2])))
+  println("Hand 3:" * string(findall(x -> x == 0x01, g.board[:,:,3])))
+  println("Hand 4:" * string(findall(x -> x == 0x01, g.board[:,:,4])))
 end
 
 function GI.read_state(::Type{Game})
