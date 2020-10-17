@@ -628,12 +628,13 @@ function run_new_benchmark(
   logger = Logger()
   Log.section(logger, 1, "Computing new benchmark: $name")
   itc = 0
+  itcmax = 1
   reports = Benchmark.Report[]
-  while valid_session_dir(iterdir(session_dir, itc))
+  while valid_session_dir(session_dir)
     !isnothing(itcmax) && itc > itcmax && break
     Log.section(logger, 1, "Iteration: $itc")
     itdir = iterdir(session_dir, itc)
-    env = load_env(G, N, logger, itdir, params=params)
+    env = load_env(G, N, logger, session_dir, params=params)
     report = [run_duel(env, logger, duel) for duel in benchmark]
     push!(reports, report)
     # Save the intermediate reports

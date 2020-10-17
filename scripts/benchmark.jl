@@ -23,7 +23,7 @@ make_duel(player, baseline) =
     num_games=1,
     reset_every=1,
     flip_probability=0.0,
-    color_policy=CONTENDER_WHITE)
+    color_policy=BASELINE_WHITE)
 
 benchmark = [make_duel(alphazero, Benchmark.Solver(ϵ=0))]
 label = "full"

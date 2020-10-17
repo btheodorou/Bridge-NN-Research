@@ -67,7 +67,6 @@ end
 
 function query_solver(p::Player, g)
   hstr = hand_string(p, g)
-  println(hstr)
   Base.lock(p.lock)
   println(p.process, hstr)
   l = readline(p.process)
@@ -75,7 +74,6 @@ function query_solver(p::Player, g)
   optimal_actions = map(split(l)) do x
     parse(Int64, x)
   end
-  println(optimal_actions)
   return optimal_actions
 end
 
