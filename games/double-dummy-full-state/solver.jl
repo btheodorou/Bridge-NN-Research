@@ -42,6 +42,7 @@ function hand_string(p::Player, g)
   else
     trump = findfirst(x -> x == 1, board[:,:,5])[2]
   end
+  trump -= 1
   
   # Calculate which player is up next
   first = maximum(g.board[:,:,6])
