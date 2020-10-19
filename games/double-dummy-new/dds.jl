@@ -52,32 +52,6 @@ function AnalysePlay()
   return (result, futp[])
 end
 
-function SolveBoardPBNExample2()
-  remainCards = MVector{80, Cchar}(undef)
-  pbn = "N:QJ6...98 ..T764.Q4 K5.T83..2 AT942...3"
-  for (i, c) in enumerate(pbn)
-    remainCards[i] = c
-  end
-  remainCards[length(pbn)+1] = 0
-  spades = 0
-  north = 0
-  deal = dealPBN(spades, north, [3, 2, 2], [10, 0, 0], remainCards)
-  return SolveBoardPBN(deal)
-end
-
-function SolveBoardPBNExample()
-  remainCards = MVector{80, Cchar}(undef)
-  pbn = "N:QJ6.K652.J85.T98 873.J97.AT764.Q4 K5.T83.KQ9.A7652 AT942.AQ4.32.KJ3"
-  for (i, c) in enumerate(pbn)
-    remainCards[i] = c
-  end
-  remainCards[length(pbn)+1] = 0
-  spades = 0
-  north = 0
-  deal = dealPBN(spades, north, zeros(Cint, 3), zeros(Cint, 3), remainCards)
-  return SolveBoardPBN(deal)
-end
-
 # Returns (solveBoardResult, futureTricks)
 function SolveBoardPBN(deal)
   futp = Ref{futureTricks}(futureTricks())
