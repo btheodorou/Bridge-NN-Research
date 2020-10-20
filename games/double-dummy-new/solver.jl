@@ -50,6 +50,8 @@ function hand_to_deal(p::Player, g)
   for (i, c) in enumerate(pbn)
     remainCards[i] = c
   end
+  println("SOLVER HAND:")
+  println("PBN: " * pbn)
 
   # Return the dds Deal data structure
   return dealPBN(trump, 0, ct_suits, ct_ranks, remainCards)
@@ -57,11 +59,14 @@ end
 
 function query_solver(p::Player, g)
   deal = hand_to_deal(p, g)
+  println("Deal: " * string(deal))
   result, fut = SolveBoardPBN(deal)
+  println("FutureTricks: " * string(fut))
   if result != 1
     throw("Solver Query Failed: $result")
   end
   optimal_actions = [(fut.suit[i] * 13) + (fut.rank[i] - 2) + 1 for i in 1:fut.cards]
+  println("OptimalActions: " * string(optimal_actions))
   return optimal_actions
 end
 
