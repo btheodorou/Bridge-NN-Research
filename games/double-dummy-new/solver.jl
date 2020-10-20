@@ -73,6 +73,7 @@ end
 function think(p::Player, g)
   as = GI.available_actions(g)
   opt_moves = query_solver(p, g)
+  println("Available Actions: " * string(available_actions))
   opt_mask = findall(x -> x in opt_moves, as)
   π = zeros(length(as))
   π[opt_mask] .= 1 / length(opt_mask)
