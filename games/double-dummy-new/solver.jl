@@ -58,7 +58,6 @@ end
 function query_solver(p::Player, g)
   deal = hand_to_deal(p, g)
   result, fut = SolveBoardPBN(deal)
-  println("FutureTricks: " * string(fut))
   if result != 1
     throw("Solver Query Failed: $result")
   end
