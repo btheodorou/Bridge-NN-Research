@@ -46,7 +46,7 @@ function hand_to_deal(p::Player, g)
 
   # Create the PBN representation of the remaining hands
   pbn = string("$(get(leader_dict, first, "")):$(join([join([join(reverse([get(rank_dict, index[1], "") for index in findall(x -> x == 0x01, board[:,i,j])])) for i in 1:4], ".") for j in 1:4], " "))")
-  remainCards = MVector{80, Cchar}(undef)
+  remainCards = zeros(Cchar, 80)
   for (i, c) in enumerate(pbn)
     remainCards[i] = c
   end
