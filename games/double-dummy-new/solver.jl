@@ -59,7 +59,9 @@ function query_solver(p::Player, g)
   deal = hand_to_deal(p, g)
   result, fut = SolveBoardPBN(deal)
   if result != 1
-    throw("Solver Query Failed")
+    println(deal)
+    println(fut)
+    throw("Solver Query Failed: $result")
   end
   optimal_actions = [(fut.suit[i] * 13) + (fut.rank[i] - 2) + 1 for i in 1:fut.cards]
   return optimal_actions
