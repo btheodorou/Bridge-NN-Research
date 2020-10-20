@@ -52,14 +52,14 @@ function hand_to_deal(p::Player, g)
   end
 
   # Return the dds Deal data structure
-  return dealPBN(trump, first, ct_suits, ct_ranks, remainCards)
+  return dealPBN(trump, 0, ct_suits, ct_ranks, remainCards)
 end
 
 function query_solver(p::Player, g)
   deal = hand_to_deal(p, g)
   result, fut = SolveBoardPBN(deal)
   if result != 1
-    throw("Solver Query Failed")
+    throw("Solver Query Failed: $result")
   end
   optimal_actions = [(fut.suit[i] * 13) + (fut.rank[i] - 2) + 1 for i in 1:fut.cards]
   return optimal_actions
