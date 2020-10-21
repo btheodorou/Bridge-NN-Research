@@ -33,6 +33,7 @@ mutable struct Game <: GI.AbstractGame
   curplayer :: Player
   finished :: Bool
   trick_winner :: Player
+  leader :: Player
   amask :: Vector{Bool} # actions mask
   # Actions history, which uniquely identifies the current board position
   # Used by external solvers
@@ -44,19 +45,21 @@ function Game()
   curplayer = WHITE
   finished = false
   trick_winner = 0x00
+  leader = 0x01
   amask = get_legal_actions(board)
   history = Int[]
-  Game(board, curplayer, finished, trick_winner, amask, history)
+  Game(board, curplayer, finished, trick_winner, leader, amask, history)
 end
 
 function Game(state)
   board = state.board
   curplayer = state.curplayer
   trick_winner = state.trick_winner
+  leader = state.leader
   amask = get_legal_actions(board)
   finished = !any(amask)
   history = Int[]
-  Game(board, curplayer, finished, trick_winner, amask, history)
+  Game(board, curplayer, finished, trick_winner, leader, amask, history)
 end
 
 function GI.play!(g::Game, action)
@@ -72,19 +75,19 @@ function GI.game_terminated(g::Game)
   return g.finished
 end
 
-GI.State(::Type{Game}) = typeof((board=zeros(UInt8, NUM_VALUES, NUM_SUITS, NUM_ARRAYS), curplayer=WHITE, trick_winner=WHITE))
+GI.State(::Type{Game}) = typeof((board=zeros(UInt8, NUM_VALUES, NUM_SUITS, NUM_ARRAYS), curplayer=WHITE, trick_winner=WHITE, leader=WHITE))
 GI.Action(::Type{Game}) = Int
 GI.two_players(::Type{Game}) = true
 const ACTIONS = collect(1:NUM_CARDS)
 GI.actions(::Type{Game}) = ACTIONS
 history(g::Game) = g.history
 GI.actions_mask(g::Game) = g.amask
-GI.current_state(g::Game) = (board=g.board, curplayer=g.curplayer, trick_winner=g.trick_winner)
+GI.current_state(g::Game) = (board=g.board, curplayer=g.curplayer, trick_winner=g.trick_winner, leader=g.leader)
 GI.white_playing(::Type{Game}, state) = state.curplayer == WHITE
 
 function GI.white_reward(g::Game)
-  -(g.trick_winner % 2) + 2 == WHITE && (return  1.)
-  -(g.trick_winner % 2) + 2 == BLACK && (return -1.)
+  g.trick_winner == WHITE && (return  1.)
+  g.trick_winner == BLACK && (return -1.)
   return 0.
 end
 
@@ -130,11 +133,12 @@ function update_status!(g::Game)
   if maximum(g.board[:,:,6]) == 4
     new_winner = calculate_winner(g.board)
     circshift(g.board[:,:,1:4], (0,0,-(new_winner - 1)))
-    g.trick_winner = ((g.trick_winner + (new_winner - 1)) % 4
-    if g.trick_winner == 0
-      g.trick_winner = 4
+    g.leader = ((g.leader + (new_winner - 1)) % 4
+    if g.leader == 0
+      g.leader = 4
     end
-    g.curplayer = -(g.trick_winner % 2) + 2
+    g.curplayer = -(g.leader % 2) + 2
+    g.trick_winner = g.curplayer
     g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
   else
     g.trick_winner = 0x00
@@ -171,17 +175,17 @@ function calculate_winner(board::Board)
     end
   end
 
-  # Return the reward corresponding to the correct winner
+  # Return the winner for the current trick
   return winning_player
 end
 
 function Base.copy(g::Game)
   history = isnothing(g.history) ? nothing : copy(g.history)
-  Game(g.board, g.curplayer, g.finished, g.trick_winner, copy(g.amask), history)
+  Game(g.board, g.curplayer, g.finished, g.trick_winner, g.leader, copy(g.amask), history)
 end
 
 function Base.copy(state)
-  return (board=copy(state.board), curplayer=state.curplayer, trick_winner=state.trick_winner)
+  return (board=copy(state.board), curplayer=state.curplayer, trick_winner=state.trick_winner, leader=state.leader)
 end
 
 #####
@@ -249,7 +253,18 @@ function GI.parse_action(g::Game, str)
 end
 
 function GI.render(g::Game)
-  print(g.board)
+  if isnothing(findfirst(iszero, g.board[:,:,5]))
+    trump_suit = 5
+  else
+    trump_suit = findfirst(x -> x == 1, g.board[:,:,5])[2]
+  end
+  println("Trump:" * string(trump_suit))
+  println("Previous Reward: " * string(GI.white_reward(g)))
+  println("Current Trick: " * string(findfirst(x -> x == 1, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 2, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 3, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 4, g.board[:,:,6])))
+  println("Hand 1:" * string(findall(x -> x == 0x01, g.board[:,:,1])))
+  println("Hand 2:" * string(findall(x -> x == 0x01, g.board[:,:,2])))
+  println("Hand 3:" * string(findall(x -> x == 0x01, g.board[:,:,3])))
+  println("Hand 4:" * string(findall(x -> x == 0x01, g.board[:,:,4])))
 end
 
 function GI.read_state(::Type{Game})
@@ -261,12 +276,9 @@ end
 #####
 
 function GI.is_imperfect_information()
-    return true
+    return false
 end
 
 function GI.mask_state(state)
-  maskedState = copy(state)
-  maskedState.board[:,:,2] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
-  maskedState.board[:,:,4] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
-  return maskedState
+  return state
 end

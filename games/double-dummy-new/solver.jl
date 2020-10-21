@@ -31,8 +31,8 @@ function hand_to_deal(p::Player, g)
   trump -= 1
   
   # Calculate which player led and which is up next
-  leader = g.trick_winner - 1
-  first = ((g.trick_winner - 1) + maximum(g.board[:,:,6])) % 4
+  leader = g.leader - 1
+  first = ((g.leader - 1) + maximum(g.board[:,:,6])) % 4
   
   # Calculate the cards that have been played in the current trick
   ct_ranks = zeros(Cint, 3)
