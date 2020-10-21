@@ -4,7 +4,7 @@ using Random
 # Initialize the dimension constants
 const NUM_SUITS = 4
 const NUM_VALUES= 13
-const NUM_ARRAYS = 18
+const NUM_ARRAYS = 6
 const NUM_CARDS = 52
 
 # Initialize the player constants
@@ -117,9 +117,10 @@ function random_starting_state(deck::Array{UInt8,3})
 end
 
 function get_legal_actions(hand::Board)
-  if maximum(g.board[:,:,6]) == 0 || maximum(g.board[:,leading_suit = findfirst(x -> x == 1, board[:,:,6])[2],1] == 0)
+  if maximum(hand[:,:,6]) == 0 || maximum(hand[:,findfirst(x -> x == 1, hand[:,:,6])[2],1]) == 0
     return vec(Array{Bool}(hand[:,:,1]))
   else
+    leading_suit = findfirst(x -> x == 1, hand[:,:,6])[2]
     action_mask = falses(NUM_VALUES, NUM_SUITS) 
     action_mask[:,leading_suit] = Array{Bool}(hand[:,leading_suit,1])
     return vec(Array{Bool}(action_mask))
@@ -131,10 +132,7 @@ function update_status!(g::Game)
   g.finished = !any(g.amask)
   if maximum(g.board[:,:,6]) == 4
     g.trick_winner = calculate_winner(g.board)
-    if !g.finished
-      g.board[:,:,19-sum(g.board[:,:,1])] = g.board[:,:,6]
-      g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
-    end
+    g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
   else
     g.trick_winner = 0x00
   end
@@ -249,20 +247,24 @@ function GI.parse_action(g::Game, str)
 end
 
 function GI.render(g::Game)
-  if isnothing(findfirst(iszero, g.board[:,:,5]))
-    trump_suit = 5
-  else
-    trump_suit = findfirst(x -> x == 1, g.board[:,:,5])[2]
-  end
-  println("Trump:" * string(trump_suit))
-  println("Previous Reward: " * string(GI.white_reward(g)))
-  println("Current Trick: " * string(findfirst(x -> x == 1, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 2, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 3, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 4, g.board[:,:,6])))
-  println("Hand 1:" * string(findall(x -> x == 0x01, g.board[:,:,1])))
-  println("Hand 2:" * string(findall(x -> x == 0x01, g.board[:,:,2])))
-  println("Hand 3:" * string(findall(x -> x == 0x01, g.board[:,:,3])))
-  println("Hand 4:" * string(findall(x -> x == 0x01, g.board[:,:,4])))
+  print(g.board)
 end
 
 function GI.read_state(::Type{Game})
   return nothing
+end
+
+#####
+##### Imperfect Information
+#####
+
+function GI.is_imperfect_information()
+    return true
+end
+
+function GI.mask_state(state)
+  maskedState = copy(state)
+  maskedState.board[:,:,2] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+  maskedState.board[:,:,4] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+  return maskedState
 end

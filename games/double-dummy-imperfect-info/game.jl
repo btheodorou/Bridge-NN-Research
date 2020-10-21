@@ -117,9 +117,10 @@ function random_starting_state(deck::Array{UInt8,3})
 end
 
 function get_legal_actions(hand::Board)
-  if maximum(g.board[:,:,6]) == 0 || maximum(g.board[:,leading_suit = findfirst(x -> x == 1, board[:,:,6])[2],1] == 0)
+  if maximum(hand[:,:,6]) == 0 || maximum(hand[:,findfirst(x -> x == 1, hand[:,:,6])[2],1]) == 0
     return vec(Array{Bool}(hand[:,:,1]))
   else
+    leading_suit = findfirst(x -> x == 1, hand[:,:,6])[2]
     action_mask = falses(NUM_VALUES, NUM_SUITS) 
     action_mask[:,leading_suit] = Array{Bool}(hand[:,leading_suit,1])
     return vec(Array{Bool}(action_mask))
