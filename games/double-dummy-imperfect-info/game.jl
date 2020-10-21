@@ -233,7 +233,7 @@ end
 function GI.symmetries(::Type{Game}, state)
   symb = flipped_board(state.board)
   σ = vec(reshape(collect(1:NUM_CARDS), (NUM_VALUES, NUM_SUITS))[:,reverse(1:NUM_SUITS)])
-  syms = (board=Board(symb), curplayer=state.curplayer, trick_winner=state.trick_winner)
+  syms = (board=Board(symb), curplayer=state.curplayer, trick_winner=state.trick_winner, leader=state.leader)
   return [(syms, σ)]
 end
 
