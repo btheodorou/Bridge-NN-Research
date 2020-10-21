@@ -37,8 +37,9 @@ function hand_to_deal(p::Player, g)
   # Calculate the cards that have been played in the current trick
   ct_ranks = zeros(Cint, 3)
   ct_suits = zeros(Cint, 3)
-  if first > 0
-    for i in 1:first
+  played = max(board[:,:,6])
+  if played > 0
+    for i in 1:played
       card = findfirst(x -> x == i, board[:,:,6])
       ct_ranks[i] = card[1] + 1
       ct_suits[i] = card[2] - 1
