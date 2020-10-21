@@ -128,14 +128,14 @@ function get_legal_actions(hand::Board)
 end
 
 function update_status!(g::Game)
-  g.amask = get_legal_actions(g.board)
-  g.finished = !any(g.amask)
   if maximum(g.board[:,:,6]) == 4
     g.trick_winner = calculate_winner(g.board)
     g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
   else
     g.trick_winner = 0x00
   end
+  g.amask = get_legal_actions(g.board)
+  g.finished = !any(g.amask)
 end
 
 function calculate_winner(board::Board)

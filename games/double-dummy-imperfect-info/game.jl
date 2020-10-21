@@ -122,20 +122,20 @@ function get_legal_actions(hand::Board)
   else
     leading_suit = findfirst(x -> x == 1, hand[:,:,6])[2]
     action_mask = falses(NUM_VALUES, NUM_SUITS) 
-    action_mask[:,leading_suit] = Array{Bool}(hand[:,leading_suit,1])
+    action_mask[:,leading_suit] = BitArray(hand[:,leading_suit,1])
     return vec(Array{Bool}(action_mask))
   end
 end
 
 function update_status!(g::Game)
-  g.amask = get_legal_actions(g.board)
-  g.finished = !any(g.amask)
   if maximum(g.board[:,:,6]) == 4
     g.trick_winner = calculate_winner(g.board)
     g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
   else
     g.trick_winner = 0x00
   end
+  g.amask = get_legal_actions(g.board)
+  g.finished = !any(g.amask)
 end
 
 function calculate_winner(board::Board)
