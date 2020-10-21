@@ -66,7 +66,6 @@ function GI.play!(g::Game, action)
   g.board[:,:,6] = setindex!(g.board[:,:,6], maximum(g.board[:,:,6]) + 1, action)
   g.board[:,:,1:4] = circshift(g.board[:,:,1:4], (0,0,-1))
   update_status!(g)
-  g.curplayer = switch_players(g.curplayer)
 end
 
 function GI.game_terminated(g::Game)
@@ -84,8 +83,8 @@ GI.current_state(g::Game) = (board=g.board, curplayer=g.curplayer, trick_winner=
 GI.white_playing(::Type{Game}, state) = state.curplayer == WHITE
 
 function GI.white_reward(g::Game)
-  g.trick_winner == WHITE && (return  1.)
-  g.trick_winner == BLACK && (return -1.)
+  -(g.trick_winner % 2) + 2 == WHITE && (return  1.)
+  -(g.trick_winner % 2) + 2 == BLACK && (return -1.)
   return 0.
 end
 
@@ -121,18 +120,25 @@ function get_legal_actions(hand::Board)
     return vec(Array{Bool}(hand[:,:,1]))
   else
     leading_suit = findfirst(x -> x == 1, hand[:,:,6])[2]
-    action_mask = falses(NUM_VALUES, NUM_SUITS) 
-    action_mask[:,leading_suit] = Array{Bool}(hand[:,leading_suit,1])
+    action_mask = zeros(UInt8, NUM_VALUES, NUM_SUITS) 
+    action_mask[:,leading_suit] = hand[:,leading_suit,1]
     return vec(Array{Bool}(action_mask))
   end
 end
 
 function update_status!(g::Game)
   if maximum(g.board[:,:,6]) == 4
-    g.trick_winner = calculate_winner(g.board)
+    new_winner = calculate_winner(g.board)
+    circshift(g.board[:,:,1:4], (0,0,-(new_winner - 1)))
+    g.trick_winner = ((g.trick_winner + (new_winner - 1)) % 4
+    if g.trick_winner == 0
+      g.trick_winner = 4
+    end
+    g.curplayer = -(g.trick_winner % 2) + 2
     g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
   else
     g.trick_winner = 0x00
+    g.curplayer = switch_players(g.curplayer)
   end
   g.amask = get_legal_actions(g.board)
   g.finished = !any(g.amask)
@@ -166,11 +172,7 @@ function calculate_winner(board::Board)
   end
 
   # Return the reward corresponding to the correct winner
-  if winning_player == 1 || winning_player == 3
-    return 0x01
-  else
-    return 0x02
-  end
+  return winning_player
 end
 
 function Base.copy(g::Game)

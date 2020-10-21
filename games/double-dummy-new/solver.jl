@@ -30,8 +30,9 @@ function hand_to_deal(p::Player, g)
   end
   trump -= 1
   
-  # Calculate which player is up next
-  first = maximum(g.board[:,:,6])
+  # Calculate which player led and which is up next
+  leader = g.trick_winner - 1
+  first = ((g.trick_winner - 1) + maximum(g.board[:,:,6])) % 4
   
   # Calculate the cards that have been played in the current trick
   ct_ranks = zeros(Cint, 3)
@@ -52,7 +53,7 @@ function hand_to_deal(p::Player, g)
   end
 
   # Return the dds Deal data structure
-  return dealPBN(trump, 0, ct_suits, ct_ranks, remainCards)
+  return dealPBN(trump, leader, ct_suits, ct_ranks, remainCards)
 end
 
 function query_solver(p::Player, g)
