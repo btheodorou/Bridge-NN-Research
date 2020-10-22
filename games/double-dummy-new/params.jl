@@ -93,7 +93,7 @@ make_duel(player, baseline) =
   Benchmark.Duel(
     player,
     baseline,
-    num_games=150,
+    num_games=2,
     flip_probability=0.1,
     color_policy=ALTERNATE_COLORS,
     play_swiss_style=true)
