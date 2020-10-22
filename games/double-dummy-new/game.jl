@@ -258,8 +258,11 @@ function GI.render(g::Game)
   else
     trump_suit = findfirst(x -> x == 1, g.board[:,:,5])[2]
   end
-  println("Trump:" * string(trump_suit))
+  println("Current Player: " * string(g.curplayer))
+  println("Leader: " * string(g.leader))
+  println("Trump: " * string(trump_suit))
   println("Previous Reward: " * string(GI.white_reward(g)))
+  println("Available Actions: " * GI.available_actions(g))
   println("Current Trick: " * string(findfirst(x -> x == 1, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 2, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 3, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 4, g.board[:,:,6])))
   println("Hand 1:" * string(findall(x -> x == 0x01, g.board[:,:,1])))
   println("Hand 2:" * string(findall(x -> x == 0x01, g.board[:,:,2])))
