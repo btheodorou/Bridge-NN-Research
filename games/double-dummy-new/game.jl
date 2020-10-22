@@ -132,7 +132,7 @@ end
 function update_status!(g::Game)
   if maximum(g.board[:,:,6]) == 4
     new_winner = calculate_winner(g.board)
-    g.board[:,:,1:4] = circshift(g.board[:,:,1:4], (0,0,(new_winner - 1)))
+    g.board[:,:,1:4] = circshift(g.board[:,:,1:4], (0,0,-(new_winner - 1)))
     g.leader = (g.leader + (new_winner - 1)) % 4
     if g.leader == 0
       g.leader = 4
