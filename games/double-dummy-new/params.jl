@@ -12,7 +12,7 @@ netparams = ResNetHP(
   batch_norm_momentum=0.1)
 
 self_play = SelfPlayParams(
-  num_games=2,
+  num_games=1000,
   reset_mcts_every=1,
   mcts=MctsParams(
     use_gpu=true,
@@ -25,7 +25,7 @@ self_play = SelfPlayParams(
     dirichlet_noise_α=0.75))
 
 arena = ArenaParams(
-  num_games=2,
+  num_games=400,
   reset_mcts_every=1,
   flip_probability=0.1,
   update_threshold=0.5,
@@ -93,7 +93,7 @@ make_duel(player, baseline) =
   Benchmark.Duel(
     player,
     baseline,
-    num_games=2,
+    num_games=150,
     flip_probability=0.1,
     color_policy=ALTERNATE_COLORS,
     play_swiss_style=true)
