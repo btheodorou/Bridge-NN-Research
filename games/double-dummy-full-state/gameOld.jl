@@ -4,7 +4,7 @@ using Random
 # Initialize the dimension constants
 const NUM_SUITS = 4
 const NUM_VALUES= 13
-const NUM_ARRAYS = 6
+const NUM_ARRAYS = 18
 const NUM_CARDS = 52
 
 # Initialize the player constants
@@ -33,7 +33,6 @@ mutable struct Game <: GI.AbstractGame
   curplayer :: Player
   finished :: Bool
   trick_winner :: Player
-  leader :: Player
   amask :: Vector{Bool} # actions mask
   # Actions history, which uniquely identifies the current board position
   # Used by external solvers
@@ -45,21 +44,19 @@ function Game()
   curplayer = WHITE
   finished = false
   trick_winner = 0x00
-  leader = 0x01
   amask = get_legal_actions(board)
   history = Int[]
-  Game(board, curplayer, finished, trick_winner, leader, amask, history)
+  Game(board, curplayer, finished, trick_winner, amask, history)
 end
 
 function Game(state)
   board = state.board
   curplayer = state.curplayer
   trick_winner = state.trick_winner
-  leader = state.leader
   amask = get_legal_actions(board)
   finished = !any(amask)
   history = Int[]
-  Game(board, curplayer, finished, trick_winner, leader, amask, history)
+  Game(board, curplayer, finished, trick_winner, amask, history)
 end
 
 function GI.play!(g::Game, action)
@@ -69,20 +66,21 @@ function GI.play!(g::Game, action)
   g.board[:,:,6] = setindex!(g.board[:,:,6], maximum(g.board[:,:,6]) + 1, action)
   g.board[:,:,1:4] = circshift(g.board[:,:,1:4], (0,0,-1))
   update_status!(g)
+  g.curplayer = switch_players(g.curplayer)
 end
 
 function GI.game_terminated(g::Game)
   return g.finished
 end
 
-GI.State(::Type{Game}) = typeof((board=zeros(UInt8, NUM_VALUES, NUM_SUITS, NUM_ARRAYS), curplayer=WHITE, trick_winner=WHITE, leader=WHITE))
+GI.State(::Type{Game}) = typeof((board=zeros(UInt8, NUM_VALUES, NUM_SUITS, NUM_ARRAYS), curplayer=WHITE, trick_winner=WHITE))
 GI.Action(::Type{Game}) = Int
 GI.two_players(::Type{Game}) = true
 const ACTIONS = collect(1:NUM_CARDS)
 GI.actions(::Type{Game}) = ACTIONS
 history(g::Game) = g.history
 GI.actions_mask(g::Game) = g.amask
-GI.current_state(g::Game) = (board=g.board, curplayer=g.curplayer, trick_winner=g.trick_winner, leader=g.leader)
+GI.current_state(g::Game) = (board=g.board, curplayer=g.curplayer, trick_winner=g.trick_winner)
 GI.white_playing(::Type{Game}, state) = state.curplayer == WHITE
 
 function GI.white_reward(g::Game)
@@ -119,33 +117,21 @@ function random_starting_state(deck::Array{UInt8,3})
 end
 
 function get_legal_actions(hand::Board)
-  if maximum(hand[:,:,6]) == 0 || maximum(hand[:,findfirst(x -> x == 1, hand[:,:,6])[2],1]) == 0
-    return vec(Array{Bool}(hand[:,:,1]))
-  else
-    leading_suit = findfirst(x -> x == 1, hand[:,:,6])[2]
-    action_mask = zeros(UInt8, NUM_VALUES, NUM_SUITS) 
-    action_mask[:,leading_suit] = hand[:,leading_suit,1]
-    return vec(Array{Bool}(action_mask))
-  end
+  return vec(Array{Bool}(hand[:,:,1]))
 end
 
 function update_status!(g::Game)
-  if maximum(g.board[:,:,6]) == 4
-    new_winner = calculate_winner(g.board)
-    circshift(g.board[:,:,1:4], (0,0,-(new_winner - 1)))
-    g.leader = (g.leader + (new_winner - 1)) % 4
-    if g.leader == 0
-      g.leader = 4
-    end
-    g.curplayer = -(g.leader % 2) + 2
-    g.trick_winner = g.curplayer
-    g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
-  else
-    g.trick_winner = 0x00
-    g.curplayer = switch_players(g.curplayer)
-  end
   g.amask = get_legal_actions(g.board)
   g.finished = !any(g.amask)
+  if maximum(g.board[:,:,6]) == 4
+    g.trick_winner = calculate_winner(g.board)
+    if !g.finished
+      g.board[:,:,19-sum(g.board[:,:,1])] = g.board[:,:,6]
+      g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+    end
+  else
+    g.trick_winner = 0x00
+  end
 end
 
 function calculate_winner(board::Board)
@@ -175,17 +161,21 @@ function calculate_winner(board::Board)
     end
   end
 
-  # Return the winner for the current trick
-  return winning_player
+  # Return the reward corresponding to the correct winner
+  if winning_player == 1 || winning_player == 3
+    return 0x01
+  else
+    return 0x02
+  end
 end
 
 function Base.copy(g::Game)
   history = isnothing(g.history) ? nothing : copy(g.history)
-  Game(g.board, g.curplayer, g.finished, g.trick_winner, g.leader, copy(g.amask), history)
+  Game(g.board, g.curplayer, g.finished, g.trick_winner, copy(g.amask), history)
 end
 
 function Base.copy(state)
-  return (board=copy(state.board), curplayer=state.curplayer, trick_winner=state.trick_winner, leader=state.leader)
+  return (board=copy(state.board), curplayer=state.curplayer, trick_winner=state.trick_winner)
 end
 
 #####
@@ -233,7 +223,7 @@ end
 function GI.symmetries(::Type{Game}, state)
   symb = flipped_board(state.board)
   σ = vec(reshape(collect(1:NUM_CARDS), (NUM_VALUES, NUM_SUITS))[:,reverse(1:NUM_SUITS)])
-  syms = (board=Board(symb), curplayer=state.curplayer, trick_winner=state.trick_winner, leader=state.leader)
+  syms = (board=Board(symb), curplayer=state.curplayer, trick_winner=state.trick_winner)
   return [(syms, σ)]
 end
 
@@ -258,11 +248,8 @@ function GI.render(g::Game)
   else
     trump_suit = findfirst(x -> x == 1, g.board[:,:,5])[2]
   end
-  println("Current Player: " * string(g.curplayer))
-  println("Leader: " * string(g.leader))
-  println("Trump: " * string(trump_suit))
+  println("Trump:" * string(trump_suit))
   println("Previous Reward: " * string(GI.white_reward(g)))
-  println("Available Actions: " * GI.available_actions(g))
   println("Current Trick: " * string(findfirst(x -> x == 1, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 2, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 3, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 4, g.board[:,:,6])))
   println("Hand 1:" * string(findall(x -> x == 0x01, g.board[:,:,1])))
   println("Hand 2:" * string(findall(x -> x == 0x01, g.board[:,:,2])))
@@ -272,16 +259,4 @@ end
 
 function GI.read_state(::Type{Game})
   return nothing
-end
-
-#####
-##### Imperfect Information
-#####
-
-function GI.is_imperfect_information()
-    return false
-end
-
-function GI.mask_state(state)
-  return state
 end
