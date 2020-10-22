@@ -12,7 +12,7 @@ netparams = ResNetHP(
   batch_norm_momentum=0.1)
 
 self_play = SelfPlayParams(
-  num_games=1000,
+  num_games=2,
   reset_mcts_every=1,
   mcts=MctsParams(
     use_gpu=true,
@@ -25,7 +25,7 @@ self_play = SelfPlayParams(
     dirichlet_noise_α=0.75))
 
 arena = ArenaParams(
-  num_games=400,
+  num_games=2,
   reset_mcts_every=1,
   flip_probability=0.1,
   update_threshold=0.5,
@@ -78,13 +78,13 @@ minmax_baseline = Benchmark.MinMaxTS(depth=5, amplify_rewards=true, τ=0.2)
 solver_baseline = Benchmark.Solver(ϵ=0)
 
 players = [
-  Benchmark.Full(arena.mcts),
+  #Benchmark.Full(arena.mcts),
   Benchmark.Full(arena.mcts),
   Benchmark.Full(arena.mcts),
   Benchmark.NetworkOnly(τ=0.5, use_gpu=true)]
 
 baselines = [
-  solver_baseline,
+  #solver_baseline,
   mcts_baseline,
   minmax_baseline,
   mcts_baseline]
