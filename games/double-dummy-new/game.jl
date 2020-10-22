@@ -132,7 +132,7 @@ end
 function update_status!(g::Game)
   if maximum(g.board[:,:,6]) == 4
     new_winner = calculate_winner(g.board)
-    circshift(g.board[:,:,1:4], (0,0,-(new_winner - 1)))
+    g.board[:,:,1:4] = circshift(g.board[:,:,1:4], (0,0,(new_winner - 1)))
     g.leader = (g.leader + (new_winner - 1)) % 4
     if g.leader == 0
       g.leader = 4
@@ -262,7 +262,7 @@ function GI.render(g::Game)
   println("Leader: " * string(g.leader))
   println("Trump: " * string(trump_suit))
   println("Previous Reward: " * string(GI.white_reward(g)))
-  println("Available Actions: " * GI.available_actions(g))
+  println("Available Actions: " * string(GI.available_actions(g)))
   println("Current Trick: " * string(findfirst(x -> x == 1, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 2, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 3, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 4, g.board[:,:,6])))
   println("Hand 1:" * string(findall(x -> x == 0x01, g.board[:,:,1])))
   println("Hand 2:" * string(findall(x -> x == 0x01, g.board[:,:,2])))
