@@ -25,7 +25,7 @@ self_play = SelfPlayParams(
     dirichlet_noise_α=0.75))
 
 arena = ArenaParams(
-  num_games=400,
+  num_games=200,
   reset_mcts_every=1,
   flip_probability=0.1,
   update_threshold=0.5,
@@ -59,7 +59,7 @@ params = Params(
     num_game_stages=4),
   mem_buffer_size=PLSchedule(
   [      0,        100],
-  [200_000,    750_000]))
+  [200_000,  1_000_000]))
 
 #####
 ##### Benchmarks

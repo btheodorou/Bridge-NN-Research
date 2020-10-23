@@ -131,15 +131,15 @@ end
 
 function update_status!(g::Game)
   if maximum(g.board[:,:,6]) == 4
-    new_winner = calculate_winner(g.board)
-    g.board[:,:,1:4] = circshift(g.board[:,:,1:4], (0,0,-(new_winner - 1)))
-    g.leader = (g.leader + (new_winner - 1)) % 4
+    new_winner = calculate_winner(g.board) # Calculate winner (by number of card played) for the current trick
+    g.board[:,:,1:4] = circshift(g.board[:,:,1:4], (0,0,-(new_winner - 1))) # Circle through the first four slices so the winner is first
+    g.leader = (g.leader + (new_winner - 1)) % 4 # Set the NESW leader to the winner
     if g.leader == 0
       g.leader = 4
     end
-    g.curplayer = -(g.leader % 2) + 2
-    g.trick_winner = g.curplayer
-    g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+    g.curplayer = -(g.leader % 2) + 2 # Set the current player based on the leader
+    g.trick_winner = g.curplayer # Set the trick winner to the current player/leader
+    g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS) # Reset the current trick slice to zeros
   else
     g.trick_winner = 0x00
     g.curplayer = switch_players(g.curplayer)
