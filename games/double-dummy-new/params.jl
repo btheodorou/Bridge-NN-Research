@@ -45,7 +45,7 @@ learning = LearningParams(
   l2_regularization=1e-4,
   nonvalidity_penalty=1.,
   min_checkpoints_per_epoch=1,
-  max_batches_per_checkpoint=8000,
+  max_batches_per_checkpoint=25000,
   num_checkpoints=2)
 
 params = Params(

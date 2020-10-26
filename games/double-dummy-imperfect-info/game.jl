@@ -131,15 +131,15 @@ end
 
 function update_status!(g::Game)
   if maximum(g.board[:,:,6]) == 4
-    new_winner = calculate_winner(g.board)
-    circshift(g.board[:,:,1:4], (0,0,-(new_winner - 1)))
-    g.leader = (g.leader + (new_winner - 1)) % 4
+    new_winner = calculate_winner(g.board) # Calculate winner (by number of card played) for the current trick
+    g.board[:,:,1:4] = circshift(g.board[:,:,1:4], (0,0,-(new_winner - 1))) # Circle through the first four slices so the winner is first
+    g.leader = (g.leader + (new_winner - 1)) % 4 # Set the NESW leader to the winner
     if g.leader == 0
       g.leader = 4
     end
-    g.curplayer = -(g.leader % 2) + 2
-    g.trick_winner = g.curplayer
-    g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+    g.curplayer = -(g.leader % 2) + 2 # Set the current player based on the leader
+    g.trick_winner = g.curplayer # Set the trick winner to the current player/leader
+    g.board[:,:,6] = zeros(UInt8, NUM_VALUES, NUM_SUITS) # Reset the current trick slice to zeros
   else
     g.trick_winner = 0x00
     g.curplayer = switch_players(g.curplayer)
@@ -258,8 +258,11 @@ function GI.render(g::Game)
   else
     trump_suit = findfirst(x -> x == 1, g.board[:,:,5])[2]
   end
-  println("Trump:" * string(trump_suit))
+  println("Current Player: " * string(g.curplayer))
+  println("Leader: " * string(g.leader))
+  println("Trump: " * string(trump_suit))
   println("Previous Reward: " * string(GI.white_reward(g)))
+  println("Available Actions: " * string(GI.available_actions(g)))
   println("Current Trick: " * string(findfirst(x -> x == 1, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 2, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 3, g.board[:,:,6])) * ", " * string(findfirst(x -> x == 4, g.board[:,:,6])))
   println("Hand 1:" * string(findall(x -> x == 0x01, g.board[:,:,1])))
   println("Hand 2:" * string(findall(x -> x == 0x01, g.board[:,:,2])))
@@ -281,7 +284,18 @@ end
 
 function GI.mask_state(state)
   maskedState = copy(state)
-  maskedState.board[:,:,2] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
-  maskedState.board[:,:,4] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+  # Since the player to the left of the declarer starts, and we have designated 
+  # North as our first leader, West is our declarer, and thus East is our dummy
+  toPlay = (maskedState.leader + maximum(maskedState.board[:,:,6])) % 4
+  if toPlay == 1 # N to play
+    maskedState.board[:,:,3] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+    maskedState.board[:,:,4] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+  elseif toPlay == 3 # S to play
+    maskedState.board[:,:,2] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+    maskedState.board[:,:,3] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+  else # E or W to play
+    maskedState.board[:,:,2] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+    maskedState.board[:,:,4] = zeros(UInt8, NUM_VALUES, NUM_SUITS)
+  end
   return maskedState
 end
