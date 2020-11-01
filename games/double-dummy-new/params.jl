@@ -5,7 +5,7 @@ Network = ResNet
 
 netparams = ResNetHP(
   num_filters=128,
-  num_blocks=15,
+  num_blocks=20,
   conv_kernel_size=(3, 3),
   num_policy_head_filters=64,
   num_value_head_filters=64,
@@ -18,14 +18,14 @@ self_play = SelfPlayParams(
     use_gpu=true,
     num_workers=32,
     num_iters_per_turn=1000,
-    cpuct=3.0,
+    cpuct=4.0,
     prior_temperature=0.7,
-    temperature=PLSchedule([0, 12], [1.0, 0.1]),
+    temperature=PLSchedule([0, 24], [1.0, 0.5]),
     dirichlet_noise_ϵ=0.25,
-    dirichlet_noise_α=0.75))
+    dirichlet_noise_α=1.25))
 
 arena = ArenaParams(
-  num_games=200,
+  num_games=2,
   reset_mcts_every=1,
   flip_probability=0.1,
   update_threshold=0.5,
@@ -58,36 +58,32 @@ params = Params(
   memory_analysis=MemAnalysisParams(
     num_game_stages=4),
   mem_buffer_size=PLSchedule(
-  [      0,        100],
-  [200_000,  1_000_000]))
+  [      5,        57],
+  [208_000, 1_560_000]))
 
 #####
 ##### Benchmarks
 #####
 
-mcts_baseline =
-  Benchmark.MctsRollouts(
-    MctsParams(
-      arena.mcts,
-      num_iters_per_turn=1000,
-      num_workers=1,
-      cpuct=1.))
+# mcts_baseline =
+#   Benchmark.MctsRollouts(
+#     MctsParams(
+#       arena.mcts,
+#       num_iters_per_turn=1000,
+#       num_workers=1,
+#       cpuct=1.))
 
-minmax_baseline = Benchmark.MinMaxTS(depth=5, amplify_rewards=true, τ=0.2)
+# minmax_baseline = Benchmark.MinMaxTS(depth=5, amplify_rewards=true, τ=0.2)
 
 solver_baseline = Benchmark.Solver(ϵ=0)
 
 players = [
   Benchmark.Full(arena.mcts),
-  Benchmark.Full(arena.mcts),
-  Benchmark.Full(arena.mcts),
-  Benchmark.NetworkOnly(τ=0.5, use_gpu=true)]
+  Benchmark.NetworkOnly(τ=0.25, use_gpu=true)]
 
 baselines = [
   solver_baseline,
-  mcts_baseline,
-  minmax_baseline,
-  mcts_baseline]
+  solver_baseline]
 
 make_duel(player, baseline) =
   Benchmark.Duel(
