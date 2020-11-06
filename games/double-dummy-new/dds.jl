@@ -60,7 +60,7 @@ function SolveBoardPBN(deal)
     deal,
     -1, #target
     2, #solutions
-    0, #mode
+    1, #mode
     futp,
     Threads.threadid() - 1
     )

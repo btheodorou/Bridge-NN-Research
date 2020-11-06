@@ -64,16 +64,17 @@ function query_solver(p::Player, g)
     throw("Solver Query Failed: $result")
   end
   optimal_actions = [(fut.suit[i] * 13) + (fut.rank[i] - 2) + 1 for i in 1:fut.cards]
-  return optimal_actions
+  v = fut.score[1]
+  return optimal_actions, v
 end
 
 function think(p::Player, g)
   as = GI.available_actions(g)
-  opt_moves = query_solver(p, g)
+  opt_moves, v = query_solver(p, g)
   opt_mask = findall(x -> x in opt_moves, as)
   π = zeros(length(as))
   π[opt_mask] .= 1 / length(opt_mask)
-  return as, π
+  return as, π, v
 end
 
 Benchmark.PerfectPlayer(::Type{Game}) = Player

@@ -110,7 +110,7 @@ function think(p::Player, game)
     π[winning] .= 1.
   end
   π ./= sum(π)
-  return actions, π
+  return actions, π, nothing
 end
 
 end

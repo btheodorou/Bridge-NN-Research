@@ -90,7 +90,7 @@ function think(p::Player, g)
   opt = findall(>=(maxq), qs)
   π = zeros(length(as))
   π[opt] .= 1 / length(opt)
-  return as, π
+  return as, π, nothing
 end
 
 Benchmark.PerfectPlayer(::Type{Game}) = Player
