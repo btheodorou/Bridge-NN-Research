@@ -220,7 +220,7 @@ function think(p::MctsPlayer, game)
       v = MCTS.explore!(p.mcts, game, p.niters)
     end
   end
-  return MCTS.policy(p.mcts, game), q
+  return MCTS.policy(p.mcts, game), v
 end
 
 function player_temperature(p::MctsPlayer, game, turn)
