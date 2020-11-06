@@ -64,7 +64,7 @@ function state_statistics(game, player, turn, memory=nothing)
   @assert !GI.game_terminated(game)
   state = GI.current_state(game)
   # Make the player think
-  actions, π = think(player, game)
+  actions, π, _ = think(player, game)
   τ = player_temperature(player, game, turn)
   π = apply_temperature(π, τ)
   report = StateStats(actions)

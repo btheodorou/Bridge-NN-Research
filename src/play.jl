@@ -14,7 +14,7 @@ GameType(::AbstractPlayer{Game}) where Game = Game
 """
     think(::AbstractPlayer, game)
 
-Return a probability distribution over actions as a `(actions, π)` pair.
+Return a probability distribution over actions as a `(actions, π)` pair. Also optionally return a value_estimate of the current state
 """
 function think end
 
@@ -48,7 +48,7 @@ an action according to the distribution computed by [`think`](@ref), with a
 temperature given by [`player_temperature`](@ref).
 """
 function select_move(player::AbstractPlayer, game, turn_number)
-  actions, π = think(player, game)
+  actions, π, _ = think(player, game)
   τ = player_temperature(player, game, turn_number)
   π = apply_temperature(π, τ)
   return actions[Util.rand_categorical(π)]
@@ -69,7 +69,7 @@ function think(player::RandomPlayer, game)
   actions = GI.available_actions(game)
   n = length(actions)
   π = ones(n) ./ length(actions)
-  return actions, π
+  return actions, π, nothing
 end
 
 #####
@@ -91,10 +91,10 @@ struct EpsilonGreedyPlayer{G, P} <: AbstractPlayer{G}
 end
 
 function think(p::EpsilonGreedyPlayer, game)
-  actions, π = think(p.player, game)
+  actions, π, value_estimate = think(p.player, game)
   n = length(actions)
   η = ones(n) ./ n
-  return actions, (1 - p.ϵ) * π + p.ϵ * η
+  return actions, (1 - p.ϵ) * π + p.ϵ * η, value_estimate
 end
 
 function reset!(p::EpsilonGreedyPlayer)
@@ -211,15 +211,16 @@ function RandomMctsPlayer(::Type{G}, params::MctsParams) where G
 end
 
 function think(p::MctsPlayer, game)
+  v = nothing
   if isnothing(p.timeout) # Fixed number of MCTS simulations
-    MCTS.explore!(p.mcts, game, p.niters)
+    v = MCTS.explore!(p.mcts, game, p.niters)
   else # Run simulations until timeout
     start = time()
     while time() - start < p.timeout
-      MCTS.explore!(p.mcts, game, p.niters)
+      v = MCTS.explore!(p.mcts, game, p.niters)
     end
   end
-  return MCTS.policy(p.mcts, game)
+  return MCTS.policy(p.mcts, game), q
 end
 
 function player_temperature(p::MctsPlayer, game, turn)
@@ -251,8 +252,8 @@ end
 function think(p::NetworkPlayer, game)
   actions = GI.available_actions(game)
   state = GI.current_state(game)
-  π, _ = MCTS.evaluate(p.network, state)
-  return actions, π
+  π, v = MCTS.evaluate(p.network, state)
+  return actions, π, v
 end
 
 #####
@@ -335,12 +336,12 @@ function play_game(player; flip_probability=0., initial_state=nothing)
     if !iszero(flip_probability) && rand() < flip_probability
       game = GI.apply_random_symmetry(game)
     end
-    actions, π_target = think(player, game)
+    actions, π_target, value_estimate = think(player, game)
     τ = player_temperature(player, game, length(trace))
     π_sample = apply_temperature(π_target, τ)
     a = actions[Util.rand_categorical(π_sample)]
     GI.play!(game, a)
-    push!(trace, π_target, GI.white_reward(game), GI.current_state(game))
+    push!(trace, π_target, GI.white_reward(game), value_estimate, GI.current_state(game))
   end
 end
 

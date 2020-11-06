@@ -82,8 +82,9 @@ function push_game!(mem::MemoryBuffer, trace, gamma)
     wr = gamma * wr + trace.rewards[i]
     s = trace.states[i]
     π = trace.policies[i]
+    v = trace.values[i]
     wp = GI.white_playing(GameType(trace), s)
-    z = wp ? wr : -wr
+    z = wp ? (wr + v)/2 : (-wr + v)/2
     t = float(n - i + 1)
     push!(mem.buf, TrainingSample(s, π, z, t, 1))
   end

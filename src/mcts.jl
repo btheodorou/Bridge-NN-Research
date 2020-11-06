@@ -449,16 +449,19 @@ function dirichlet_noise(game, α)
 end
 
 function explore_sync!(env::Env, game, nsims)
+  q = nothing
   η = dirichlet_noise(game, env.noise_α)
   elapsed = @elapsed for i in 1:nsims
-    worker_explore!(env, env.workers[1], game, η)
+    q = worker_explore!(env, env.workers[1], game, η)
   end
   env.total_time += elapsed
+  return q
 end
 
 # Spawn an inference server along with `env.nworkers` workers.
 # Each worker runs simulations in a loop until `env.remaining` reaches zero.
 function explore_async!(env::Env, game, nsims)
+  q = nothing
   env.remaining = nsims
   η = dirichlet_noise(game, env.noise_α)
   elapsed = @elapsed begin
@@ -469,7 +472,7 @@ function explore_async!(env::Env, game, nsims)
           lock(env.global_lock)
           while env.remaining > 0
             env.remaining -= 1
-            worker_explore!(env, w, game, η)
+            q = worker_explore!(env, w, game, η)
           end
           put!(w.send, Done(env))
           unlock(env.global_lock)
@@ -478,7 +481,7 @@ function explore_async!(env::Env, game, nsims)
     end
   end
   env.total_time += elapsed
-  return
+  return q
 end
 
 """
@@ -487,7 +490,7 @@ end
 Run `nsims` MCTS simulations from the current state.
 """
 function explore!(env::Env, game, nsims)
-  asynchronous(env) ?
+  return asynchronous(env) ?
     explore_async!(env, game, nsims) :
     explore_sync!(env, game, nsims)
 end
