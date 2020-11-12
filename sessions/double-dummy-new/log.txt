@@ -1,0 +1,883 @@
+
+Initializing a new AlphaZero environment
+
+  Initial report
+  
+    Number of network parameters: 6,520,885
+    Number of regularized network parameters: 6,520,704
+    Memory footprint per MCTS node: 2488 bytes
+  
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.52 (win rate of -76%), redundancy: 3.3%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -4.79 (win rate of -189%), redundancy: 2.7%
+
+Starting iteration 1
+
+  Starting self-play
+  
+    Time spent on inference: 60%
+    Generating 3 samples per second on average
+    Average exploration depth: 10.3
+    MCTS memory footprint: 96.33MB
+    Experience buffer size: 52,000 (51,996 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp    Wtot      Nb      Ns
+     8.9671  6.9623  0.5022  0.5656  0.9370  0.8549  0.5796  52,000  51,996  52,000  all samples
+     8.9656  6.9610  0.5020  0.5656  0.9370  0.8548  0.5796  52,000  51,996  52,000  latest batch
+     4.6410  2.9448  0.1531  0.5656  0.9774  0.4220  0.3318  13,000  12,996  13,000  1 to 13 turns left
+    10.0872  8.0495  0.5229  0.5656  0.9492  0.9109  0.5897  13,000  13,000  13,000  14 to 26 turns left
+    10.7678  8.6581  0.6175  0.5656  0.9266  0.9883  0.6527  13,000  13,000  13,000  27 to 39 turns left
+    10.3840  8.2090  0.7147  0.5656  0.8947  1.0982  0.7442  13,000  13,000  13,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       9.4533   7.2531   0.7082   0.5656   0.9264   0.5796   0.8746
+      19.0750   6.9560   0.4507  10.7363   0.9321   0.5796   1.0337
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +3.00 (win rate of 200%, network replaced), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      18.3944   6.9560   0.4449  10.0624   0.9311   0.5796   1.0377
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +2.00 (win rate of 150%), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -3.43 (win rate of -121%), redundancy: 3.4%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -4.83 (win rate of -191%), redundancy: 2.7%
+
+Starting iteration 2
+
+  Starting self-play
+  
+    Time spent on inference: 62%
+    Generating 3 samples per second on average
+    Average exploration depth: 9.2
+    MCTS memory footprint: 99.43MB
+    Experience buffer size: 104,000 (103,992 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp     Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    17.9705  6.5729  0.4034  10.0624  0.9318  1.0410  0.6051  104,000  103,992  104,000  all samples
+    17.5467  6.1893  0.3620  10.0624  0.9329  1.0427  0.6306   52,000   52,000   52,000  latest batch
+    14.1636  2.9839  0.1465  10.0624  0.9708  0.4901  0.3473   26,000   25,992   26,000  1 to 13 turns left
+    19.2319  7.7720  0.4563  10.0624  0.9411  1.0797  0.6162   26,000   26,000   26,000  14 to 26 turns left
+    19.4216  7.9475  0.4902  10.0624  0.9214  1.2120  0.6892   26,000   26,000   26,000  27 to 39 turns left
+    19.0758  7.5987  0.5206  10.0624  0.8940  1.3823  0.7676   26,000   26,000   26,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      17.9716   6.5741   0.4028  10.0624   0.9323   0.6051   1.0379
+      16.7276   6.5686   0.3887   8.8369   0.9335   0.6051   1.0020
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      15.7542   6.6151   0.3935   7.8140   0.9316   0.6051   1.0014
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -3.08 (win rate of -104%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -4.87 (win rate of -193%), redundancy: 2.7%
+
+Starting iteration 3
+
+  Starting self-play
+  
+    Time spent on inference: 62%
+    Generating 3 samples per second on average
+    Average exploration depth: 9.3
+    MCTS memory footprint: 99.64MB
+    Experience buffer size: 156,000 (155,988 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    15.6699  6.5485  0.3751  7.8140  0.9323  1.0001  0.6112  156,000  155,988  156,000  all samples
+    15.4948  6.4049  0.3425  7.8140  0.9334  0.9981  0.6234   52,000   52,000   52,000  latest batch
+    11.9660  3.0363  0.1473  7.8140  0.9684  0.4827  0.3548   39,000   38,988   39,000  1 to 13 turns left
+    16.9685  7.7712  0.4437  7.8140  0.9396  1.0623  0.6241   39,000   39,000   39,000  14 to 26 turns left
+    17.0666  7.8737  0.4546  7.8140  0.9242  1.1681  0.6942   39,000   39,000   39,000  27 to 39 turns left
+    16.6831  7.5172  0.4549  7.8140  0.8970  1.2874  0.7717   39,000   39,000   39,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      15.6674   6.5451   0.3761   7.8140   0.9322   0.6112   1.0007
+      13.6235   6.4493   0.4430   6.4369   0.2944   0.6112   0.8833
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       8.9366   3.1296   0.3976   5.3288   0.0805   0.6112   0.8709
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +3.00 (win rate of 200%, network replaced), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.76 (win rate of -88%), redundancy: 3.2%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -4.36 (win rate of -168%), redundancy: 2.8%
+
+Starting iteration 4
+
+  Starting self-play
+  
+    Time spent on inference: 62%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.3
+    MCTS memory footprint: 97.46MB
+    Experience buffer size: 208,000 (207,988 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    9.0714  3.2669  0.3931  5.3288  0.0826  0.8727  0.6072  208,000  207,988  208,000  all samples
+    9.4790  3.6918  0.3734  5.3288  0.0850  0.8745  0.5952   52,000   52,000   52,000  latest batch
+    7.5439  1.9827  0.1664  5.3288  0.0661  0.4424  0.3536   52,000   51,988   52,000  1 to 13 turns left
+    9.6319  3.7305  0.4749  5.3288  0.0976  0.9358  0.6182   52,000   52,000   52,000  14 to 26 turns left
+    9.4889  3.5922  0.4731  5.3288  0.0948  1.0160  0.6911   52,000   52,000   52,000  27 to 39 turns left
+    9.6194  3.7612  0.4574  5.3288  0.0719  1.0965  0.7659   52,000   52,000   52,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       9.0791   3.2708   0.3985   5.3288   0.0810   0.6072   0.8709
+       7.0401   2.4712   0.3637   4.1723   0.0330   0.6072   0.9041
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -2.00 (win rate of -50%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.9134   2.2561   0.3523   3.2790   0.0259   0.6072   0.8853
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.73 (win rate of -87%), redundancy: 2.9%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.69 (win rate of -135%), redundancy: 2.7%
+
+Starting iteration 5
+
+  Starting self-play
+  
+    Time spent on inference: 63%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.2
+    MCTS memory footprint: 99.02MB
+    Experience buffer size: 208,000 (207,992 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    6.0537  2.4046  0.3448  3.2790  0.0252  0.8859  0.6130  208,000  207,992  208,000  all samples
+    6.4570  2.7626  0.3905  3.2790  0.0248  0.8865  0.6030   52,000   52,000   52,000  latest batch
+    4.8316  1.3852  0.1426  3.2790  0.0248  0.4610  0.3571   52,000   51,992   52,000  1 to 13 turns left
+    6.1809  2.4608  0.4158  3.2790  0.0253  0.9724  0.6257   52,000   52,000   52,000  14 to 26 turns left
+    6.3801  2.6561  0.4178  3.2790  0.0272  1.0320  0.6988   52,000   52,000   52,000  27 to 39 turns left
+    6.8232  3.1173  0.4034  3.2790  0.0234  1.0784  0.7707   52,000   52,000   52,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       6.0608   2.4120   0.3441   3.2790   0.0257   0.6130   0.8870
+       5.0636   2.1281   0.3199   2.5937   0.0219   0.6130   0.8837
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 4.7%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       4.3601   1.9606   0.3165   2.0687   0.0143   0.6130   0.8758
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.17 (win rate of -59%), redundancy: 2.9%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.49 (win rate of -125%), redundancy: 2.8%
+
+Starting iteration 6
+
+  Starting self-play
+  
+    Time spent on inference: 64%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.4
+    MCTS memory footprint: 97.58MB
+    Experience buffer size: 208,000 (207,996 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    4.5264  2.1107  0.3307  2.0687  0.0162  0.8721  0.6025  208,000  207,996  208,000  all samples
+    4.9134  2.4910  0.3376  2.0687  0.0162  0.8671  0.5883   52,000   52,000   52,000  latest batch
+    3.3629  1.1382  0.1342  2.0687  0.0218  0.4551  0.3540   52,000   51,996   52,000  1 to 13 turns left
+    4.5466  2.0688  0.3925  2.0687  0.0166  0.9580  0.6155   52,000   52,000   52,000  14 to 26 turns left
+    4.9015  2.4138  0.4034  2.0687  0.0156  1.0203  0.6832   52,000   52,000   52,000  27 to 39 turns left
+    5.2958  2.8233  0.3928  2.0687  0.0110  1.0550  0.7573   52,000   52,000   52,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       4.5314   2.1189   0.3296   2.0687   0.0142   0.6025   0.8741
+       3.9948   1.9872   0.3247   1.6704   0.0125   0.6025   0.8796
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 4.7%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       3.3217   1.6329   0.3125   1.3636   0.0128   0.6025   0.8855
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -3.00 (win rate of -100%), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.64 (win rate of -82%), redundancy: 2.9%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.37 (win rate of -119%), redundancy: 2.7%
+
+Starting iteration 7
+
+  Starting self-play
+  
+    Time spent on inference: 64%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.3
+    MCTS memory footprint: 97.64MB
+    Experience buffer size: 234,000 (233,996 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    3.4733  1.7786  0.3184  1.3636  0.0127  0.8842  0.5985  234,000  233,996  234,000  all samples
+    3.9866  2.2885  0.3216  1.3636  0.0129  0.8834  0.5965   52,000   52,000   52,000  latest batch
+    2.4192  0.9213  0.1236  1.3636  0.0107  0.4559  0.3507   58,500   58,496   58,500  1 to 13 turns left
+    3.5173  1.7626  0.3762  1.3636  0.0148  0.9637  0.6136   58,500   58,500   58,500  14 to 26 turns left
+    3.8017  2.0302  0.3935  1.3636  0.0143  1.0352  0.6771   58,500   58,500   58,500  27 to 39 turns left
+    4.1554  2.4003  0.3807  1.3636  0.0108  1.0824  0.7526   58,500   58,500   58,500  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       3.4827   1.7879   0.3185   1.3636   0.0128   0.5985   0.8855
+       3.1525   1.7034   0.3128   1.1242   0.0121   0.5985   0.8750
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       2.8213   1.5658   0.3115   0.9325   0.0115   0.5985   0.8926
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.27 (win rate of -63%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.35 (win rate of -117%), redundancy: 2.6%
+
+Starting iteration 8
+
+  Starting self-play
+  
+    Time spent on inference: 64%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.4
+    MCTS memory footprint: 98.31MB
+    Experience buffer size: 260,000 (259,996 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    2.9705  1.7165  0.3094  0.9324  0.0121  0.8925  0.5968  260,000  259,996  260,000  all samples
+    3.5536  2.3145  0.2941  0.9324  0.0126  0.8905  0.6010   52,000   52,000   52,000  latest batch
+    1.9313  0.8681  0.1162  0.9324  0.0145  0.4512  0.3495   65,000   64,996   65,000  1 to 13 turns left
+    2.9452  1.6376  0.3607  0.9324  0.0144  0.9642  0.6124   65,000   65,000   65,000  14 to 26 turns left
+    3.2940  1.9656  0.3839  0.9324  0.0121  1.0480  0.6768   65,000   65,000   65,000  27 to 39 turns left
+    3.7135  2.3965  0.3770  0.9324  0.0076  1.1068  0.7486   65,000   65,000   65,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       2.9796   1.7224   0.3132   0.9324   0.0116   0.5968   0.8921
+       2.5852   1.4786   0.3111   0.7865   0.0090   0.5968   0.8712
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 11.3%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       3.0648   1.4674   0.3067   1.2798   0.0109   0.5968   0.8792
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -2.00 (win rate of -50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.24 (win rate of -62%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.31 (win rate of -115%), redundancy: 2.8%
+
+Starting iteration 9
+
+  Starting self-play
+  
+    Time spent on inference: 65%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.3
+    MCTS memory footprint: 98.35MB
+    Experience buffer size: 286,000 (285,996 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    3.2065  1.6078  0.3074  1.2798  0.0114  0.8798  0.5978  286,000  285,996  286,000  all samples
+    3.8669  2.2579  0.3174  1.2798  0.0118  0.8760  0.6015   52,000   52,000   52,000  latest batch
+    2.1808  0.7736  0.1135  1.2798  0.0138  0.4506  0.3494   71,500   71,496   71,500  1 to 13 turns left
+    3.1793  1.5335  0.3532  1.2798  0.0128  0.9567  0.6178   71,500   71,500   71,500  14 to 26 turns left
+    3.5301  1.8572  0.3817  1.2798  0.0113  1.0320  0.6765   71,500   71,500   71,500  27 to 39 turns left
+    3.9370  2.2678  0.3815  1.2798  0.0079  1.0797  0.7474   71,500   71,500   71,500  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       3.2235   1.6249   0.3078   1.2798   0.0110   0.5978   0.8782
+       2.8633   1.4976   0.3051   1.0491   0.0115   0.5978   0.8633
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       2.5296   1.3331   0.3021   0.8834   0.0110   0.5978   0.8674
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +2.00 (win rate of 150%, network replaced), redundancy: 4.7%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.28 (win rate of -64%), redundancy: 2.9%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.40 (win rate of -120%), redundancy: 2.7%
+
+Starting iteration 10
+
+  Starting self-play
+  
+    Time spent on inference: 65%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.6
+    MCTS memory footprint: 97.68MB
+    Experience buffer size: 312,000 (312,000 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    2.7105  1.5185  0.2968  0.8834  0.0119  0.8691  0.5978  312,000  312,000  312,000  all samples
+    3.6389  2.4597  0.2836  0.8834  0.0122  0.8682  0.5964   52,000   52,000   52,000  latest batch
+    1.7184  0.7083  0.1090  0.8834  0.0177  0.4472  0.3516   78,000   78,000   78,000  1 to 13 turns left
+    2.6666  1.4367  0.3344  0.8834  0.0121  0.9411  0.6179   78,000   78,000   78,000  14 to 26 turns left
+    3.0179  1.7546  0.3694  0.8834  0.0105  1.0180  0.6771   78,000   78,000   78,000  27 to 39 turns left
+    3.4398  2.1748  0.3745  0.8834  0.0072  1.0701  0.7445   78,000   78,000   78,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       2.7256   1.5314   0.2997   0.8834   0.0111   0.5978   0.8669
+       5.5240   3.2156   0.3616   1.9133   0.0335   0.5978   0.8998
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       3.9158   2.1570   0.3296   1.4102   0.0189   0.5978   0.8872
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.48 (win rate of -74%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.36 (win rate of -118%), redundancy: 2.7%
+
+Starting iteration 11
+
+  Starting self-play
+  
+    Time spent on inference: 63%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.2
+    MCTS memory footprint: 98.09MB
+    Experience buffer size: 338,000 (338,000 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    3.9377  2.1794  0.3301  1.4102  0.0180  0.8861  0.5980  338,000  338,000  338,000  all samples
+    4.1147  2.3491  0.3379  1.4102  0.0174  0.8924  0.6009   52,000   52,000   52,000  latest batch
+    2.6681  1.1254  0.1190  1.4102  0.0135  0.4537  0.3522   84,500   84,500   84,500  1 to 13 turns left
+    3.9003  2.0896  0.3786  1.4102  0.0218  0.9591  0.6166   84,500   84,500   84,500  14 to 26 turns left
+    4.3343  2.4898  0.4130  1.4102  0.0213  1.0391  0.6790   84,500   84,500   84,500  27 to 39 turns left
+    4.8483  3.0131  0.4094  1.4102  0.0156  1.0924  0.7442   84,500   84,500   84,500  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       3.9571   2.1983   0.3298   1.4102   0.0188   0.5980   0.8879
+       3.6472   1.8623   0.3149   1.4478   0.0222   0.5980   0.8791
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       3.9746   2.1294   0.3125   1.5229   0.0098   0.5980   0.8772
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -4.00 (win rate of -150%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.32 (win rate of -66%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -2.87 (win rate of -93%), redundancy: 2.7%
+
+Starting iteration 12
+
+  Starting self-play
+  
+    Time spent on inference: 63%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.1
+    MCTS memory footprint: 97.62MB
+    Experience buffer size: 364,000 (363,992 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    3.9828  2.1375  0.3120  1.5229  0.0104  0.8770  0.5981  364,000  363,992  364,000  all samples
+    3.9936  2.1387  0.3216  1.5229  0.0104  0.8798  0.6023   52,000   52,000   52,000  latest batch
+    2.6486  0.9998  0.1141  1.5229  0.0117  0.4489  0.3525   91,000   90,992   91,000  1 to 13 turns left
+    3.8800  1.9909  0.3537  1.5229  0.0124  0.9459  0.6170   91,000   91,000   91,000  14 to 26 turns left
+    4.4364  2.5149  0.3881  1.5229  0.0105  1.0267  0.6787   91,000   91,000   91,000  27 to 39 turns left
+    4.9670  3.0449  0.3923  1.5229  0.0069  1.0870  0.7444   91,000   91,000   91,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       3.9873   2.1422   0.3123   1.5229   0.0098   0.5981   0.8768
+       3.1279   1.7243   0.2999   1.0928   0.0109   0.5981   0.8639
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 4.7%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       3.2093   1.7334   0.2979   1.1686   0.0094   0.5981   0.8688
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.12 (win rate of -56%), redundancy: 2.9%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.01 (win rate of -101%), redundancy: 2.7%
+
+Starting iteration 13
+
+  Starting self-play
+  
+    Time spent on inference: 65%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.5
+    MCTS memory footprint: 97.91MB
+    Experience buffer size: 390,000 (389,992 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    3.2764  1.7998  0.2968  1.1686  0.0112  0.8704  0.5990  390,000  389,992  390,000  all samples
+    3.7206  2.2644  0.2760  1.1686  0.0116  0.8710  0.6009   52,000   52,000   52,000  latest batch
+    1.9181  0.6231  0.1094  1.1686  0.0169  0.4467  0.3539   97,500   97,492   97,500  1 to 13 turns left
+    3.1345  1.6209  0.3331  1.1686  0.0118  0.9383  0.6193   97,500   97,500   97,500  14 to 26 turns left
+    3.7452  2.1986  0.3684  1.1686  0.0096  1.0167  0.6795   97,500   97,500   97,500  27 to 39 turns left
+    4.3058  2.7548  0.3761  1.1686  0.0063  1.0800  0.7434   97,500   97,500   97,500  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       3.2798   1.8045   0.2973   1.1686   0.0093   0.5990   0.8690
+       2.8032   1.6418   0.2884   0.8644   0.0086   0.5990   0.8735
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       8.4276   3.3964   0.4047   4.5204   0.1060   0.5990   0.8955
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.00 (win rate of 0%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.39 (win rate of -69%), redundancy: 3.1%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.97 (win rate of -149%), redundancy: 2.8%
+
+Starting iteration 14
+
+  Starting self-play
+  
+    Time spent on inference: 65%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.5
+    MCTS memory footprint: 98.76MB
+    Experience buffer size: 416,000 (415,992 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    8.4891  3.4575  0.4073  4.5204  0.1038  0.8976  0.6003  416,000  415,992  416,000  all samples
+    8.6465  3.6037  0.4188  4.5204  0.1036  0.8946  0.6025   52,000   52,000   52,000  latest batch
+    6.3667  1.6524  0.1380  4.5204  0.0559  0.4469  0.3552  104,000  103,992  104,000  1 to 13 turns left
+    8.4816  3.4141  0.4423  4.5204  0.1048  0.9512  0.6210  104,000  104,000  104,000  14 to 26 turns left
+    9.2576  4.0983  0.5058  4.5204  0.1331  1.0462  0.6807  104,000  104,000  104,000  27 to 39 turns left
+    9.8502  4.6654  0.5428  4.5204  0.1216  1.1459  0.7441  104,000  104,000  104,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       8.4633   3.4306   0.4065   4.5204   0.1058   0.6003   0.8954
+       5.8989   2.6239   0.3353   2.9198   0.0199   0.6003   0.8932
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       4.2929   2.0023   0.3086   1.9708   0.0112   0.6003   0.8819
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.17 (win rate of -59%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.05 (win rate of -103%), redundancy: 2.8%
+
+Starting iteration 15
+
+  Starting self-play
+  
+    Time spent on inference: 64%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.2
+    MCTS memory footprint: 97.46MB
+    Experience buffer size: 442,000 (441,992 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    4.3023  2.0115  0.3088  1.9708  0.0112  0.8822  0.6011  442,000  441,992  442,000  all samples
+    4.4439  2.1508  0.3110  1.9708  0.0113  0.8866  0.6046   52,000   52,000   52,000  latest batch
+    2.9744  0.8874  0.1066  1.9708  0.0097  0.4477  0.3559  110,500  110,492  110,500  1 to 13 turns left
+    4.1542  1.8201  0.3497  1.9708  0.0137  0.9440  0.6210  110,500  110,500  110,500  14 to 26 turns left
+    4.7537  2.3859  0.3842  1.9708  0.0128  1.0305  0.6823  110,500  110,500  110,500  27 to 39 turns left
+    5.3268  2.9529  0.3944  1.9708  0.0087  1.1067  0.7454  110,500  110,500  110,500  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       4.3172   2.0261   0.3090   1.9708   0.0112   0.6011   0.8825
+      376.470   9.7481   0.4195 365.3734   0.9299   0.6011   1.0284
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      221.350   9.7499   0.4162 210.2616   0.9226   0.6011   1.0264
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -3.09 (win rate of -105%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -4.35 (win rate of -167%), redundancy: 2.6%
+
+Starting iteration 16
+
+  Starting self-play
+  
+    Time spent on inference: 64%
+    Generating 2 samples per second on average
+    Average exploration depth: 10.3
+    MCTS memory footprint: 98.10MB
+    Experience buffer size: 468,000 (467,992 distinct boards)
+  
+  Memory Analysis
+  
+        Loss       Lv      Lp      Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    221.3534   9.7519  0.4178  210.2611  0.9226  1.0266  0.6014  468,000  467,992  468,000  all samples
+    221.2660   9.6588  0.4239  210.2610  0.9222  1.0277  0.6022   52,000   52,000   52,000  latest batch
+    214.5865   3.2246  0.1361  210.2611  0.9648  0.4925  0.3564  117,000  116,992  117,000  1 to 13 turns left
+    221.1370   9.4882  0.4567  210.2611  0.9310  1.0801  0.6207  117,000  117,000  117,000  14 to 26 turns left
+    224.2728  12.5762  0.5227  210.2611  0.9128  1.2083  0.6827  117,000  117,000  117,000  27 to 39 turns left
+    225.4183  13.7196  0.5558  210.2611  0.8818  1.3255  0.7457  117,000  117,000  117,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      221.353   9.7520   0.4175 210.2611   0.9225   0.6014   1.0265
+      127.424   9.7485   0.4111 117.1452   0.1194   0.6014   0.9058
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -2.00 (win rate of -50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      75.5161   9.7512   0.3925  65.2763   0.0961   0.6014   0.8964
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.91 (win rate of -95%), redundancy: 3.1%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.80 (win rate of -140%), redundancy: 2.7%
+
+Starting iteration 17
+
+  Starting self-play
+  
+    Time spent on inference: 60%
+    Generating 3 samples per second on average
+    Average exploration depth: 10.6
+    MCTS memory footprint: 96.26MB
+    Experience buffer size: 494,000 (493,988 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp     Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    75.3012   9.5440  0.3850  65.2763  0.0958  0.8987  0.5968  494,000  493,988  494,000  all samples
+    73.4337   7.7316  0.3331  65.2763  0.0926  0.9145  0.5596   52,000   52,000   52,000  latest batch
+    68.6898   3.2069  0.1489  65.2763  0.0577  0.4414  0.3562  123,500  123,488  123,500  1 to 13 turns left
+    75.2419   9.4144  0.4447  65.2763  0.1065  0.9624  0.6172  123,500  123,500  123,500  14 to 26 turns left
+    78.1925  12.3173  0.4729  65.2763  0.1260  1.0570  0.6758  123,500  123,500  123,500  27 to 39 turns left
+    79.0831  13.2400  0.4737  65.2763  0.0931  1.1340  0.7380  123,500  123,500  123,500  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      75.3042   9.5441   0.3882  65.2763   0.0956   0.5968   0.8980
+      45.1769   9.5569   0.3654  35.2209   0.0337   0.5968   0.9028
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 5.7%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      28.9196   9.5469   0.3475  19.0119   0.0133   0.5968   0.9042
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.00 (win rate of 0%), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.81 (win rate of -91%), redundancy: 3.2%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.32 (win rate of -116%), redundancy: 2.8%
