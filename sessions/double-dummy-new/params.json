@@ -32,9 +32,9 @@
                               "use_position_averaging": true,
                              "samples_weighing_policy": "LOG_WEIGHT",
                                            "optimiser": {
-                                                                 "lr_base": 0.015,
-                                                                 "lr_high": 0.15,
-                                                                  "lr_low": 0.01,
+                                                                 "lr_base": 0.0075,
+                                                                 "lr_high": 0.05,
+                                                                  "lr_low": 0.0025,
                                                             "momentum_low": 0.8,
                                                            "momentum_high": 0.9
                                                         },
