@@ -1,0 +1,3315 @@
+
+Initializing a new AlphaZero environment
+
+  Initial report
+  
+    Number of network parameters: 6,892,597
+    Number of regularized network parameters: 6,892,416
+    Memory footprint per MCTS node: 2488 bytes
+  
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.34 (win rate of -17%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.20 (win rate of 110%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -5.10 (win rate of -205%), redundancy: 1.8%
+
+Starting iteration 1
+
+  Starting self-play
+  
+    Time spent on inference: 71%
+    Generating 8 samples per second on average
+    Average exploration depth: 4.9
+    MCTS memory footprint: 51.51MB
+    Experience buffer size: 52,000 (51,996 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp    Wtot      Nb      Ns
+    11.8041  10.0854  0.3867  0.4551  0.8768  1.6807  1.3133  52,000  51,996  52,000  all samples
+    11.7934  10.0746  0.3869  0.4551  0.8768  1.6810  1.3133  52,000  51,996  52,000  latest batch
+     4.0848   2.4713  0.1911  0.4551  0.9672  0.6444  0.4607  13,000  12,996  13,000  1 to 13 turns left
+     8.6562   6.8942  0.3926  0.4551  0.9143  1.6275  1.2491  13,000  13,000  13,000  14 to 26 turns left
+    14.0193  12.2339  0.4802  0.4551  0.8501  2.0800  1.5871  13,000  13,000  13,000  27 to 39 turns left
+    20.3985  18.6842  0.4834  0.4551  0.7757  2.3709  1.9562  13,000  13,000  13,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      12.3663  10.2975   0.7446   0.4551   0.8690   1.3133   1.4255
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting iteration 1
+
+  Starting self-play
+  
+    Time spent on inference: 71%
+    Generating 8 samples per second on average
+    Average exploration depth: 4.9
+    MCTS memory footprint: 51.56MB
+    Experience buffer size: 52,000 (51,997 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp    Wtot      Nb      Ns
+    12.0563  10.3398  0.3846  0.4551  0.8769  1.6813  1.3151  52,000  51,997  52,000  all samples
+    12.0361  10.3200  0.3839  0.4551  0.8770  1.6805  1.3151  52,000  51,997  52,000  latest batch
+     4.0664   2.4469  0.1972  0.4551  0.9671  0.6471  0.4564  13,000  12,997  13,000  1 to 13 turns left
+     8.6456   6.8863  0.3897  0.4551  0.9145  1.6262  1.2484  13,000  13,000  13,000  14 to 26 turns left
+    14.5876  12.8043  0.4777  0.4551  0.8504  2.0789  1.5899  13,000  13,000  13,000  27 to 39 turns left
+    20.9307  19.2285  0.4710  0.4551  0.7761  2.3704  1.9658  13,000  13,000  13,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      12.5775  10.5104   0.7431   0.4551   0.8689   1.3151   1.4254
+      12.9109  11.1992   0.3663   0.4646   0.8809   1.3151   1.6551
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -2.86 (win rate of -93%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.85 (win rate of -43%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +0.81 (win rate of 90%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -5.22 (win rate of -211%), redundancy: 1.8%
+
+Starting iteration 2
+
+  Starting self-play
+  
+    Time spent on inference: 68%
+    Generating 8 samples per second on average
+    Average exploration depth: 4.9
+    MCTS memory footprint: 51.31MB
+    Experience buffer size: 104,000 (103,993 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    12.8593  11.1449  0.3686  0.4646  0.8811  1.6547  1.3144  104,000  103,993  104,000  all samples
+    12.8121  11.0965  0.3696  0.4646  0.8814  1.6537  1.3137   52,000   52,000   52,000  latest batch
+     5.1590   3.5006  0.2307  0.4646  0.9630  0.6157  0.4582   26,000   25,993   26,000  1 to 13 turns left
+     9.6397   7.8757  0.3761  0.4646  0.9233  1.6081  1.2506   26,000   26,000   26,000  14 to 26 turns left
+    15.5749  13.7871  0.4625  0.4646  0.8607  2.0535  1.5890   26,000   26,000   26,000  27 to 39 turns left
+    21.0185  19.3732  0.4037  0.4646  0.7770  2.3407  1.9599   26,000   26,000   26,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      12.8550  11.1422   0.3670   0.4646   0.8811   1.3144   1.6548
+      12.4499  11.1374   0.4084   0.4234   0.4807   1.3144   1.5216
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.74 (win rate of -37%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.38 (win rate of -19%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +0.55 (win rate of 78%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -5.14 (win rate of -207%), redundancy: 1.8%
+
+Starting iteration 3
+
+  Starting self-play
+  
+    Time spent on inference: 68%
+    Generating 8 samples per second on average
+    Average exploration depth: 4.9
+    MCTS memory footprint: 51.59MB
+    Experience buffer size: 156,000 (155,966 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    12.7965  11.4858  0.4042  0.4234  0.4831  1.5153  1.3143  156,000  155,966  156,000  all samples
+    13.4845  12.1681  0.4089  0.4234  0.4840  1.5141  1.3140   52,000   51,994   52,000  latest batch
+     5.0203   3.5359  0.2474  0.4234  0.8136  0.5930  0.4578   39,000   38,966   39,000  1 to 13 turns left
+     9.4567   8.1090  0.4104  0.4234  0.5139  1.4973  1.2511   39,000   39,000   39,000  14 to 26 turns left
+    15.5474  14.2761  0.4946  0.4234  0.3533  1.8731  1.5892   39,000   39,000   39,000  27 to 39 turns left
+    21.1634  20.0243  0.4641  0.4234  0.2515  2.0976  1.9591   39,000   39,000   39,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      12.8016  11.4865   0.4107   0.4234   0.4810   1.3143   1.5213
+      12.1545  11.4868   0.2995   0.3590   0.0092   1.3143   1.5605
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.74 (win rate of -37%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.17 (win rate of -8%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +0.68 (win rate of 84%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -5.50 (win rate of -225%), redundancy: 1.8%
+
+Starting iteration 4
+
+  Starting self-play
+  
+    Time spent on inference: 68%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.0
+    MCTS memory footprint: 51.74MB
+    Experience buffer size: 208,000 (207,942 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    12.0751  11.3991  0.3081  0.3590  0.0090  1.5613  1.3140  208,000  207,942  208,000  all samples
+    11.8187  11.1297  0.3211  0.3590  0.0090  1.5604  1.3132   52,000   51,996   52,000  latest batch
+     4.0924   3.5382  0.1881  0.3590  0.0071  0.6136  0.4576   52,000   51,942   52,000  1 to 13 turns left
+     8.7312   8.0366  0.3266  0.3590  0.0091  1.5213  1.2501   52,000   52,000   52,000  14 to 26 turns left
+    14.8352  14.0938  0.3723  0.3590  0.0101  1.9217  1.5878   52,000   52,000   52,000  27 to 39 turns left
+    20.6322  19.9174  0.3461  0.3590  0.0098  2.1887  1.9606   52,000   52,000   52,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      12.0719  11.3999   0.3037   0.3590   0.0092   1.3140   1.5604
+      11.9510  11.4001   0.2716   0.2735   0.0057   1.3140   1.5530
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.25 (win rate of -13%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.54 (win rate of -27%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +0.79 (win rate of 90%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -5.38 (win rate of -219%), redundancy: 1.8%
+
+Starting iteration 5
+
+  Starting self-play
+  
+    Time spent on inference: 68%
+    Generating 7 samples per second on average
+    Average exploration depth: 4.9
+    MCTS memory footprint: 51.53MB
+    Experience buffer size: 232,000 (231,887 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    12.0314  11.4766  0.2756  0.2735  0.0057  1.5569  1.3143  232,000  231,887  232,000  all samples
+    12.1782  11.6098  0.2891  0.2735  0.0057  1.5562  1.3148   52,000   51,989   52,000  latest batch
+     4.0146   3.5678  0.1698  0.2735  0.0035  0.6099  0.4579   58,000   57,887   58,000  1 to 14 turns left
+     8.7099   8.1344  0.2964  0.2735  0.0057  1.5164  1.2503   58,000   58,000   58,000  14 to 27 turns left
+    14.7863  14.1689  0.3370  0.2735  0.0068  1.9068  1.5892   58,000   58,000   58,000  27 to 40 turns left
+    20.6206  20.0417  0.2985  0.2735  0.0069  2.1943  1.9597   58,000   58,000   58,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      12.0315  11.4764   0.2758   0.2735   0.0057   1.3143   1.5533
+      11.9344  11.4770   0.2519   0.1993   0.0063   1.3143   1.5385
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.06 (win rate of -3%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.85 (win rate of -43%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +0.95 (win rate of 98%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -5.10 (win rate of -205%), redundancy: 1.8%
+
+Starting iteration 6
+
+  Starting self-play
+  
+    Time spent on inference: 68%
+    Generating 7 samples per second on average
+    Average exploration depth: 4.9
+    MCTS memory footprint: 51.62MB
+    Experience buffer size: 240,000 (239,877 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    12.0358  11.5758  0.2547  0.1993  0.0061  1.5408  1.3144  240,000  239,877  240,000  all samples
+    12.2439  11.7704  0.2683  0.1993  0.0060  1.5408  1.3158   52,000   52,000   52,000  latest batch
+     3.9344   3.5695  0.1610  0.1993  0.0046  0.6070  0.4589   60,000   59,877   60,000  1 to 14 turns left
+     8.6718   8.1885  0.2781  0.1993  0.0060  1.4984  1.2491   60,000   60,000   60,000  14 to 27 turns left
+    14.8123  14.2938  0.3124  0.1993  0.0068  1.8798  1.5897   60,000   60,000   60,000  27 to 40 turns left
+    20.7274  20.2535  0.2678  0.1993  0.0069  2.1782  1.9597   60,000   60,000   60,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      12.0379  11.5764   0.2560   0.1993   0.0063   1.3144   1.5381
+      11.9536  11.5756   0.2282   0.1453   0.0044   1.3144   1.5224
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -0.67 (win rate of 16%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.06 (win rate of -3%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +0.01 (win rate of 50%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -5.31 (win rate of -215%), redundancy: 1.8%
+
+Starting iteration 7
+
+  Starting self-play
+  
+    Time spent on inference: 67%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.0
+    MCTS memory footprint: 51.36MB
+    Experience buffer size: 248,000 (247,907 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    12.0672  11.6853  0.2322  0.1453  0.0045  1.5211  1.3140  248,000  247,907  248,000  all samples
+    12.1600  11.7646  0.2457  0.1453  0.0045  1.5217  1.3127   52,000   52,000   52,000  latest batch
+     3.8569   3.5612  0.1479  0.1453  0.0025  0.6021  0.4586   62,000   61,907   62,000  1 to 14 turns left
+     8.5322   8.1297  0.2526  0.1453  0.0046  1.4767  1.2473   62,000   62,000   62,000  14 to 27 turns left
+    14.7784  14.3428  0.2850  0.1453  0.0053  1.8577  1.5893   62,000   62,000   62,000  27 to 40 turns left
+    21.0990  20.7048  0.2434  0.1453  0.0055  2.1481  1.9608   62,000   62,000   62,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      12.0684  11.6856   0.2331   0.1453   0.0044   1.3140   1.5229
+      12.0080  11.6857   0.2088   0.1093   0.0043   1.3140   1.5143
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -0.50 (win rate of 25%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.27 (win rate of -14%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +0.15 (win rate of 57%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -4.99 (win rate of -200%), redundancy: 1.8%
+
+Starting iteration 8
+
+  Starting self-play
+  
+    Time spent on inference: 67%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.0
+    MCTS memory footprint: 51.39MB
+    Experience buffer size: 256,000 (255,902 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    11.8196  11.4914  0.2146  0.1093  0.0043  1.5187  1.3146  256,000  255,902  256,000  all samples
+    11.3897  11.0503  0.2259  0.1093  0.0043  1.5203  1.3157   52,000   52,000   52,000  latest batch
+     3.7637   3.5145  0.1368  0.1093  0.0030  0.5851  0.4586   64,000   63,902   64,000  1 to 14 turns left
+     8.3135   7.9701  0.2294  0.1093  0.0048  1.4380  1.2453   64,000   64,000   64,000  14 to 27 turns left
+    14.4527  14.0758  0.2629  0.1093  0.0048  1.8614  1.5904   64,000   64,000   64,000  27 to 40 turns left
+    20.7338  20.3915  0.2283  0.1093  0.0046  2.1896  1.9639   64,000   64,000   64,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      11.8141  11.4883   0.2122   0.1093   0.0043   1.3146   1.5150
+      11.7563  11.4879   0.1784   0.0861   0.0039   1.3146   1.4772
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -0.22 (win rate of 39%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.23 (win rate of -12%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +0.59 (win rate of 80%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -5.43 (win rate of -222%), redundancy: 1.8%
+
+Starting iteration 9
+
+  Starting self-play
+  
+    Time spent on inference: 67%
+    Generating 7 samples per second on average
+    Average exploration depth: 4.9
+    MCTS memory footprint: 51.62MB
+    Experience buffer size: 264,000 (263,905 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    11.6957  11.4286  0.1770  0.0861  0.0041  1.4730  1.3145  264,000  263,905  264,000  all samples
+    11.2653  10.9880  0.1870  0.0861  0.0041  1.4729  1.3131   52,000   51,996   52,000  latest batch
+     3.7196   3.5105  0.1198  0.0861  0.0032  0.5822  0.4595   66,000   65,905   66,000  1 to 14 turns left
+     8.2570   7.9781  0.1885  0.0861  0.0044  1.4139  1.2463   66,000   66,000   66,000  14 to 27 turns left
+    14.3424  14.0313  0.2207  0.0861  0.0043  1.7855  1.5910   66,000   66,000   66,000  27 to 40 turns left
+    20.4553  20.1863  0.1784  0.0861  0.0045  2.1100  1.9612   66,000   66,000   66,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      11.6993  11.4278   0.1814   0.0861   0.0039   1.3145   1.4774
+      11.6683  11.4317   0.1632   0.0703   0.0032   1.3145   1.4509
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -0.12 (win rate of 44%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.12 (win rate of -6%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +0.96 (win rate of 98%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -5.15 (win rate of -208%), redundancy: 1.8%
+
+Starting iteration 10
+
+  Starting self-play
+  
+    Time spent on inference: 68%
+    Generating 7 samples per second on average
+    Average exploration depth: 4.9
+    MCTS memory footprint: 51.30MB
+    Experience buffer size: 272,000 (271,894 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    11.6056  11.3652  0.1669  0.0703  0.0032  1.4547  1.3147  272,000  271,894  272,000  all samples
+    11.4142  11.1613  0.1794  0.0703  0.0032  1.4552  1.3150   52,000   51,997   52,000  latest batch
+     3.6810   3.4998  0.1087  0.0703  0.0022  0.5559  0.4599   68,000   67,894   68,000  1 to 14 turns left
+     8.1558   7.9160  0.1659  0.0703  0.0036  1.3859  1.2475   68,000   68,000   68,000  14 to 27 turns left
+    14.1693  13.8868  0.2087  0.0703  0.0035  1.7808  1.5894   68,000   68,000   68,000  27 to 40 turns left
+    20.3942  20.1372  0.1831  0.0703  0.0036  2.0956  1.9619   68,000   68,000   68,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      11.6002  11.3604   0.1663   0.0703   0.0032   1.3147   1.4511
+       8.2236   7.6651   0.3368   0.2087   0.0130   1.3147   1.5862
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.52 (win rate of 76%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.42 (win rate of -21%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.26 (win rate of 113%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -4.85 (win rate of -192%), redundancy: 1.8%
+
+Starting iteration 11
+
+  Starting self-play
+  
+    Time spent on inference: 68%
+    Generating 7 samples per second on average
+    Average exploration depth: 4.9
+    MCTS memory footprint: 51.45MB
+    Experience buffer size: 280,000 (279,870 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     8.2322   7.6925  0.3191  0.2087  0.0119  1.5853  1.3146  279,998  279,870  280,000  all samples
+     8.4799   7.9372  0.3219  0.2087  0.0120  1.5849  1.3156   52,000   51,996   52,000  latest batch
+     2.2058   1.7382  0.2330  0.2087  0.0259  0.6171  0.4593   69,998   69,870   70,000  1 to 14 turns left
+     5.2630   4.7160  0.3305  0.2087  0.0077  1.5445  1.2476   70,000   70,000   70,000  14 to 27 turns left
+    10.0644   9.4678  0.3804  0.2087  0.0074  1.9560  1.5893   70,000   70,000   70,000  27 to 40 turns left
+    15.3953  14.8484  0.3317  0.2087  0.0064  2.2232  1.9622   70,000   70,000   70,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       8.2522   7.6927   0.3378   0.2087   0.0129   1.3146   1.5863
+       7.9814   7.5416   0.2770   0.1526   0.0103   1.3146   1.5967
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.14 (win rate of 107%, network replaced), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.74 (win rate of 13%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.41 (win rate of 120%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -4.32 (win rate of -166%), redundancy: 1.8%
+
+Starting iteration 12
+
+  Starting self-play
+  
+    Time spent on inference: 67%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.3
+    MCTS memory footprint: 51.08MB
+    Experience buffer size: 288,000 (287,907 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     7.6797   7.2327  0.2840  0.1526  0.0104  1.5979  1.3054  287,999  287,907  288,000  all samples
+     6.4920   6.0146  0.3137  0.1526  0.0111  1.6040  1.2614   52,000   51,996   52,000  latest batch
+     1.8643   1.5220  0.1769  0.1526  0.0128  0.6173  0.4566   71,999   71,907   72,000  1 to 14 turns left
+     4.9492   4.4862  0.3007  0.1526  0.0096  1.5383  1.2338   72,000   72,000   72,000  14 to 27 turns left
+     9.3992   8.8917  0.3451  0.1526  0.0098  1.9708  1.5855   72,000   72,000   72,000  27 to 40 turns left
+    14.4940  14.0191  0.3129  0.1526  0.0094  2.2649  1.9455   72,000   72,000   72,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       7.6823   7.2343   0.2852   0.1526   0.0102   1.3054   1.5982
+       7.5116   7.0961   0.2736   0.1361   0.0058   1.3054   1.5575
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.42 (win rate of 71%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.46 (win rate of 27%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.83 (win rate of 142%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -4.08 (win rate of -154%), redundancy: 1.8%
+
+Starting iteration 13
+
+  Starting self-play
+  
+    Time spent on inference: 67%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.3
+    MCTS memory footprint: 51.15MB
+    Experience buffer size: 296,000 (295,918 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     7.2043   6.7824  0.2799  0.1361  0.0058  1.5577  1.2959  295,999  295,918  296,000  all samples
+     6.3381   5.8848  0.3109  0.1361  0.0062  1.5630  1.2601   52,000   52,000   52,000  latest batch
+     1.6790   1.3698  0.1647  0.1361  0.0084  0.6045  0.4540   73,999   73,918   74,000  1 to 14 turns left
+     4.7874   4.3498  0.2966  0.1361  0.0049  1.5073  1.2189   74,000   74,000   74,000  14 to 27 turns left
+     8.8191   8.3373  0.3406  0.1361  0.0051  1.9166  1.5826   74,000   74,000   74,000  27 to 40 turns left
+    13.5252  13.0660  0.3182  0.1361  0.0048  2.2022  1.9282   74,000   74,000   74,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       7.2065   6.7829   0.2817   0.1361   0.0058   1.2959   1.5590
+       7.0538   6.6668   0.2633   0.1191   0.0047   1.2959   1.5273
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -0.01 (win rate of 50%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.96 (win rate of 2%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.48 (win rate of 124%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -4.74 (win rate of -187%), redundancy: 1.8%
+
+Starting iteration 14
+
+  Starting self-play
+  
+    Time spent on inference: 67%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.3
+    MCTS memory footprint: 50.99MB
+    Experience buffer size: 304,000 (303,937 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     6.9440   6.5514  0.2687  0.1191  0.0047  1.5283  1.2876  304,000  303,937  304,000  all samples
+     6.5230   6.1084  0.2908  0.1191  0.0047  1.5337  1.2634   52,000   51,997   52,000  latest batch
+     1.5314   1.2593  0.1489  0.1191  0.0041  0.5842  0.4509   76,000   75,937   76,000  1 to 14 turns left
+     4.6856   4.2773  0.2845  0.1191  0.0048  1.4669  1.2070   76,000   76,000   76,000  14 to 27 turns left
+     8.5242   8.0717  0.3285  0.1191  0.0050  1.8791  1.5793   76,000   76,000   76,000  27 to 40 turns left
+    13.0280  12.5910  0.3130  0.1191  0.0050  2.1829  1.9131   76,000   76,000   76,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       6.9428   6.5488   0.2702   0.1191   0.0047   1.2876   1.5290
+       6.8607   6.4805   0.2613   0.1150   0.0038   1.2876   1.5325
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.46 (win rate of 73%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -1.21 (win rate of -10%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.36 (win rate of 118%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -3.80 (win rate of -140%), redundancy: 1.8%
+
+Starting iteration 15
+
+  Starting self-play
+  
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting iteration 15
+
+  Starting self-play
+  
+    Time spent on inference: 71%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.3
+    MCTS memory footprint: 51.27MB
+    Experience buffer size: 312,000 (311,936 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     6.6804   6.2959  0.2655  0.1150  0.0040  1.5332  1.2798  312,000  311,936  312,000  all samples
+     6.3499   5.9530  0.2778  0.1150  0.0041  1.5348  1.2635   52,000   52,000   52,000  latest batch
+     1.4684   1.2031  0.1463  0.1150  0.0040  0.5761  0.4482   78,000   77,936   78,000  1 to 13 turns left
+     4.4757   4.0769  0.2804  0.1150  0.0033  1.4550  1.1926   78,000   78,000   78,000  14 to 26 turns left
+     8.1021   7.6593  0.3240  0.1150  0.0038  1.8837  1.5750   78,000   78,000   78,000  27 to 39 turns left
+    12.6826  12.2508  0.3121  0.1150  0.0047  2.2181  1.9035   78,000   78,000   78,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       6.6910   6.3066   0.2656   0.1150   0.0038   1.2798   1.5313
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting iteration 15
+
+  Starting self-play
+  
+    Time spent on inference: 71%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.3
+    MCTS memory footprint: 51.14MB
+    Experience buffer size: 312,000 (311,930 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     6.7114   6.3263  0.2661  0.1150  0.0039  1.5334  1.2797  312,000  311,930  312,000  all samples
+     6.5366   6.1367  0.2808  0.1150  0.0041  1.5361  1.2630   52,000   52,000   52,000  latest batch
+     1.4765   1.2101  0.1474  0.1150  0.0040  0.5760  0.4471   78,000   77,930   78,000  1 to 13 turns left
+     4.5265   4.1286  0.2795  0.1150  0.0033  1.4549  1.1942   78,000   78,000   78,000  14 to 26 turns left
+     8.1838   7.7412  0.3238  0.1150  0.0038  1.8847  1.5765   78,000   78,000   78,000  27 to 39 turns left
+    12.6656  12.2321  0.3139  0.1150  0.0047  2.2181  1.9012   78,000   78,000   78,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       6.7335   6.3477   0.2673   0.1150   0.0036   1.2797   1.5227
+       6.9029   6.3800   0.2791   0.2372   0.0065   1.2797   1.5230
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.73 (win rate of 86%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.23 (win rate of 38%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.22 (win rate of 111%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -4.16 (win rate of -158%), redundancy: 1.8%
+
+Starting iteration 16
+
+  Starting self-play
+  
+    Time spent on inference: 71%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.3
+    MCTS memory footprint: 50.80MB
+    Experience buffer size: 320,000 (319,935 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     6.6617   6.1384  0.2795  0.2372  0.0066  1.5178  1.2721  320,000  319,935  320,000  all samples
+     6.3209   5.7938  0.2832  0.2372  0.0067  1.5202  1.2630   52,000   52,000   52,000  latest batch
+     1.6278   1.2321  0.1544  0.2372  0.0040  0.5717  0.4438   80,000   79,935   80,000  1 to 14 turns left
+     4.6003   4.0626  0.2953  0.2372  0.0051  1.4539  1.1824   80,000   80,000   80,000  14 to 27 turns left
+     8.0632   7.4838  0.3349  0.2372  0.0074  1.8746  1.5735   80,000   80,000   80,000  27 to 40 turns left
+    12.3475  11.7668  0.3335  0.2372  0.0099  2.1708  1.8887   80,000   80,000   80,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       6.6706   6.1468   0.2801   0.2372   0.0065   1.2721   1.5239
+       6.5529   6.0369   0.2691   0.2417   0.0052   1.2721   1.5120
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.57 (win rate of 78%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.70 (win rate of 15%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.93 (win rate of 146%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -4.11 (win rate of -156%), redundancy: 1.8%
+
+Starting iteration 17
+
+  Starting self-play
+  
+    Time spent on inference: 71%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.3
+    MCTS memory footprint: 51.16MB
+    Experience buffer size: 328,000 (327,920 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     6.2899   5.7687  0.2743  0.2417  0.0052  1.5106  1.2652  328,000  327,920  328,000  all samples
+     6.3357   5.8128  0.2760  0.2417  0.0051  1.5107  1.2661   52,000   52,000   52,000  latest batch
+     1.5405   1.1480  0.1473  0.2417  0.0036  0.5682  0.4407   82,000   81,920   82,000  1 to 14 turns left
+     4.3754   3.8471  0.2820  0.2417  0.0047  1.4591  1.1720   82,000   82,000   82,000  14 to 27 turns left
+     7.5486   6.9810  0.3201  0.2417  0.0058  1.8691  1.5708   82,000   82,000   82,000  27 to 40 turns left
+    11.7010  11.1048  0.3479  0.2417  0.0066  2.1459  1.8773   82,000   82,000   82,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       6.2983   5.7823   0.2692   0.2417   0.0052   1.2652   1.5134
+       6.0421   5.5917   0.2485   0.1966   0.0053   1.2652   1.4827
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.20 (win rate of 110%, network replaced), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.39 (win rate of 30%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.14 (win rate of 157%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.17 (win rate of -58%), redundancy: 1.8%
+
+Starting iteration 18
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.62MB
+    Experience buffer size: 336,000 (335,890 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.9410   5.4927  0.2458  0.1966  0.0060  1.4859  1.2514  335,998  335,890  336,000  all samples
+     5.5614   5.1154  0.2435  0.1966  0.0059  1.4962  1.1890   52,000   51,990   52,000  latest batch
+     1.3694   1.0324  0.1358  0.1966  0.0046  0.5533  0.4386   83,998   83,890   84,000  1 to 14 turns left
+     4.2370   3.7688  0.2665  0.1966  0.0052  1.4111  1.1545   84,000   84,000   84,000  14 to 27 turns left
+     7.2029   6.7076  0.2924  0.1966  0.0063  1.8250  1.5534   84,000   84,000   84,000  27 to 40 turns left
+    10.9551  10.4623  0.2883  0.1966  0.0079  2.1539  1.8589   84,000   84,000   84,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.9556   5.5036   0.2501   0.1966   0.0053   1.2514   1.4849
+       5.8712   5.4199   0.2405   0.2074   0.0035   1.2514   1.4780
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -0.06 (win rate of 47%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.01 (win rate of 50%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.30 (win rate of 165%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.46 (win rate of -73%), redundancy: 1.8%
+
+Starting iteration 19
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.80MB
+    Experience buffer size: 344,000 (343,896 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8595   5.4038  0.2449  0.2074  0.0035  1.4827  1.2408  343,996  343,896  344,000  all samples
+     5.7541   5.2772  0.2661  0.2074  0.0034  1.4869  1.1891   52,000   51,996   52,000  latest batch
+     1.3202   0.9785  0.1314  0.2074  0.0029  0.5522  0.4369   85,996   85,896   86,000  1 to 14 turns left
+     4.1856   3.7082  0.2665  0.2074  0.0035  1.4088  1.1432   86,000   86,000   86,000  14 to 27 turns left
+     7.1488   6.6454  0.2923  0.2074  0.0036  1.8270  1.5394   86,000   86,000   86,000  27 to 40 turns left
+    10.7861  10.2853  0.2896  0.2074  0.0038  2.1430  1.8435   86,000   86,000   86,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8682   5.4126   0.2447   0.2074   0.0035   1.2408   1.4787
+       5.8178   5.3843   0.2339   0.1966   0.0030   1.2408   1.4308
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.39 (win rate of 70%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.16 (win rate of 42%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.30 (win rate of 165%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -1.88 (win rate of -44%), redundancy: 1.8%
+
+Starting iteration 20
+
+  Starting self-play
+  
+    Time spent on inference: 71%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.86MB
+    Experience buffer size: 352,000 (351,885 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8172   5.3777  0.2399  0.1966  0.0030  1.4257  1.2309  351,996  351,885  352,000  all samples
+     5.8099   5.3570  0.2533  0.1966  0.0030  1.4321  1.1895   52,000   52,000   52,000  latest batch
+     1.3000   0.9749  0.1260  0.1966  0.0024  0.5322  0.4356   87,996   87,885   88,000  1 to 14 turns left
+     4.1495   3.6859  0.2639  0.1966  0.0031  1.3515  1.1320   88,000   88,000   88,000  14 to 27 turns left
+     7.1013   6.6175  0.2838  0.1966  0.0033  1.7530  1.5262   88,000   88,000   88,000  27 to 40 turns left
+    10.7151  10.2297  0.2854  0.1966  0.0034  2.0662  1.8298   88,000   88,000   88,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8144   5.3773   0.2375   0.1966   0.0030   1.2309   1.4319
+       5.7160   5.2932   0.2282   0.1909   0.0038   1.2309   1.4448
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.38 (win rate of 69%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.49 (win rate of 26%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.14 (win rate of 157%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.63 (win rate of -82%), redundancy: 1.8%
+
+Starting iteration 21
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 51.00MB
+    Experience buffer size: 360,000 (359,905 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.6371  5.2132  0.2292  0.1909  0.0038  1.4459  1.2209  359,999  359,905  360,000  all samples
+     5.5260  5.0949  0.2368  0.1909  0.0034  1.4510  1.1893   52,000   51,997   52,000  latest batch
+     1.2569  0.9474  0.1168  0.1909  0.0018  0.5482  0.4346   89,999   89,905   90,000  1 to 14 turns left
+     4.1109  3.6619  0.2556  0.1909  0.0026  1.3800  1.1200   90,000   90,000   90,000  14 to 27 turns left
+     6.8952  6.4262  0.2742  0.1909  0.0040  1.7819  1.5135   90,000   90,000   90,000  27 to 40 turns left
+    10.2830  9.8151  0.2703  0.1909  0.0068  2.0734  1.8156   90,000   90,000   90,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.6479   5.2230   0.2302   0.1909   0.0038   1.2209   1.4458
+       5.6567   5.2048   0.2284   0.2206   0.0029   1.2209   1.4304
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.44 (win rate of 72%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.30 (win rate of 35%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.72 (win rate of 186%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.37 (win rate of -68%), redundancy: 1.8%
+
+Starting iteration 22
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.7
+    MCTS memory footprint: 50.42MB
+    Experience buffer size: 368,000 (367,897 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.5729  5.1200  0.2294  0.2206  0.0030  1.4356  1.2120  367,999  367,897  368,000  all samples
+     5.5548  5.0950  0.2362  0.2206  0.0030  1.4413  1.1943   52,000   52,000   52,000  latest batch
+     1.2806  0.9452  0.1127  0.2206  0.0021  0.5400  0.4345   91,999   91,897   92,000  1 to 14 turns left
+     4.1225  3.6395  0.2592  0.2206  0.0032  1.3733  1.1092   92,000   92,000   92,000  14 to 27 turns left
+     6.8403  6.3400  0.2764  0.2206  0.0034  1.7746  1.5016   92,000   92,000   92,000  27 to 40 turns left
+    10.0456  9.5524  0.2693  0.2206  0.0033  2.0544  1.8028   92,000   92,000   92,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.5839   5.1307   0.2298   0.2206   0.0029   1.2121   1.4316
+       5.5740   5.1213   0.2270   0.2217   0.0041   1.2121   1.4177
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.20 (win rate of 60%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.07 (win rate of 54%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.74 (win rate of 187%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.11 (win rate of -55%), redundancy: 1.8%
+
+Starting iteration 23
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.75MB
+    Experience buffer size: 376,000 (375,871 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.5827  5.1287  0.2277  0.2217  0.0047  1.4188  1.2025  375,999  375,871  376,000  all samples
+     5.7109  5.2522  0.2322  0.2217  0.0049  1.4203  1.1867   52,000   51,997   52,000  latest batch
+     1.2805  0.9448  0.1114  0.2217  0.0026  0.5333  0.4336   93,999   93,871   94,000  1 to 14 turns left
+     4.1681  3.6843  0.2583  0.2217  0.0039  1.3499  1.0979   94,000   94,000   94,000  14 to 27 turns left
+     6.8491  6.3503  0.2720  0.2217  0.0051  1.7498  1.4896   94,000   94,000   94,000  27 to 40 turns left
+    10.0323  9.5346  0.2690  0.2217  0.0071  2.0422  1.7887   94,000   94,000   94,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.5909   5.1385   0.2267   0.2217   0.0041   1.2025   1.4190
+       5.4990   5.0968   0.2177   0.1819   0.0027   1.2025   1.4068
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.46 (win rate of 73%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.47 (win rate of 26%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.76 (win rate of 188%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.12 (win rate of -56%), redundancy: 1.8%
+
+Starting iteration 24
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.67MB
+    Experience buffer size: 384,000 (383,846 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.5151  5.1127  0.2177  0.1819  0.0028  1.4059  1.1934  383,999  383,846  384,000  all samples
+    5.8490  5.4409  0.2235  0.1819  0.0028  1.4065  1.1890   52,000   52,000   52,000  latest batch
+    1.2238  0.9369  0.1032  0.1819  0.0018  0.5279  0.4324   95,999   95,846   96,000  1 to 14 turns left
+    4.1545  3.7186  0.2512  0.1819  0.0027  1.3408  1.0868   96,000   96,000   96,000  14 to 27 turns left
+    6.8138  6.3687  0.2602  0.1819  0.0031  1.7337  1.4792   96,000   96,000   96,000  27 to 40 turns left
+    9.8676  9.4261  0.2562  0.1819  0.0034  2.0210  1.7753   96,000   96,000   96,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.5200   5.1188   0.2166   0.1819   0.0027   1.1935   1.4082
+       5.7822   5.2741   0.2808   0.2234   0.0039   1.1935   1.4512
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.38 (win rate of 69%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.59 (win rate of 20%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.53 (win rate of 176%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.13 (win rate of -56%), redundancy: 1.8%
+
+Starting iteration 25
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.43MB
+    Experience buffer size: 392,000 (391,833 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.7528  5.2460  0.2790  0.2234  0.0045  1.4509  1.1897  391,999  391,833  392,000  all samples
+     5.6485  5.1357  0.2849  0.2234  0.0044  1.4523  1.1919   52,000   52,000   52,000  latest batch
+     1.5875  1.2050  0.1520  0.2234  0.0071  0.5711  0.4316   97,999   97,833   98,000  1 to 14 turns left
+     4.4155  3.8543  0.3341  0.2234  0.0037  1.4135  1.0825   98,000   98,000   98,000  14 to 27 turns left
+     6.9552  6.4030  0.3253  0.2234  0.0034  1.7807  1.4749   98,000   98,000   98,000  27 to 40 turns left
+    10.0533  9.5219  0.3043  0.2234  0.0037  2.0379  1.7700   98,000   98,000   98,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.7630   5.2546   0.2811   0.2234   0.0038   1.1897   1.4520
+       5.5104   5.1144   0.2165   0.1769   0.0027   1.1897   1.3925
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.68 (win rate of 84%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.34 (win rate of 33%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.38 (win rate of 169%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.14 (win rate of -57%), redundancy: 1.8%
+
+Starting iteration 26
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.45MB
+    Experience buffer size: 400,000 (399,866 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.4938  5.0929  0.2215  0.1769  0.0025  1.3856  1.1899  400,000  399,866  400,000  all samples
+    5.3015  4.8948  0.2273  0.1769  0.0025  1.3867  1.1887   52,000   52,000   52,000  latest batch
+    1.2099  0.9292  0.1021  0.1769  0.0018  0.5143  0.4312  100,000   99,866  100,000  1 to 14 turns left
+    4.0945  3.6658  0.2493  0.1769  0.0026  1.3054  1.0825  100,000  100,000  100,000  14 to 27 turns left
+    6.7317  6.2918  0.2603  0.1769  0.0028  1.7055  1.4757  100,000  100,000  100,000  27 to 40 turns left
+    9.9425  9.4884  0.2743  0.1769  0.0030  2.0172  1.7703  100,000  100,000  100,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.4942   5.0973   0.2174   0.1769   0.0027   1.1900   1.3927
+       5.4191   5.0414   0.2110   0.1632   0.0036   1.1900   1.3974
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.68 (win rate of 84%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.04 (win rate of 52%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.36 (win rate of 168%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -1.78 (win rate of -39%), redundancy: 1.8%
+
+Starting iteration 27
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.7
+    MCTS memory footprint: 51.08MB
+    Experience buffer size: 408,000 (407,877 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.4418  5.0599  0.2143  0.1632  0.0044  1.3946  1.1902  408,000  407,877  408,000  all samples
+    5.5307  5.1439  0.2192  0.1632  0.0044  1.3955  1.1923   52,000   51,996   52,000  latest batch
+    1.1922  0.9255  0.1005  0.1632  0.0030  0.5167  0.4312  102,000  101,877  102,000  1 to 14 turns left
+    4.0699  3.6582  0.2446  0.1632  0.0039  1.3216  1.0830  102,000  102,000  102,000  14 to 27 turns left
+    6.6608  6.2390  0.2545  0.1632  0.0042  1.7205  1.4750  102,000  102,000  102,000  27 to 40 turns left
+    9.8440  9.4166  0.2575  0.1632  0.0067  2.0196  1.7715  102,000  102,000  102,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.4487   5.0702   0.2117   0.1632   0.0037   1.1902   1.3978
+       5.4955   5.1038   0.2180   0.1708   0.0029   1.1902   1.3765
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.57 (win rate of 78%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.57 (win rate of 22%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.04 (win rate of 152%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.10 (win rate of -55%), redundancy: 1.8%
+
+Starting iteration 28
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.7
+    MCTS memory footprint: 50.90MB
+    Experience buffer size: 416,000 (415,863 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.4375  5.0501  0.2137  0.1708  0.0030  1.3782  1.1904  416,000  415,863  416,000  all samples
+    5.4290  5.0351  0.2200  0.1708  0.0031  1.3771  1.1910   52,000   52,000   52,000  latest batch
+    1.1953  0.9196  0.1026  0.1708  0.0023  0.5217  0.4311  104,000  103,863  104,000  1 to 13 turns left
+    4.0704  3.6483  0.2482  0.1708  0.0031  1.3167  1.0832  104,000  104,000  104,000  14 to 26 turns left
+    6.6301  6.1989  0.2572  0.1708  0.0032  1.6944  1.4753  104,000  104,000  104,000  27 to 39 turns left
+    9.8553  9.4344  0.2466  0.1708  0.0035  1.9798  1.7720  104,000  104,000  104,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.4666   5.0741   0.2187   0.1708   0.0029   1.1904   1.3764
+       5.3760   5.0097   0.2072   0.1563   0.0028   1.1904   1.3741
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.54 (win rate of 77%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.27 (win rate of 64%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.89 (win rate of 144%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.39 (win rate of -70%), redundancy: 1.8%
+
+Starting iteration 29
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.61MB
+    Experience buffer size: 424,000 (423,848 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.3927  5.0255  0.2079  0.1563  0.0031  1.3738  1.1904  423,999  423,848  424,000  all samples
+    5.4426  5.0682  0.2149  0.1563  0.0032  1.3736  1.1897   52,000   52,000   52,000  latest batch
+    1.1554  0.8976  0.0996  0.1563  0.0020  0.5184  0.4310  105,999  105,848  106,000  1 to 14 turns left
+    3.9930  3.5917  0.2421  0.1563  0.0029  1.3099  1.0833  106,000  106,000  106,000  14 to 27 turns left
+    6.5982  6.1880  0.2506  0.1563  0.0033  1.6912  1.4746  106,000  106,000  106,000  27 to 40 turns left
+    9.8233  9.4236  0.2394  0.1563  0.0041  1.9759  1.7728  106,000  106,000  106,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.3988   5.0314   0.2083   0.1563   0.0028   1.1904   1.3743
+       5.3764   5.0177   0.2072   0.1488   0.0028   1.1904   1.3794
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.86 (win rate of 93%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.19 (win rate of 40%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.27 (win rate of 164%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -1.88 (win rate of -44%), redundancy: 1.8%
+
+Starting iteration 30
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.7
+    MCTS memory footprint: 50.87MB
+    Experience buffer size: 432,000 (431,820 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.4002  5.0419  0.2065  0.1488  0.0031  1.3798  1.1902  432,000  431,820  432,000  all samples
+    5.4826  5.1188  0.2120  0.1488  0.0030  1.3792  1.1888   52,000   51,996   52,000  latest batch
+    1.1461  0.8976  0.0977  0.1488  0.0020  0.5223  0.4309  108,000  107,820  108,000  1 to 14 turns left
+    3.9949  3.6023  0.2407  0.1488  0.0031  1.3196  1.0835  108,000  108,000  108,000  14 to 27 turns left
+    6.6174  6.2171  0.2483  0.1488  0.0032  1.7019  1.4733  108,000  108,000  108,000  27 to 40 turns left
+    9.8478  9.4558  0.2392  0.1488  0.0039  1.9754  1.7730  108,000  108,000  108,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.4084   5.0490   0.2078   0.1488   0.0028   1.1902   1.3793
+       5.4650   5.0816   0.2202   0.1606   0.0027   1.1902   1.3944
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.57 (win rate of 79%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.16 (win rate of 42%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.01 (win rate of 150%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.05 (win rate of -52%), redundancy: 1.8%
+
+Starting iteration 31
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.62MB
+    Experience buffer size: 440,000 (439,763 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.4335  5.0484  0.2214  0.1606  0.0031  1.3919  1.1898  439,998  439,763  440,000  all samples
+    5.3592  4.9701  0.2254  0.1606  0.0032  1.3903  1.1889   52,000   51,996   52,000  latest batch
+    1.1690  0.9038  0.1028  0.1606  0.0019  0.5180  0.4309  109,998  109,763  110,000  1 to 14 turns left
+    4.0194  3.6018  0.2541  0.1606  0.0029  1.3259  1.0829  110,000  110,000  110,000  14 to 27 turns left
+    6.6368  6.2116  0.2615  0.1606  0.0031  1.7192  1.4728  110,000  110,000  110,000  27 to 40 turns left
+    9.9129  9.4804  0.2674  0.1606  0.0044  2.0044  1.7725  110,000  110,000  110,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.4429   5.0586   0.2210   0.1606   0.0027   1.1898   1.3942
+       5.3631   5.0146   0.2047   0.1412   0.0026   1.1898   1.3895
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.91 (win rate of 96%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.67 (win rate of 16%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.64 (win rate of 132%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.55 (win rate of -77%), redundancy: 1.8%
+
+Starting iteration 32
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.7
+    MCTS memory footprint: 50.94MB
+    Experience buffer size: 448,000 (447,726 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.3473  4.9981  0.2053  0.1412  0.0027  1.3864  1.1900  447,998  447,726  448,000  all samples
+    5.5761  5.2206  0.2117  0.1412  0.0027  1.3850  1.1903   52,000   51,992   52,000  latest batch
+    1.1309  0.8928  0.0950  0.1412  0.0020  0.5203  0.4312  111,998  111,726  112,000  1 to 14 turns left
+    3.9670  3.5854  0.2376  0.1412  0.0029  1.3217  1.0833  112,000  112,000  112,000  14 to 27 turns left
+    6.5631  6.1708  0.2481  0.1412  0.0030  1.7108  1.4728  112,000  112,000  112,000  27 to 40 turns left
+    9.7255  9.3409  0.2404  0.1412  0.0030  1.9926  1.7726  112,000  112,000  112,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.3556   5.0064   0.2055   0.1412   0.0026   1.1900   1.3895
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting iteration 32
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.55MB
+    Experience buffer size: 448,000 (447,755 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.3531  5.0040  0.2053  0.1412  0.0027  1.3863  1.1899  447,998  447,755  448,000  all samples
+    5.6278  5.2725  0.2114  0.1412  0.0027  1.3846  1.1894   52,000   52,000   52,000  latest batch
+    1.1317  0.8935  0.0952  0.1412  0.0020  0.5202  0.4311  111,998  111,755  112,000  1 to 14 turns left
+    3.9755  3.5937  0.2377  0.1412  0.0029  1.3212  1.0827  112,000  112,000  112,000  14 to 27 turns left
+    6.5322  6.1396  0.2485  0.1412  0.0030  1.7109  1.4722  112,000  112,000  112,000  27 to 40 turns left
+    9.7710  9.3872  0.2396  0.1412  0.0030  1.9928  1.7735  112,000  112,000  112,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.3625   5.0133   0.2054   0.1412   0.0026   1.1899   1.3895
+       5.3258   4.9832   0.2004   0.1396   0.0025   1.1899   1.3727
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.56 (win rate of 78%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.36 (win rate of 68%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.80 (win rate of 140%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.16 (win rate of -58%), redundancy: 1.8%
+
+Starting iteration 33
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.75MB
+    Experience buffer size: 456,000 (455,786 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.3322  4.9896  0.2003  0.1396  0.0027  1.3719  1.1899  455,998  455,786  456,000  all samples
+    5.5252  5.1757  0.2071  0.1396  0.0027  1.3726  1.1896   52,000   52,000   52,000  latest batch
+    1.1169  0.8842  0.0911  0.1396  0.0021  0.5092  0.4312  113,998  113,786  114,000  1 to 14 turns left
+    3.9505  3.5729  0.2352  0.1396  0.0028  1.3078  1.0828  114,000  114,000  114,000  14 to 27 turns left
+    6.5072  6.1218  0.2429  0.1396  0.0028  1.6935  1.4711  114,000  114,000  114,000  27 to 40 turns left
+    9.7537  9.3790  0.2319  0.1396  0.0031  1.9767  1.7743  114,000  114,000  114,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.3370   4.9936   0.2012   0.1396   0.0025   1.1899   1.3728
+       5.3475   4.9968   0.2071   0.1411   0.0026   1.1899   1.3863
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.60 (win rate of 80%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.07 (win rate of 54%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.18 (win rate of 159%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.53 (win rate of -76%), redundancy: 1.8%
+
+Starting iteration 34
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.61MB
+    Experience buffer size: 464,000 (463,780 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.3475  4.9946  0.2086  0.1411  0.0032  1.3824  1.1901  464,000  463,780  464,000  all samples
+    5.3806  5.0232  0.2133  0.1411  0.0030  1.3822  1.1920   52,000   51,993   52,000  latest batch
+    1.1288  0.8913  0.0947  0.1411  0.0017  0.5171  0.4316  116,000  115,780  116,000  1 to 14 turns left
+    3.9760  3.5919  0.2402  0.1411  0.0028  1.3166  1.0821  116,000  116,000  116,000  14 to 27 turns left
+    6.5309  6.1340  0.2521  0.1411  0.0036  1.7063  1.4718  116,000  116,000  116,000  27 to 40 turns left
+    9.7562  9.3628  0.2477  0.1411  0.0047  1.9898  1.7748  116,000  116,000  116,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.3535   5.0021   0.2077   0.1411   0.0026   1.1901   1.3862
+       5.3100   4.9715   0.2016   0.1344   0.0025   1.1901   1.3851
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.64 (win rate of 82%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.53 (win rate of 24%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +1.90 (win rate of 145%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.22 (win rate of -61%), redundancy: 1.8%
+
+Starting iteration 35
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 50.80MB
+    Experience buffer size: 472,000 (471,759 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.3667  5.0259  0.2038  0.1344  0.0027  1.3788  1.1899  471,998  471,759  472,000  all samples
+    5.6207  5.2765  0.2071  0.1344  0.0027  1.3776  1.1890   52,000   51,996   52,000  latest batch
+    1.1100  0.8836  0.0904  0.1344  0.0017  0.5158  0.4319  117,998  117,759  118,000  1 to 14 turns left
+    3.9498  3.5793  0.2334  0.1344  0.0028  1.3110  1.0823  118,000  118,000  118,000  14 to 27 turns left
+    6.5599  6.1768  0.2456  0.1344  0.0031  1.7070  1.4719  118,000  118,000  118,000  27 to 40 turns left
+    9.8454  9.4617  0.2458  0.1344  0.0034  1.9813  1.7736  118,000  118,000  118,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.3641   5.0252   0.2020   0.1344   0.0025   1.1899   1.3848
+       5.3677   5.0307   0.2018   0.1328   0.0024   1.1899   1.3812
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.59 (win rate of 80%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.56 (win rate of 22%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.58 (win rate of 179%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.04 (win rate of -52%), redundancy: 1.8%
+
+Starting iteration 36
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.7
+    MCTS memory footprint: 50.81MB
+    Experience buffer size: 480,000 (479,772 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.3841  5.0474  0.2016  0.1328  0.0024  1.3754  1.1899  479,998  479,772  480,000  all samples
+    5.4613  5.1198  0.2064  0.1328  0.0024  1.3757  1.1899   52,000   51,994   52,000  latest batch
+    1.1100  0.8825  0.0932  0.1328  0.0016  0.5202  0.4316  119,998  119,772  120,000  1 to 14 turns left
+    3.9585  3.5903  0.2330  0.1328  0.0025  1.3109  1.0819  120,000  120,000  120,000  14 to 27 turns left
+    6.5932  6.2144  0.2433  0.1328  0.0026  1.6996  1.4731  120,000  120,000  120,000  27 to 40 turns left
+    9.8726  9.5001  0.2369  0.1328  0.0028  1.9709  1.7731  120,000  120,000  120,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.3916   5.0542   0.2022   0.1328   0.0024   1.1900   1.3811
+       5.3718   5.0357   0.2019   0.1317   0.0025   1.1900   1.3590
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.61 (win rate of 80%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.79 (win rate of 10%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.12 (win rate of 156%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.35 (win rate of -68%), redundancy: 1.8%
+
+Starting iteration 37
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.7
+    MCTS memory footprint: 51.26MB
+    Experience buffer size: 488,000 (487,742 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.4128  5.0787  0.1998  0.1317  0.0026  1.3601  1.1897  488,000  487,742  488,000  all samples
+    5.7777  5.4391  0.2042  0.1317  0.0027  1.3617  1.1887   52,000   51,997   52,000  latest batch
+    1.1078  0.8821  0.0923  0.1317  0.0017  0.5118  0.4321  122,000  121,742  122,000  1 to 14 turns left
+    3.9806  3.6115  0.2346  0.1317  0.0028  1.3040  1.0817  122,000  122,000  122,000  14 to 27 turns left
+    6.6138  6.2378  0.2414  0.1317  0.0029  1.6790  1.4726  122,000  122,000  122,000  27 to 40 turns left
+    9.9496  9.5840  0.2309  0.1317  0.0030  1.9454  1.7725  122,000  122,000  122,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.4226   5.0861   0.2024   0.1317   0.0025   1.1897   1.3592
+       5.4236   5.0859   0.2019   0.1331   0.0027   1.1897   1.3861
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.80 (win rate of 90%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.64 (win rate of 18%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.63 (win rate of 182%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -2.25 (win rate of -62%), redundancy: 1.8%
+
+Starting iteration 38
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 51.01MB
+    Experience buffer size: 496,000 (495,728 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.3851  5.0462  0.2029  0.1331  0.0029  1.3842  1.1895  496,000  495,728  496,000  all samples
+    5.2794  4.9343  0.2091  0.1331  0.0028  1.3844  1.1879   52,000   51,996   52,000  latest batch
+    1.1169  0.8882  0.0937  0.1331  0.0018  0.5184  0.4321  124,000  123,728  124,000  1 to 14 turns left
+    3.9633  3.5911  0.2361  0.1331  0.0029  1.3155  1.0819  124,000  124,000  124,000  14 to 27 turns left
+    6.5761  6.1942  0.2457  0.1331  0.0031  1.7096  1.4720  124,000  124,000  124,000  27 to 40 turns left
+    9.8840  9.5112  0.2358  0.1331  0.0038  1.9934  1.7719  124,000  124,000  124,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.3935   5.0552   0.2025   0.1331   0.0027   1.1895   1.3860
+       5.3757   5.0370   0.2032   0.1331   0.0025   1.1895   1.3745
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.92 (win rate of 96%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.36 (win rate of 32%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.50 (win rate of 175%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -1.98 (win rate of -49%), redundancy: 1.8%
+
+Starting iteration 39
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 5.8
+    MCTS memory footprint: 51.03MB
+    Experience buffer size: 504,000 (503,728 distinct boards)
+  
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+    5.4121  5.0739  0.2023  0.1331  0.0029  1.3742  1.1893  504,000  503,728  504,000  all samples
+    5.5524  5.2092  0.2071  0.1331  0.0030  1.3734  1.1890   52,000   52,000   52,000  latest batch
+    1.1042  0.8759  0.0935  0.1331  0.0016  0.5151  0.4319  126,000  125,728  126,000  1 to 14 turns left
+    3.9674  3.5952  0.2365  0.1331  0.0026  1.3076  1.0822  126,000  126,000  126,000  14 to 27 turns left
+    6.6210  6.2378  0.2465  0.1331  0.0036  1.6989  1.4719  126,000  126,000  126,000  27 to 40 turns left
+    9.9571  9.5876  0.2325  0.1331  0.0039  1.9752  1.7713  126,000  126,000  126,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.4197   5.0806   0.2036   0.1331   0.0025   1.1893   1.3745
+       5.4019   5.0708   0.2018   0.1266   0.0026   1.1893   1.3889
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.03 (win rate of 102%, network replaced), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.41 (win rate of 70%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.41 (win rate of 220%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.73 (win rate of 14%), redundancy: 1.8%
+
+Starting iteration 40
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.80MB
+    Experience buffer size: 512,000 (511,731 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.4713  5.1422  0.1999  0.1266  0.0026  1.3855  1.1832  512,000  511,731  512,000  all samples
+     5.9801  5.6667  0.1842  0.1266  0.0026  1.3926  1.1279   52,000   51,997   52,000  latest batch
+     1.1024  0.8838  0.0901  0.1266  0.0018  0.5084  0.4310  128,000  127,731  128,000  1 to 14 turns left
+     4.0176  3.6587  0.2297  0.1266  0.0026  1.3067  1.0772  128,000  128,000  128,000  14 to 27 turns left
+     6.7216  6.3494  0.2428  0.1266  0.0028  1.7087  1.4629  128,000  128,000  128,000  27 to 40 turns left
+    10.0419  9.6750  0.2372  0.1266  0.0031  2.0182  1.7616  128,000  128,000  128,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.4799   5.1488   0.2020   0.1266   0.0027   1.1832   1.3892
+       5.4758   5.1429   0.2015   0.1287   0.0027   1.1832   1.3705
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.41 (win rate of 70%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.25 (win rate of 62%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.86 (win rate of 193%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.75 (win rate of 12%), redundancy: 1.8%
+
+Starting iteration 41
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.64MB
+    Experience buffer size: 520,000 (519,731 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.5073  5.1747  0.2011  0.1287  0.0028  1.3735  1.1771  520,000  519,731  520,000  all samples
+     5.6778  5.3367  0.2097  0.1287  0.0026  1.3783  1.1273   52,000   51,992   52,000  latest batch
+     1.1040  0.8834  0.0899  0.1287  0.0019  0.5122  0.4306  130,000  129,731  130,000  1 to 13 turns left
+     4.0806  3.7147  0.2345  0.1287  0.0028  1.3086  1.0720  130,000  130,000  130,000  14 to 26 turns left
+     6.7517  6.3736  0.2462  0.1287  0.0032  1.6938  1.4528  130,000  130,000  130,000  27 to 39 turns left
+    10.0896  9.7236  0.2340  0.1287  0.0033  1.9797  1.7528  130,000  130,000  130,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.5174   5.1832   0.2028   0.1287   0.0027   1.1771   1.3707
+       5.5125   5.1834   0.2007   0.1258   0.0026   1.1771   1.3695
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -0.12 (win rate of 44%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.33 (win rate of 34%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.41 (win rate of 220%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.58 (win rate of 21%), redundancy: 1.8%
+
+Starting iteration 42
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.77MB
+    Experience buffer size: 528,000 (527,726 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.5704  5.2395  0.2025  0.1258  0.0026  1.3744  1.1713  528,000  527,726  528,000  all samples
+     6.0975  5.7581  0.2109  0.1258  0.0027  1.3759  1.1271   52,000   51,996   52,000  latest batch
+     1.1162  0.8979  0.0908  0.1258  0.0018  0.5166  0.4302  132,000  131,726  132,000  1 to 14 turns left
+     4.1258  3.7637  0.2335  0.1258  0.0028  1.3071  1.0665  132,000  132,000  132,000  14 to 27 turns left
+     6.8431  6.4689  0.2454  0.1258  0.0030  1.6974  1.4442  132,000  132,000  132,000  27 to 40 turns left
+    10.1951  9.8260  0.2402  0.1258  0.0031  1.9766  1.7442  132,000  132,000  132,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.5744   5.2444   0.2016   0.1258   0.0026   1.1713   1.3700
+       5.5453   5.2232   0.1980   0.1216   0.0025   1.1713   1.3591
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -0.11 (win rate of 44%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.71 (win rate of 86%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.32 (win rate of 216%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -1.02 (win rate of -1%), redundancy: 1.8%
+
+Starting iteration 43
+
+  Starting self-play
+  
+    Time spent on inference: 69%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.73MB
+    Experience buffer size: 536,000 (535,713 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.5680  5.2483  0.1956  0.1216  0.0025  1.3553  1.1656  536,000  535,713  536,000  all samples
+     5.8897  5.5720  0.1935  0.1216  0.0026  1.3571  1.1293   52,000   51,996   52,000  latest batch
+     1.1033  0.8943  0.0859  0.1216  0.0015  0.5154  0.4299  134,000  133,713  134,000  1 to 14 turns left
+     4.1255  3.7720  0.2292  0.1216  0.0026  1.2956  1.0607  134,000  134,000  134,000  14 to 27 turns left
+     6.8669  6.5018  0.2406  0.1216  0.0029  1.6684  1.4365  134,000  134,000  134,000  27 to 40 turns left
+    10.1749  9.8236  0.2267  0.1216  0.0030  1.9418  1.7350  134,000  134,000  134,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.5750   5.2532   0.1978   0.1216   0.0025   1.1656   1.3593
+       5.5743   5.2536   0.2004   0.1178   0.0026   1.1656   1.3423
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.22 (win rate of 61%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.40 (win rate of 70%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.71 (win rate of 186%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.69 (win rate of 16%), redundancy: 1.8%
+
+Starting iteration 44
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.38MB
+    Experience buffer size: 544,000 (543,726 distinct boards)
+  
+  Memory Analysis
+  
+       Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.6444  5.3241  0.1999  0.1178  0.0026  1.3434  1.1598  543,999  543,726  544,000  all samples
+     6.0141  5.6932  0.2005  0.1178  0.0026  1.3459  1.1268   52,000   52,000   52,000  latest batch
+     1.0995  0.8938  0.0862  0.1178  0.0018  0.5049  0.4294  135,999  135,726  136,000  1 to 14 turns left
+     4.1678  3.8159  0.2313  0.1178  0.0028  1.2766  1.0558  136,000  136,000  136,000  14 to 27 turns left
+     7.0014  6.6333  0.2473  0.1178  0.0030  1.6448  1.4273  136,000  136,000  136,000  27 to 40 turns left
+    10.3069  9.9515  0.2348  0.1178  0.0029  1.9470  1.7269  136,000  136,000  136,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.6521   5.3316   0.2002   0.1178   0.0026   1.1599   1.3425
+       5.6348   5.3182   0.1981   0.1160   0.0025   1.1599   1.3353
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.28 (win rate of 64%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.28 (win rate of 64%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.79 (win rate of 190%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.69 (win rate of 16%), redundancy: 1.8%
+
+Starting iteration 45
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 51.18MB
+    Experience buffer size: 552,000 (551,739 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.6943   5.3797  0.1960  0.1160  0.0026  1.3386  1.1542  551,999  551,739  552,000  all samples
+     6.2191   5.9045  0.1960  0.1160  0.0025  1.3389  1.1271   52,000   52,000   52,000  latest batch
+     1.1089   0.9063  0.0849  0.1160  0.0017  0.4987  0.4288  137,999  137,739  138,000  1 to 14 turns left
+     4.2314   3.8820  0.2307  0.1160  0.0026  1.2708  1.0513  138,000  138,000  138,000  14 to 27 turns left
+     7.0858   6.7249  0.2419  0.1160  0.0030  1.6515  1.4189  138,000  138,000  138,000  27 to 40 turns left
+    10.3524  10.0067  0.2268  0.1160  0.0029  1.9335  1.7179  138,000  138,000  138,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.7026   5.3865   0.1975   0.1160   0.0025   1.1542   1.3354
+       5.6897   5.3798   0.1938   0.1138   0.0023   1.1542   1.3352
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.01 (win rate of 50%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.19 (win rate of 60%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.66 (win rate of 183%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.74 (win rate of 13%), redundancy: 1.8%
+
+Starting iteration 46
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 6 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.46MB
+    Experience buffer size: 560,000 (559,729 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.7047   5.3980  0.1906  0.1138  0.0023  1.3333  1.1493  560,000  559,729  560,000  all samples
+     5.7125   5.4056  0.1908  0.1138  0.0023  1.3350  1.1302   52,000   51,993   52,000  latest batch
+     1.1077   0.9122  0.0799  0.1138  0.0018  0.5067  0.4285  140,000  139,729  140,000  1 to 14 turns left
+     4.2539   3.9143  0.2234  0.1138  0.0024  1.2763  1.0472  140,000  140,000  140,000  14 to 27 turns left
+     7.1176   6.7631  0.2382  0.1138  0.0025  1.6388  1.4101  140,000  140,000  140,000  27 to 40 turns left
+    10.3423  10.0053  0.2207  0.1138  0.0025  1.9112  1.7112  140,000  140,000  140,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.7137   5.4044   0.1932   0.1138   0.0023   1.1493   1.3356
+       5.7205   5.4094   0.1956   0.1130   0.0025   1.1493   1.3389
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.30 (win rate of 65%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.04 (win rate of 48%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.01 (win rate of 200%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.41 (win rate of 30%), redundancy: 1.8%
+
+Starting iteration 47
+
+  Starting self-play
+  
+    Time spent on inference: 69%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.68MB
+    Experience buffer size: 568,000 (567,746 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.7326   5.4253  0.1917  0.1130  0.0026  1.3405  1.1442  567,998  567,746  568,000  all samples
+     5.5744   5.2667  0.1922  0.1130  0.0026  1.3407  1.1282   52,000   51,996   52,000  latest batch
+     1.1058   0.9090  0.0818  0.1130  0.0020  0.4954  0.4281  141,998  141,746  142,000  1 to 14 turns left
+     4.2846   3.9447  0.2240  0.1130  0.0028  1.2699  1.0427  142,000  142,000  142,000  14 to 27 turns left
+     7.1574   6.8037  0.2377  0.1130  0.0029  1.6507  1.4021  142,000  142,000  142,000  27 to 40 turns left
+    10.3842  10.0452  0.2232  0.1130  0.0028  1.9460  1.7039  142,000  142,000  142,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.7466   5.4361   0.1950   0.1130   0.0025   1.1442   1.3389
+       5.7210   5.4138   0.1920   0.1124   0.0028   1.1442   1.3197
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.36 (win rate of 68%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.03 (win rate of 48%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.59 (win rate of 180%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.57 (win rate of 22%), redundancy: 1.8%
+
+Starting iteration 48
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 6 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.48MB
+    Experience buffer size: 576,000 (575,746 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.7444   5.4400  0.1894  0.1124  0.0027  1.3184  1.1394  575,998  575,746  576,000  all samples
+     6.0864   5.7831  0.1883  0.1124  0.0026  1.3201  1.1285   52,000   51,996   52,000  latest batch
+     1.1061   0.9127  0.0793  0.1124  0.0018  0.4968  0.4276  143,998  143,746  144,000  1 to 14 turns left
+     4.3055   3.9684  0.2219  0.1124  0.0028  1.2490  1.0377  144,000  144,000  144,000  14 to 27 turns left
+     7.1826   6.8307  0.2364  0.1124  0.0031  1.6179  1.3950  144,000  144,000  144,000  27 to 40 turns left
+    10.3836  10.0482  0.2200  0.1124  0.0030  1.9099  1.6972  144,000  144,000  144,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.7492   5.4435   0.1906   0.1124   0.0028   1.1394   1.3197
+       5.7589   5.4541   0.1916   0.1104   0.0029   1.1394   1.3022
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.30 (win rate of 65%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.25 (win rate of 62%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.79 (win rate of 190%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.94 (win rate of 3%), redundancy: 1.8%
+
+Starting iteration 49
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 6 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.68MB
+    Experience buffer size: 584,000 (583,722 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8038   5.5024  0.1880  0.1104  0.0029  1.3031  1.1348  583,998  583,722  584,000  all samples
+     5.8070   5.5062  0.1875  0.1104  0.0029  1.3006  1.1281   52,000   52,000   52,000  latest batch
+     1.1196   0.9289  0.0786  0.1104  0.0017  0.4918  0.4273  145,998  145,722  146,000  1 to 14 turns left
+     4.3648   4.0294  0.2220  0.1104  0.0030  1.2393  1.0332  146,000  146,000  146,000  14 to 27 turns left
+     7.2578   6.9101  0.2338  0.1104  0.0035  1.5982  1.3879  146,000  146,000  146,000  27 to 40 turns left
+    10.4734  10.1417  0.2178  0.1104  0.0034  1.8830  1.6908  146,000  146,000  146,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8106   5.5079   0.1895   0.1104   0.0029   1.1348   1.3024
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting iteration 49
+
+  Starting self-play
+  
+    Time spent on inference: 69%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.44MB
+    Experience buffer size: 584,000 (583,736 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8170   5.5157  0.1881  0.1104  0.0029  1.3035  1.1348  583,998  583,736  584,000  all samples
+     5.9597   5.6588  0.1876  0.1104  0.0029  1.3055  1.1287   52,000   51,997   52,000  latest batch
+     1.1215   0.9306  0.0788  0.1104  0.0017  0.4918  0.4269  145,998  145,736  146,000  1 to 14 turns left
+     4.3833   4.0480  0.2218  0.1104  0.0030  1.2399  1.0337  146,000  146,000  146,000  14 to 27 turns left
+     7.2771   6.9294  0.2338  0.1104  0.0035  1.5991  1.3886  146,000  146,000  146,000  27 to 40 turns left
+    10.4868  10.1552  0.2177  0.1104  0.0035  1.8833  1.6901  146,000  146,000  146,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8236   5.5208   0.1895   0.1104   0.0029   1.1348   1.3029
+       5.8005   5.5034   0.1851   0.1094   0.0027   1.1348   1.3179
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.13 (win rate of 56%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.02 (win rate of 49%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.38 (win rate of 219%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.75 (win rate of 12%), redundancy: 1.8%
+
+Starting iteration 50
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 51.13MB
+    Experience buffer size: 592,000 (591,702 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8023   5.5088  0.1814  0.1094  0.0027  1.3149  1.1303  591,998  591,702  592,000  all samples
+     5.7063   5.4105  0.1837  0.1094  0.0026  1.3184  1.1305   52,000   51,993   52,000  latest batch
+     1.1146   0.9284  0.0751  0.1094  0.0017  0.4909  0.4265  147,998  147,702  148,000  1 to 14 turns left
+     4.3948   4.0667  0.2159  0.1094  0.0028  1.2493  1.0292  148,000  148,000  148,000  14 to 27 turns left
+     7.2760   6.9362  0.2273  0.1094  0.0032  1.6154  1.3813  148,000  148,000  148,000  27 to 40 turns left
+    10.4240  10.1043  0.2074  0.1094  0.0030  1.9040  1.6839  148,000  148,000  148,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8095   5.5144   0.1831   0.1094   0.0027   1.1303   1.3180
+       5.7991   5.5068   0.1825   0.1074   0.0024   1.1303   1.3042
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.32 (win rate of 66%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.23 (win rate of 62%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.06 (win rate of 203%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.81 (win rate of 9%), redundancy: 1.8%
+
+Training completed
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Training completed
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting iteration 51
+
+  Starting self-play
+  
+    Time spent on inference: 69%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.43MB
+    Experience buffer size: 600,000 (599,671 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8004   5.5086  0.1820  0.1074  0.0024  1.3024  1.1283  599,998  599,671  600,000  all samples
+     5.7385   5.4426  0.1860  0.1074  0.0024  1.3032  1.1283   52,000   51,996   52,000  latest batch
+     1.1062   0.9229  0.0742  0.1074  0.0016  0.4960  0.4265  149,998  149,671  150,000  1 to 14 turns left
+     4.3964   4.0684  0.2181  0.1074  0.0025  1.2476  1.0274  150,000  150,000  150,000  14 to 27 turns left
+     7.2824   6.9445  0.2277  0.1074  0.0028  1.5966  1.3790  150,000  150,000  150,000  27 to 40 turns left
+    10.4149  10.0968  0.2080  0.1074  0.0027  1.8694  1.6803  150,000  150,000  150,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8064   5.5150   0.1816   0.1074   0.0024   1.1283   1.3043
+       5.7994   5.5069   0.1827   0.1074   0.0024   1.1283   1.2907
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.50 (win rate of 75%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.14 (win rate of 57%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.91 (win rate of 196%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.45 (win rate of 28%), redundancy: 1.8%
+
+Starting iteration 52
+
+  Starting self-play
+  
+    Time spent on inference: 69%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.59MB
+    Experience buffer size: 608,000 (607,642 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8023   5.5119  0.1806  0.1074  0.0025  1.2951  1.1284  607,996  607,642  608,000  all samples
+     5.7621   5.4679  0.1843  0.1074  0.0025  1.2955  1.1263   52,000   52,000   52,000  latest batch
+     1.1033   0.9190  0.0751  0.1074  0.0018  0.4906  0.4263  151,996  151,642  152,000  1 to 14 turns left
+     4.3764   4.0511  0.2153  0.1074  0.0027  1.2395  1.0276  152,000  152,000  152,000  14 to 27 turns left
+     7.2795   6.9435  0.2256  0.1074  0.0028  1.5865  1.3788  152,000  152,000  152,000  27 to 40 turns left
+    10.4536  10.1371  0.2065  0.1074  0.0026  1.8637  1.6808  152,000  152,000  152,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8083   5.5156   0.1829   0.1074   0.0024   1.1284   1.2911
+       5.8063   5.5174   0.1801   0.1062   0.0026   1.1284   1.2778
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.40 (win rate of 70%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.09 (win rate of 55%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.71 (win rate of 186%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.79 (win rate of 10%), redundancy: 1.8%
+
+Starting iteration 53
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.47MB
+    Experience buffer size: 616,000 (615,674 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8327   5.5462  0.1777  0.1062  0.0026  1.2783  1.1285  615,999  615,674  616,000  all samples
+     6.2078   5.9152  0.1838  0.1062  0.0027  1.2812  1.1293   52,000   52,000   52,000  latest batch
+     1.1026   0.9230  0.0717  0.1062  0.0017  0.4867  0.4262  153,999  153,674  154,000  1 to 14 turns left
+     4.3767   4.0574  0.2103  0.1062  0.0027  1.2299  1.0278  154,000  154,000  154,000  14 to 27 turns left
+     7.3041   6.9732  0.2215  0.1062  0.0031  1.5748  1.3790  154,000  154,000  154,000  27 to 40 turns left
+    10.5483  10.2321  0.2070  0.1062  0.0030  1.8216  1.6809  154,000  154,000  154,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8430   5.5535   0.1806   0.1062   0.0026   1.1285   1.2780
+       5.8370   5.5484   0.1806   0.1055   0.0026   1.1285   1.2729
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.02 (win rate of 51%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.42 (win rate of 71%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.66 (win rate of 183%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.73 (win rate of 14%), redundancy: 1.8%
+
+Starting iteration 54
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.31MB
+    Experience buffer size: 624,000 (623,630 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8144   5.5265  0.1799  0.1055  0.0025  1.2705  1.1285  623,999  623,630  624,000  all samples
+     5.6902   5.3967  0.1855  0.1055  0.0025  1.2698  1.1286   52,000   52,000   52,000  latest batch
+     1.1057   0.9248  0.0737  0.1055  0.0018  0.4779  0.4261  155,999  155,630  156,000  1 to 13 turns left
+     4.3857   4.0642  0.2133  0.1055  0.0026  1.2077  1.0285  156,000  156,000  156,000  14 to 26 turns left
+     7.2829   6.9495  0.2250  0.1055  0.0029  1.5653  1.3794  156,000  156,000  156,000  27 to 39 turns left
+    10.4811  10.1651  0.2077  0.1055  0.0029  1.8312  1.6800  156,000  156,000  156,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8203   5.5314   0.1810   0.1055   0.0026   1.1285   1.2728
+       5.8291   5.5368   0.1851   0.1048   0.0024   1.1285   1.3126
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.40 (win rate of 70%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.46 (win rate of 73%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.60 (win rate of 180%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -1.06 (win rate of -3%), redundancy: 1.8%
+
+Starting iteration 55
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.83MB
+    Experience buffer size: 632,000 (631,602 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8015   5.5113  0.1830  0.1048  0.0024  1.3197  1.1284  631,998  631,602  632,000  all samples
+     5.6513   5.3556  0.1884  0.1048  0.0024  1.3206  1.1284   52,000   51,997   52,000  latest batch
+     1.1054   0.9237  0.0751  0.1048  0.0018  0.4946  0.4261  157,998  157,602  158,000  1 to 14 turns left
+     4.4073   4.0803  0.2197  0.1048  0.0026  1.2660  1.0292  158,000  158,000  158,000  14 to 27 turns left
+     7.2671   6.9308  0.2288  0.1048  0.0027  1.6252  1.3782  158,000  158,000  158,000  27 to 40 turns left
+    10.4261  10.1104  0.2082  0.1048  0.0027  1.8929  1.6803  158,000  158,000  158,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8092   5.5163   0.1857   0.1048   0.0024   1.1285   1.3126
+       5.7962   5.5086   0.1803   0.1050   0.0024   1.1285   1.3190
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.04 (win rate of 52%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.32 (win rate of 34%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.95 (win rate of 198%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.87 (win rate of 6%), redundancy: 1.8%
+
+Starting iteration 56
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.86MB
+    Experience buffer size: 640,000 (639,559 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8003   5.5154  0.1775  0.1050  0.0024  1.3165  1.1288  639,998  639,559  640,000  all samples
+     5.9506   5.6594  0.1840  0.1050  0.0024  1.3187  1.1295   52,000   51,994   52,000  latest batch
+     1.1000   0.9222  0.0712  0.1050  0.0017  0.5010  0.4262  159,998  159,559  160,000  1 to 14 turns left
+     4.4251   4.1061  0.2114  0.1050  0.0026  1.2521  1.0301  160,000  160,000  160,000  14 to 27 turns left
+     7.2696   6.9403  0.2216  0.1050  0.0027  1.6087  1.3787  160,000  160,000  160,000  27 to 40 turns left
+    10.4065  10.0931  0.2059  0.1050  0.0026  1.9042  1.6802  160,000  160,000  160,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8079   5.5197   0.1808   0.1050   0.0024   1.1288   1.3191
+       5.8111   5.5255   0.1798   0.1031   0.0028   1.1288   1.2801
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.64 (win rate of 82%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.20 (win rate of 60%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.12 (win rate of 206%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.89 (win rate of 5%), redundancy: 1.8%
+
+Starting iteration 57
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.80MB
+    Experience buffer size: 648,000 (647,571 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8437   5.5580  0.1798  0.1031  0.0028  1.2741  1.1291  647,996  647,571  648,000  all samples
+     6.4181   6.1279  0.1843  0.1031  0.0028  1.2747  1.1295   52,000   52,000   52,000  latest batch
+     1.0997   0.9208  0.0740  0.1031  0.0018  0.4821  0.4260  161,996  161,571  162,000  1 to 14 turns left
+     4.4411   4.1201  0.2148  0.1031  0.0030  1.2131  1.0307  162,000  162,000  162,000  14 to 27 turns left
+     7.3402   7.0098  0.2240  0.1031  0.0033  1.5581  1.3787  162,000  162,000  162,000  27 to 40 turns left
+    10.4936  10.1810  0.2064  0.1031  0.0030  1.8430  1.6811  162,000  162,000  162,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8496   5.5637   0.1801   0.1031   0.0028   1.1291   1.2801
+       5.8274   5.5451   0.1767   0.1029   0.0028   1.1291   1.2875
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.52 (win rate of 76%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.07 (win rate of 54%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.56 (win rate of 228%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.70 (win rate of 15%), redundancy: 1.8%
+
+Starting iteration 58
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.57MB
+    Experience buffer size: 656,000 (655,594 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8226   5.5424  0.1746  0.1029  0.0028  1.2885  1.1290  655,998  655,594  656,000  all samples
+     5.9749   5.6908  0.1784  0.1029  0.0028  1.2885  1.1298   52,000   52,000   52,000  latest batch
+     1.0982   0.9239  0.0700  0.1029  0.0015  0.4908  0.4260  163,998  163,594  164,000  1 to 14 turns left
+     4.4181   4.1051  0.2073  0.1029  0.0028  1.2327  1.0300  164,000  164,000  164,000  14 to 27 turns left
+     7.3035   6.9785  0.2188  0.1029  0.0034  1.5816  1.3789  164,000  164,000  164,000  27 to 40 turns left
+    10.4685  10.1598  0.2022  0.1029  0.0036  1.8488  1.6809  164,000  164,000  164,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8298   5.5470   0.1771   0.1029   0.0028   1.1290   1.2873
+       5.8215   5.5397   0.1770   0.1025   0.0024   1.1290   1.2942
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.43 (win rate of 72%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.11 (win rate of 56%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.69 (win rate of 184%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.78 (win rate of 11%), redundancy: 1.8%
+
+Starting iteration 59
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.80MB
+    Experience buffer size: 664,000 (663,619 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8293   5.5498  0.1746  0.1025  0.0024  1.2918  1.1288  663,998  663,619  664,000  all samples
+     5.7962   5.5123  0.1791  0.1025  0.0024  1.2908  1.1284   52,000   52,000   52,000  latest batch
+     1.1009   0.9274  0.0692  0.1025  0.0017  0.4854  0.4260  165,998  165,619  166,000  1 to 14 turns left
+     4.4377   4.1236  0.2091  0.1025  0.0025  1.2354  1.0298  166,000  166,000  166,000  14 to 27 turns left
+     7.3106   6.9867  0.2187  0.1025  0.0027  1.5863  1.3781  166,000  166,000  166,000  27 to 40 turns left
+    10.4709  10.1643  0.2015  0.1025  0.0025  1.8603  1.6812  166,000  166,000  166,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8376   5.5555   0.1773   0.1025   0.0024   1.1288   1.2941
+       5.8450   5.5586   0.1815   0.1024   0.0024   1.1288   1.2903
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.32 (win rate of 66%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.59 (win rate of 80%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.31 (win rate of 216%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.50 (win rate of 25%), redundancy: 1.8%
+
+Starting iteration 60
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.80MB
+    Experience buffer size: 672,000 (671,607 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8573   5.5735  0.1790  0.1024  0.0024  1.2836  1.1290  671,995  671,607  672,000  all samples
+     5.9665   5.6798  0.1819  0.1024  0.0024  1.2833  1.1322   52,000   51,997   52,000  latest batch
+     1.1041   0.9271  0.0730  0.1024  0.0017  0.4859  0.4260  167,995  167,607  168,000  1 to 14 turns left
+     4.4307   4.1110  0.2146  0.1024  0.0027  1.2172  1.0301  168,000  168,000  168,000  14 to 27 turns left
+     7.3500   7.0201  0.2248  0.1024  0.0027  1.5758  1.3779  168,000  168,000  168,000  27 to 40 turns left
+    10.5441  10.2355  0.2036  0.1024  0.0027  1.8554  1.6821  168,000  168,000  168,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8655   5.5788   0.1819   0.1024   0.0024   1.1291   1.2905
+       5.8616   5.5801   0.1779   0.1012   0.0025   1.1291   1.2911
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.30 (win rate of 65%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.36 (win rate of 32%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.30 (win rate of 215%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.40 (win rate of 30%), redundancy: 1.8%
+
+Starting iteration 61
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.62MB
+    Experience buffer size: 680,000 (679,611 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8728   5.5930  0.1761  0.1012  0.0025  1.2926  1.1294  679,993  679,611  680,000  all samples
+     6.0387   5.7549  0.1801  0.1012  0.0025  1.2943  1.1324   52,000   52,000   52,000  latest batch
+     1.0968   0.9226  0.0712  0.1012  0.0018  0.4859  0.4262  169,993  169,611  170,000  1 to 14 turns left
+     4.4394   4.1261  0.2094  0.1012  0.0027  1.2369  1.0313  170,000  170,000  170,000  14 to 27 turns left
+     7.3813   7.0571  0.2201  0.1012  0.0028  1.5869  1.3785  170,000  170,000  170,000  27 to 40 turns left
+    10.5735  10.2660  0.2036  0.1012  0.0027  1.8605  1.6817  170,000  170,000  170,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8803   5.5983   0.1784   0.1012   0.0025   1.1294   1.2915
+       5.8810   5.5979   0.1793   0.1013   0.0026   1.1294   1.2849
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.37 (win rate of 68%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.50 (win rate of 75%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.71 (win rate of 186%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.17 (win rate of 42%), redundancy: 1.8%
+
+Starting iteration 62
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.74MB
+    Experience buffer size: 688,000 (687,565 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.8704   5.5871  0.1795  0.1013  0.0026  1.2881  1.1289  687,993  687,565  688,000  all samples
+     5.8963   5.6104  0.1820  0.1013  0.0026  1.2848  1.1232   52,000   52,000   52,000  latest batch
+     1.1020   0.9236  0.0753  0.1013  0.0019  0.4864  0.4264  171,993  171,565  172,000  1 to 14 turns left
+     4.4344   4.1175  0.2129  0.1013  0.0027  1.2297  1.0303  172,000  172,000  172,000  14 to 27 turns left
+     7.3874   7.0578  0.2255  0.1013  0.0029  1.5797  1.3778  172,000  172,000  172,000  27 to 40 turns left
+    10.5596  10.2512  0.2044  0.1013  0.0027  1.8565  1.6811  172,000  172,000  172,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.8793   5.5957   0.1797   0.1013   0.0026   1.1289   1.2845
+       5.8655   5.5824   0.1801   0.1006   0.0025   1.1289   1.2970
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.64 (win rate of 82%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.49 (win rate of 74%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.79 (win rate of 190%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -1.02 (win rate of -1%), redundancy: 1.8%
+
+Starting iteration 63
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.84MB
+    Experience buffer size: 696,000 (695,571 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.9096   5.6295  0.1770  0.1006  0.0025  1.2924  1.1291  695,995  695,571  696,000  all samples
+     6.4355   6.1527  0.1797  0.1006  0.0025  1.2930  1.1297   52,000   51,997   52,000  latest batch
+     1.0976   0.9246  0.0705  0.1006  0.0019  0.4895  0.4268  173,995  173,571  174,000  1 to 14 turns left
+     4.4814   4.1679  0.2101  0.1006  0.0028  1.2356  1.0308  174,000  174,000  174,000  14 to 27 turns left
+     7.4435   7.1174  0.2226  0.1006  0.0028  1.5858  1.3772  174,000  174,000  174,000  27 to 40 turns left
+    10.6160  10.3083  0.2045  0.1006  0.0026  1.8585  1.6815  174,000  174,000  174,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.9177   5.6344   0.1803   0.1006   0.0025   1.1291   1.2970
+       5.9123   5.6312   0.1777   0.1011   0.0023   1.1291   1.3070
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.37 (win rate of 68%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.01 (win rate of 50%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.11 (win rate of 205%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.44 (win rate of 28%), redundancy: 1.8%
+
+Starting iteration 64
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.60MB
+    Experience buffer size: 704,000 (703,569 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.9559   5.6753  0.1772  0.1011  0.0023  1.3012  1.1293  703,998  703,569  704,000  all samples
+     6.2399   5.9553  0.1811  0.1011  0.0023  1.3040  1.1309   52,000   52,000   52,000  latest batch
+     1.0942   0.9210  0.0704  0.1011  0.0016  0.4876  0.4269  175,998  175,569  176,000  1 to 14 turns left
+     4.4852   4.1688  0.2129  0.1011  0.0024  1.2410  1.0312  176,000  176,000  176,000  14 to 27 turns left
+     7.4816   7.1553  0.2225  0.1011  0.0026  1.6018  1.3773  176,000  176,000  176,000  27 to 40 turns left
+    10.7640  10.4574  0.2030  0.1011  0.0025  1.8744  1.6817  176,000  176,000  176,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.9606   5.6794   0.1779   0.1011   0.0023   1.1293   1.3072
+       5.9508   5.6696   0.1785   0.1004   0.0023   1.1293   1.3109
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.29 (win rate of 64%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.39 (win rate of 70%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.43 (win rate of 172%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.54 (win rate of 23%), redundancy: 1.8%
+
+Starting iteration 65
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 7 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.99MB
+    Experience buffer size: 712,000 (711,571 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.9475   5.6676  0.1771  0.1004  0.0024  1.3137  1.1289  711,997  711,571  712,000  all samples
+     5.9772   5.6940  0.1804  0.1004  0.0024  1.3123  1.1257   52,000   51,997   52,000  latest batch
+     1.0931   0.9199  0.0710  0.1004  0.0018  0.4964  0.4267  177,997  177,571  178,000  1 to 14 turns left
+     4.4707   4.1556  0.2121  0.1004  0.0026  1.2565  1.0309  178,000  178,000  178,000  14 to 27 turns left
+     7.4742   7.1482  0.2229  0.1004  0.0027  1.6149  1.3768  178,000  178,000  178,000  27 to 40 turns left
+    10.7524  10.4471  0.2024  0.1004  0.0025  1.8869  1.6813  178,000  178,000  178,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.9534   5.6718   0.1789   0.1004   0.0023   1.1289   1.3108
+       5.9530   5.6729   0.1765   0.1008   0.0028   1.1289   1.2878
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.42 (win rate of 71%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: +0.08 (win rate of 54%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.73 (win rate of 186%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.26 (win rate of 37%), redundancy: 1.8%
+
+Starting iteration 66
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 6 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.56MB
+    Experience buffer size: 720,000 (719,558 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.9576   5.6796  0.1745  0.1008  0.0027  1.2870  1.1293  719,998  719,558  720,000  all samples
+     5.9935   5.7121  0.1778  0.1008  0.0027  1.2891  1.1321   52,000   51,997   52,000  latest batch
+     1.0984   0.9278  0.0683  0.1008  0.0016  0.4887  0.4268  179,998  179,558  180,000  1 to 14 turns left
+     4.4667   4.1554  0.2077  0.1008  0.0028  1.2333  1.0313  180,000  180,000  180,000  14 to 27 turns left
+     7.4902   7.1655  0.2207  0.1008  0.0033  1.5810  1.3769  180,000  180,000  180,000  27 to 40 turns left
+    10.7752  10.4700  0.2012  0.1008  0.0032  1.8446  1.6820  180,000  180,000  180,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.9663   5.6860   0.1768   0.1008   0.0028   1.1293   1.2879
+       5.9668   5.6839   0.1803   0.1000   0.0027   1.1293   1.2861
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.20 (win rate of 60%), redundancy: 1.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.24 (win rate of 38%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +2.69 (win rate of 184%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -0.85 (win rate of 8%), redundancy: 1.8%
+
+Starting iteration 67
+
+  Starting self-play
+  
+    Time spent on inference: 70%
+    Generating 6 samples per second on average
+    Average exploration depth: 6.0
+    MCTS memory footprint: 50.84MB
+    Experience buffer size: 728,000 (727,577 distinct boards)
+  
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp     Wtot       Nb       Ns
+     5.9505   5.6685  0.1793  0.1000  0.0027  1.2843  1.1291  727,995  727,577  728,000  all samples
+     5.9549   5.6703  0.1819  0.1000  0.0027  1.2829  1.1276   52,000   51,997   52,000  latest batch
+     1.1056   0.9289  0.0749  0.1000  0.0019  0.4930  0.4266  181,995  181,577  182,000  1 to 13 turns left
+     4.4819   4.1647  0.2141  0.1000  0.0030  1.2172  1.0309  182,000  182,000  182,000  14 to 26 turns left
+     7.4802   7.1526  0.2244  0.1000  0.0031  1.5727  1.3767  182,000  182,000  182,000  27 to 39 turns left
+    10.7324  10.4257  0.2039  0.1000  0.0028  1.8542  1.6823  182,000  182,000  182,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       5.9583   5.6752   0.1805   0.1000   0.0026   1.1292   1.2860
+       5.9763   5.6914   0.1821   0.1003   0.0026   1.1292   1.2831
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -0.14 (win rate of 43%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against MCTS (1000 rollouts)
+  
+    Average reward: -0.72 (win rate of 14%), redundancy: 1.8%
+  
+  Running benchmark: AlphaZero against MinMax (depth 5)
+  
+    Average reward: +3.18 (win rate of 209%), redundancy: 1.8%
+  
+  Running benchmark: Network Only against MCTS (1000 rollouts)
+  
+    Average reward: -1.17 (win rate of -8%), redundancy: 1.8%
+
+Starting iteration 68
+
+  Starting self-play
+  
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting interactive exploration
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting interactive exploration
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting interactive exploration
+
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
+
+Starting interactive exploration
+

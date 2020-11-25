@@ -1,0 +1,77 @@
+{
+         "self_play": {
+                                "num_games": 1000,
+                         "reset_mcts_every": 1,
+                                 "gc_every": null,
+                                     "mcts": {
+                                                       "num_workers": 32,
+                                                           "use_gpu": true,
+                                                             "gamma": 1,
+                                                             "cpuct": 3,
+                                                "num_iters_per_turn": 500,
+                                                       "temperature": {
+                                                                         "xs": [
+                                                                                 0,
+                                                                                 12
+                                                                               ],
+                                                                         "ys": [
+                                                                                 1,
+                                                                                 0.1
+                                                                               ]
+                                                                      },
+                                                 "dirichlet_noise_ϵ": 0.25,
+                                                 "dirichlet_noise_α": 0.75,
+                                                 "prior_temperature": 0.7
+                                             }
+                      },
+   "memory_analysis": {
+                         "num_game_stages": 4
+                      },
+          "learning": {
+                                             "use_gpu": true,
+                              "use_position_averaging": true,
+                             "samples_weighing_policy": "LOG_WEIGHT",
+                                           "optimiser": {
+                                                           "lr": 0.001
+                                                        },
+                                   "l2_regularization": 0.0001,
+                                 "nonvalidity_penalty": 1,
+                                          "batch_size": 256,
+                         "loss_computation_batch_size": 256,
+                           "min_checkpoints_per_epoch": 1,
+                          "max_batches_per_checkpoint": 8000,
+                                     "num_checkpoints": 1
+                      },
+             "arena": {
+                                "num_games": 400,
+                         "reset_mcts_every": 1,
+                         "flip_probability": 0.1,
+                                     "mcts": {
+                                                       "num_workers": 32,
+                                                           "use_gpu": true,
+                                                             "gamma": 1,
+                                                             "cpuct": 3,
+                                                "num_iters_per_turn": 500,
+                                                       "temperature": {
+                                                                         "value": 0.2
+                                                                      },
+                                                 "dirichlet_noise_ϵ": 0.05,
+                                                 "dirichlet_noise_α": 0.75,
+                                                 "prior_temperature": 0.7
+                                             },
+                         "update_threshold": 1
+                      },
+         "num_iters": 100,
+    "use_symmetries": true,
+   "ternary_rewards": false,
+   "mem_buffer_size": {
+                         "xs": [
+                                 0,
+                                 100
+                               ],
+                         "ys": [
+                                 200000,
+                                 1000000
+                               ]
+                      }
+}

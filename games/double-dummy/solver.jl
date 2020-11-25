@@ -30,14 +30,16 @@ function hand_to_deal(p::Player, g)
   end
   trump -= 1
   
-  # Calculate which player is up next
-  first = maximum(g.board[:,:,6])
+  # Calculate which player led and which is up next
+  leader = g.leader - 1
+  played = maximum(board[:,:,6])
+  first = (leader + played) % 4
   
   # Calculate the cards that have been played in the current trick
   ct_ranks = zeros(Cint, 3)
   ct_suits = zeros(Cint, 3)
-  if first > 0
-    for i in 1:first
+  if played > 0
+    for i in 1:played
       card = findfirst(x -> x == i, board[:,:,6])
       ct_ranks[i] = card[1] + 1
       ct_suits[i] = card[2] - 1
@@ -52,7 +54,7 @@ function hand_to_deal(p::Player, g)
   end
 
   # Return the dds Deal data structure
-  return dealPBN(trump, 0, ct_suits, ct_ranks, remainCards)
+  return dealPBN(trump, leader, ct_suits, ct_ranks, remainCards)
 end
 
 function query_solver(p::Player, g)
@@ -62,16 +64,17 @@ function query_solver(p::Player, g)
     throw("Solver Query Failed: $result")
   end
   optimal_actions = [(fut.suit[i] * 13) + (fut.rank[i] - 2) + 1 for i in 1:fut.cards]
-  return optimal_actions
+  v = fut.score[1]
+  return optimal_actions, v
 end
 
 function think(p::Player, g)
   as = GI.available_actions(g)
-  opt_moves = query_solver(p, g)
+  opt_moves, v = query_solver(p, g)
   opt_mask = findall(x -> x in opt_moves, as)
   π = zeros(length(as))
   π[opt_mask] .= 1 / length(opt_mask)
-  return as, π
+  return as, π, v
 end
 
 Benchmark.PerfectPlayer(::Type{Game}) = Player
