@@ -670,10 +670,9 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
   if isnothing(net_params_file)
     net_params_file = joinpath(session_dir, NET_PARAMS_FILE)
   end
-  if isnothing(params_file)
-    params_file = joinpath(session_dir, PARAMS_FILE)
-  end
-  print(params_file)
+  # if isnothing(params_file)
+  #   params_file = joinpath(session_dir, PARAMS_FILE)
+  # end
   # Load the params
   # params = open(params_file, "r") do io
   #   JSON3.read(io, Params)
