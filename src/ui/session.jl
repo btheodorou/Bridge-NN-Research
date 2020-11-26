@@ -681,7 +681,7 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
 
   # Instantiate the network
   # network = load_network(Logger(), "", net_params_file)
-  network = Network(netparams)
+  network = ResNet(netparams)
   
   # Load the memory
   mem_file = joinpath(session_dir, MEM_FILE)
