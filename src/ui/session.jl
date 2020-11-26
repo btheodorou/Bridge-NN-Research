@@ -673,7 +673,7 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks;
   if isnothing(params_file)
     params_file = joinpath(session_dir, PARAMS_FILE)
   end
-
+  print(params_file)
   # Load the params
   params = open(params_file, "r") do io
     JSON3.read(io, Params)
@@ -684,7 +684,6 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks;
   
   # Load the memory
   mem_file = joinpath(session_dir, MEM_FILE)
-  print(mem_file)
   experience = deserialize(mem_file)
   
   # Initialize variables for the training loop
