@@ -3,7 +3,6 @@
 #####
 
 import AlphaZero: Handlers, initial_report, get_experience
-include("../training.jl")
 
 """
     SessionReport

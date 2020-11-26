@@ -22,7 +22,7 @@ export ColorPolicy, ALTERNATE_COLORS, BASELINE_WHITE, CONTENDER_WHITE
 export AbstractNetwork, OptimiserSpec, Nesterov, CyclicNesterov, Adam
 export SimpleNet, SimpleNetHP, ResNet, ResNetHP
 # Training environments
-export Env, train!, get_experience
+export Env, train!, get_experience, memory_report, learning_step!
 # User interface
 export UserInterface
 export Session, resume!, save, play_interactive_game
