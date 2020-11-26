@@ -16,4 +16,4 @@ SESSION_DIR = "sessions/$GAME"
 
 label = "defaultAgent"
 
-AlphaZero.UserInterface.train_and_monitor(Game, SESSION_DIR, label, 100, Training.benchmark, Training.params, net_params_file=nothing)
+AlphaZero.UserInterface.train_and_monitor(Game, SESSION_DIR, label, 100, Training.benchmark, Training.params, Training.netparams)

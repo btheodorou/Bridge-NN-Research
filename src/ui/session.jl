@@ -657,7 +657,7 @@ end
 
 
 
-function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks, params; net_params_file=nothing) where {G, N}
+function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks, params, netparams) where {G}
   # Create the new directory for the trial
   outdir = joinpath(session_dir, "trials", label)
   isdir(outdir) || mkpath(outdir)
@@ -667,9 +667,9 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
   Log.section(logger, 1, "Starting New Trial: $label")
 
   # Set the params_file and net_params_file to the default session files if they aren't passed in
-  if isnothing(net_params_file)
-    net_params_file = joinpath(session_dir, NET_PARAMS_FILE)
-  end
+  # if isnothing(net_params_file)
+  #   net_params_file = joinpath(session_dir, NET_PARAMS_FILE)
+  # end
   # if isnothing(params_file)
   #   params_file = joinpath(session_dir, PARAMS_FILE)
   # end
@@ -680,7 +680,8 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
   # TODO https://github.com/jonathan-laurent/AlphaZero.jl/issues/3
 
   # Instantiate the network
-  network = load_network(Logger(), nothing, net_params_file)
+  # network = load_network(Logger(), "", net_params_file)
+  network = Netword(netparams)
   
   # Load the memory
   mem_file = joinpath(session_dir, MEM_FILE)
