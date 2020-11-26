@@ -3,6 +3,7 @@
 #####
 
 import AlphaZero: Handlers, initial_report, get_experience
+include("../training.jl")
 
 """
     SessionReport
@@ -655,8 +656,6 @@ function regenerate_plots(session::Session)
   end
 end
 
-
-
 function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks, params, netparams) where {G}
   # Create the new directory for the trial
   outdir = joinpath(session_dir, "trials", label)
@@ -683,7 +682,6 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
   # network = load_network(Logger(), "", net_params_file)
   network = ResNet{G}(netparams)
   # TODO read in netparams
-
   
   # Load the memory
   mem_file = joinpath(session_dir, MEM_FILE)
@@ -706,7 +704,7 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
     learning_step!(env, handler)
 
     # Every fifth epoch run the benchmarks
-    if epoch % 5 == 0
+    if epoch % 5 == 1
       report = [run_duel(env, logger, duel) for duel in benchmarks]
       push!(reports, report)
       open(joinpath(outdir, BENCHMARK_FILE), "w") do io
