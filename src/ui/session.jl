@@ -657,7 +657,7 @@ end
 
 
 
-function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks; params_file=nothing, net_params_file=nothing) where {G, N}
+function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks, params; net_params_file=nothing) where {G, N}
   # Create the new directory for the trial
   outdir = joinpath(session_dir, "trials", label)
   isdir(outdir) || mkpath(outdir)
@@ -675,9 +675,10 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks;
   end
   print(params_file)
   # Load the params
-  params = open(params_file, "r") do io
-    JSON3.read(io, Params)
-  end
+  # params = open(params_file, "r") do io
+  #   JSON3.read(io, Params)
+  # end
+  # TODO https://github.com/jonathan-laurent/AlphaZero.jl/issues/3
 
   # Instantiate the network
   network = load_network(Logger(), nothing, net_params_file)
