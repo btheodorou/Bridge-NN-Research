@@ -656,13 +656,17 @@ function regenerate_plots(session::Session)
 end
 
 function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks, params, netparams) where {G}
-  # Create the new directory for the trial
+  # Create the new directory
   outdir = joinpath(session_dir, "trials", label)
   isdir(outdir) || mkpath(outdir)
 
-  # Create a logger for the trial
+  # Create a logger
   logger = session_logger(outdir, false, true)
   Log.section(logger, 1, "Starting New Trial: $label")
+
+  # Load the memory
+  mem_file = joinpath(session_dir, MEM_FILE)
+  experience = deserialize(mem_file)
 
   # Set the params_file and net_params_file to the default session files if they aren't passed in
   # if isnothing(net_params_file)
@@ -678,13 +682,9 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
   # TODO read in params https://github.com/jonathan-laurent/AlphaZero.jl/issues/3
 
   # Instantiate the network
+  # TODO read in netparams
   # network = load_network(Logger(), "", net_params_file)
   network = ResNet{G}(netparams)
-  # TODO read in netparams
-  
-  # Load the memory
-  mem_file = joinpath(session_dir, MEM_FILE)
-  experience = deserialize(mem_file)
   
   # Initialize variables for the training loop
   epoch = 1
@@ -703,7 +703,7 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
     learning_step!(env, handler)
 
     # Every fifth epoch run the benchmarks
-    if epoch % 5 == 1
+    if epoch == 1 || epoch % 5 == 0
       report = [run_duel(env, logger, duel) for duel in benchmarks]
       push!(reports, report)
       open(joinpath(outdir, BENCHMARK_FILE), "w") do io
@@ -717,5 +717,5 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
   end
 
   # Save the final network
-  serialize(joinpath(outdir, "finalnn.data"), network)
+  serialize(joinpath(outdir, "finalnn.data"), env.curnn)
 end
