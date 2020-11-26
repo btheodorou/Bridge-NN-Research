@@ -654,3 +654,67 @@ function regenerate_plots(session::Session)
     plot_iteration(itrep, session.env.params, plotsdir, itc)
   end
 end
+
+
+
+function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks; params_file=nothing, net_params_file=nothing) where {G, N}
+  # Create the new directory for the trial
+  outdir = joinpath(session_dir, "trials", label)
+  isdir(outdir) || mkpath(outdir)
+
+  # Create a logger for the trial
+  logger = session_logger(outdir, false, true)
+  Log.section(logger, 1, "Starting New Trial: $label")
+
+  # Set the params_file and net_params_file to the default session files if they aren't passed in
+  if isnothing(net_params_file)
+    net_params_file = joinpath(session_dir, NET_PARAMS_FILE)
+  end
+  if isnothing(params_file)
+    params_file = joinpath(session_dir, PARAMS_FILE)
+  end
+
+  # Load the params
+  params = open(params_file, "r") do io
+    JSON3.read(io, Params)
+
+  # Instantiate the network
+  network = load_network(Logger(), nothing, net_params_file)
+  
+  # Load the memory
+  mem_file = joinpath(session_dir, MEM_FILE)
+  experience = deserialize(mem_file)
+  
+  # Initialize variables for the training loop
+  epoch = 1
+  reports = Benchmark.Report[]
+  env = Env{G}(params, network, network, experience, epoch)
+  handler = Session(env, nothing, logger, nothing, nothing, nothing)
+
+  while epoch <= maxEpochs
+    # Log the epoch
+    Log.section(logger, 1, "Epoch: $epoch")
+
+    # Perform a memory report
+    memory_report(env, handler)
+
+    # Train the network
+    learning_step!(env, handler)
+
+    # Every fifth epoch run the benchmarks
+    if epoch % 5 == 0
+      report = [run_duel(env, logger, duel) for duel in benchmark]
+      push!(reports, report)
+      open(joinpath(outdir, BENCHMARK_FILE), "w") do io
+        JSON2.pretty(io, JSON3.write(reports))
+      end
+      plot_benchmark(env.params, reports, outdir)
+    end
+
+    # Increment the epoch counter
+    epoch += 1
+  end
+
+  # Save the final network
+  serialize(joinpath(outdir, "finalnn.data"), network)
+end
