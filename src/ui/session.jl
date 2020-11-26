@@ -677,11 +677,13 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
   # params = open(params_file, "r") do io
   #   JSON3.read(io, Params)
   # end
-  # TODO https://github.com/jonathan-laurent/AlphaZero.jl/issues/3
+  # TODO read in params https://github.com/jonathan-laurent/AlphaZero.jl/issues/3
 
   # Instantiate the network
   # network = load_network(Logger(), "", net_params_file)
   network = ResNet{G}(netparams)
+  # TODO read in netparams
+
   
   # Load the memory
   mem_file = joinpath(session_dir, MEM_FILE)
@@ -691,7 +693,7 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
   epoch = 1
   reports = Benchmark.Report[]
   env = Env{G}(params, network, network, experience, epoch)
-  handler = Session(env, nothing, logger, nothing, nothing, nothing)
+  handler = Session(env, nothing, logger, false, false, benchmarks)
 
   while epoch <= maxEpochs
     # Log the epoch
@@ -705,7 +707,7 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
 
     # Every fifth epoch run the benchmarks
     if epoch % 5 == 0
-      report = [run_duel(env, logger, duel) for duel in benchmark]
+      report = [run_duel(env, logger, duel) for duel in benchmarks]
       push!(reports, report)
       open(joinpath(outdir, BENCHMARK_FILE), "w") do io
         JSON2.pretty(io, JSON3.write(reports))
