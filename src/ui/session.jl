@@ -677,7 +677,8 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks;
   # Load the params
   params = open(params_file, "r") do io
     JSON3.read(io, Params)
-
+  end
+  
   # Instantiate the network
   network = load_network(Logger(), nothing, net_params_file)
   
