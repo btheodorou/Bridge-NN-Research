@@ -678,12 +678,13 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks;
   params = open(params_file, "r") do io
     JSON3.read(io, Params)
   end
-  
+
   # Instantiate the network
   network = load_network(Logger(), nothing, net_params_file)
   
   # Load the memory
   mem_file = joinpath(session_dir, MEM_FILE)
+  print(mem_file)
   experience = deserialize(mem_file)
   
   # Initialize variables for the training loop
