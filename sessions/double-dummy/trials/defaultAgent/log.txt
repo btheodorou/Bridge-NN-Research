@@ -1,0 +1,944 @@
+
+Starting New Trial: defaultAgent
+
+Epoch: 1
+
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    10.4706   7.8944  1.0890  0.5648  0.9224  0.7109  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    10.4706   7.8944  1.0890  0.5648  0.9224  0.7109  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+     4.9498   3.0793  0.3415  0.5648  0.9641  0.3830  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    11.3294   8.8239  1.0127  0.5648  0.9279  0.7800  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    12.9906  10.2165  1.2988  0.5648  0.9104  0.8097  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    12.6132   9.4583  1.7028  0.5648  0.8873  0.8711  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      10.6592   8.3852   0.7837   0.5648   0.9255   0.5278   0.8903
+       2.8826   2.0467   0.2933   0.5240   0.0186   0.5278   0.7577
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       2.3412   1.6082   0.2586   0.4668   0.0076   0.5278   0.7569
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +2.00 (win rate of 150%, network replaced), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.37 (win rate of -69%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.19 (win rate of -109%), redundancy: 2.6%
+
+Epoch: 2
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    2.3208  1.5880  0.2585  0.4668  0.0075  0.7565  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    2.3208  1.5880  0.2585  0.4668  0.0075  0.7565  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    1.2136  0.6335  0.1077  0.4668  0.0056  0.4283  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    2.5441  1.7453  0.3229  0.4668  0.0091  0.8462  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    2.7009  1.9138  0.3116  0.4668  0.0087  0.8753  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    2.8243  2.0590  0.2917  0.4668  0.0067  0.8763  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       2.3410   1.6080   0.2586   0.4668   0.0076   0.5278   0.7568
+       1.9795   1.3197   0.2342   0.4206   0.0049   0.5278   0.7528
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 4.7%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.7829   1.1768   0.2177   0.3847   0.0037   0.5278   0.7161
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+Epoch: 3
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    1.7784  1.1726  0.2175  0.3847  0.0035  0.7132  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    1.7784  1.1726  0.2175  0.3847  0.0035  0.7132  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.8728  0.3951  0.0905  0.3847  0.0026  0.4154  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.8839  1.2186  0.2767  0.3847  0.0039  0.7962  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    2.0593  1.4115  0.2590  0.3847  0.0040  0.8146  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    2.2973  1.6652  0.2437  0.3847  0.0037  0.8264  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.7829   1.1768   0.2177   0.3847   0.0037   0.5278   0.7161
+       1.6138   1.0477   0.2039   0.3592   0.0029   0.5278   0.7190
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.00 (win rate of 0%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.6512   1.1000   0.2042   0.3435   0.0035   0.5278   0.7245
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+Epoch: 4
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    1.6446  1.0932  0.2044  0.3435  0.0035  0.7259  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    1.6446  1.0932  0.2044  0.3435  0.0035  0.7259  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.7813  0.3507  0.0841  0.3435  0.0030  0.4261  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.7617  1.1526  0.2617  0.3435  0.0039  0.8142  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.9035  1.3118  0.2444  0.3435  0.0038  0.8221  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    2.1321  1.5578  0.2276  0.3435  0.0033  0.8413  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.6510   1.0998   0.2042   0.3435   0.0035   0.5278   0.7245
+       1.4445   0.9163   0.1940   0.3311   0.0031   0.5278   0.7160
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.3828   0.8663   0.1902   0.3237   0.0026   0.5278   0.7116
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +2.00 (win rate of 150%, network replaced), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+Epoch: 5
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    1.3760  0.8597  0.1900  0.3237  0.0026  0.7119  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    1.3760  0.8597  0.1900  0.3237  0.0026  0.7119  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.6570  0.2518  0.0791  0.3237  0.0024  0.4159  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.4824  0.9119  0.2441  0.3237  0.0027  0.7913  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.5907  1.0388  0.2253  0.3237  0.0028  0.8075  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.7740  1.2362  0.2115  0.3237  0.0027  0.8328  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.3827   0.8663   0.1902   0.3237   0.0026   0.5278   0.7117
+       1.2947   0.7828   0.1855   0.3241   0.0023   0.5278   0.7143
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.2182   0.7064   0.1831   0.3265   0.0022   0.5278   0.6950
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 4.7%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.28 (win rate of -64%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -2.89 (win rate of -95%), redundancy: 2.7%
+
+Epoch: 6
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    1.2148  0.7034  0.1827  0.3265  0.0022  0.6965  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    1.2148  0.7034  0.1827  0.3265  0.0022  0.6965  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.5931  0.1898  0.0749  0.3265  0.0019  0.4127  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.3254  0.7600  0.2365  0.3265  0.0024  0.7754  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.3938  0.8485  0.2165  0.3265  0.0023  0.7907  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.5467  1.0153  0.2030  0.3265  0.0020  0.8072  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.2180   0.7062   0.1831   0.3265   0.0022   0.5278   0.6950
+       1.2481   0.7330   0.1841   0.3282   0.0027   0.5278   0.6982
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -2.00 (win rate of -50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.2051   0.6950   0.1772   0.3304   0.0025   0.5278   0.6958
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +2.00 (win rate of 150%, network replaced), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+Epoch: 7
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    1.2027  0.6929  0.1771  0.3304  0.0023  0.6964  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    1.2027  0.6929  0.1771  0.3304  0.0023  0.6964  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.6127  0.2078  0.0726  0.3304  0.0020  0.4119  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.3480  0.7843  0.2307  0.3304  0.0027  0.7725  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.3700  0.8267  0.2103  0.3304  0.0026  0.7877  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.4801  0.9526  0.1950  0.3304  0.0021  0.8137  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.2048   0.6947   0.1772   0.3304   0.0025   0.5278   0.6958
+       1.1277   0.6088   0.1771   0.3398   0.0020   0.5278   0.7012
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.00 (win rate of 0%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.1495   0.6292   0.1775   0.3404   0.0024   0.5278   0.6954
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+Epoch: 8
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    1.1428  0.6225  0.1775  0.3404  0.0024  0.6956  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    1.1428  0.6225  0.1775  0.3404  0.0024  0.6956  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.5837  0.1687  0.0725  0.3404  0.0021  0.4133  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.2795  0.7067  0.2297  0.3404  0.0026  0.7777  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.3040  0.7497  0.2112  0.3404  0.0027  0.7869  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.4042  0.8651  0.1965  0.3404  0.0022  0.8046  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.1496   0.6293   0.1775   0.3404   0.0024   0.5278   0.6954
+       1.0419   0.5300   0.1721   0.3374   0.0024   0.5278   0.6974
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 5.7%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.0655   0.5544   0.1705   0.3388   0.0017   0.5278   0.6996
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+Epoch: 9
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    1.0608  0.5504  0.1699  0.3388  0.0017  0.6988  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    1.0608  0.5504  0.1699  0.3388  0.0017  0.6988  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.5476  0.1394  0.0679  0.3388  0.0014  0.4124  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.1990  0.6385  0.2199  0.3388  0.0018  0.7708  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.2181  0.6757  0.2016  0.3388  0.0019  0.7863  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.2785  0.7478  0.1902  0.3388  0.0018  0.8256  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.0655   0.5545   0.1705   0.3388   0.0017   0.5278   0.6996
+       1.0622   0.5444   0.1707   0.3449   0.0022   0.5278   0.6880
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.9907   0.4792   0.1663   0.3435   0.0016   0.5278   0.6848
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+Epoch: 10
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.9865  0.4750  0.1665  0.3435  0.0015  0.6836  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.9865  0.4750  0.1665  0.3435  0.0015  0.6836  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.5416  0.1294  0.0675  0.3435  0.0012  0.4063  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.1259  0.5642  0.2166  0.3435  0.0016  0.7589  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.1168  0.5736  0.1981  0.3435  0.0016  0.7718  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.1617  0.6326  0.1839  0.3435  0.0017  0.7972  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.9909   0.4794   0.1664   0.3435   0.0016   0.5278   0.6848
+       1.0131   0.5000   0.1670   0.3443   0.0019   0.5278   0.6939
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 4.7%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.9577   0.4475   0.1646   0.3437   0.0020   0.5278   0.6856
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.19 (win rate of -59%), redundancy: 3.1%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -2.44 (win rate of -72%), redundancy: 2.8%
+
+Epoch: 11
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.9543  0.4440  0.1646  0.3437  0.0020  0.6880  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.9543  0.4440  0.1646  0.3437  0.0020  0.6880  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.5328  0.1206  0.0666  0.3437  0.0019  0.4127  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.0930  0.5329  0.2140  0.3437  0.0024  0.7646  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.0771  0.5368  0.1945  0.3437  0.0021  0.7767  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.1143  0.5857  0.1833  0.3437  0.0016  0.7978  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.9576   0.4474   0.1646   0.3437   0.0020   0.5278   0.6856
+       0.9694   0.4595   0.1632   0.3448   0.0019   0.5278   0.6788
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.9493   0.4400   0.1634   0.3441   0.0018   0.5278   0.6978
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -2.00 (win rate of -50%), redundancy: 7.5%
+    
+    Optimizing the loss
+    
+Epoch: 12
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.9462  0.4375  0.1629  0.3441  0.0017  0.6957  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.9462  0.4375  0.1629  0.3441  0.0017  0.6957  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.5369  0.1247  0.0666  0.3441  0.0016  0.4025  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.0824  0.5235  0.2129  0.3441  0.0019  0.7645  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.0688  0.5300  0.1929  0.3441  0.0018  0.7932  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.0968  0.5718  0.1794  0.3441  0.0015  0.8228  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.9492   0.4400   0.1634   0.3441   0.0018   0.5278   0.6978
+       0.9392   0.4285   0.1619   0.3468   0.0020   0.5278   0.6841
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.4116   0.8813   0.1789   0.3437   0.0078   0.5278   0.6973
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+Epoch: 13
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    1.4011  0.8714  0.1784  0.3437  0.0076  0.6951  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    1.4011  0.8714  0.1784  0.3437  0.0076  0.6951  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.7310  0.3142  0.0699  0.3437  0.0031  0.4095  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.5900  1.0124  0.2270  0.3437  0.0069  0.7693  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.6120  1.0454  0.2128  0.3437  0.0102  0.7860  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.6714  1.1136  0.2038  0.3437  0.0102  0.8157  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       1.4116   0.8813   0.1788   0.3437   0.0078   0.5278   0.6973
+       0.9489   0.4397   0.1606   0.3464   0.0021   0.5278   0.6846
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 7.5%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.9785   0.4517   0.1614   0.3635   0.0019   0.5278   0.6882
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+Epoch: 14
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.9749  0.4484  0.1612  0.3635  0.0018  0.6862  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.9749  0.4484  0.1612  0.3635  0.0018  0.6862  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.5548  0.1250  0.0647  0.3635  0.0017  0.4034  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.1120  0.5348  0.2117  0.3635  0.0020  0.7544  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.0970  0.5412  0.1904  0.3635  0.0019  0.7786  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.1354  0.5924  0.1780  0.3635  0.0015  0.8086  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.9784   0.4516   0.1614   0.3635   0.0019   0.5278   0.6882
+       1.0323   0.4971   0.1650   0.3674   0.0028   0.5278   0.6846
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8815   0.3706   0.1566   0.3528   0.0015   0.5278   0.6737
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+Epoch: 15
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.8762  0.3665  0.1555  0.3528  0.0015  0.6729  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.8762  0.3665  0.1555  0.3528  0.0015  0.6729  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.5074  0.0914  0.0618  0.3528  0.0015  0.4090  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.0014  0.4439  0.2031  0.3528  0.0016  0.7504  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.9856  0.4472  0.1841  0.3528  0.0015  0.7586  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.0104  0.4836  0.1727  0.3528  0.0013  0.7736  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8816   0.3707   0.1566   0.3528   0.0015   0.5278   0.6737
+       0.8993   0.3877   0.1588   0.3511   0.0016   0.5278   0.6738
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8722   0.3736   0.1544   0.3423   0.0019   0.5278   0.6773
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 5.7%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.24 (win rate of -62%), redundancy: 2.9%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -2.71 (win rate of -85%), redundancy: 2.7%
+
+Epoch: 16
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.8710  0.3724  0.1544  0.3423  0.0020  0.6772  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.8710  0.3724  0.1544  0.3423  0.0020  0.6772  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.4948  0.0884  0.0625  0.3423  0.0017  0.4137  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    0.9870  0.4406  0.2020  0.3423  0.0021  0.7568  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.9785  0.4519  0.1821  0.3423  0.0022  0.7602  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.0235  0.5084  0.1709  0.3423  0.0019  0.7781  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8725   0.3739   0.1544   0.3423   0.0019   0.5278   0.6773
+       0.8852   0.3820   0.1552   0.3461   0.0018   0.5278   0.6918
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8581   0.3622   0.1535   0.3407   0.0018   0.5278   0.6777
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -2.00 (win rate of -50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+Epoch: 17
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.8535  0.3576  0.1535  0.3407  0.0017  0.6753  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.8535  0.3576  0.1535  0.3407  0.0017  0.6753  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.4938  0.0900  0.0619  0.3407  0.0013  0.3997  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    0.9707  0.4274  0.2006  0.3407  0.0021  0.7451  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.9597  0.4358  0.1812  0.3407  0.0021  0.7657  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    0.9896  0.4773  0.1702  0.3407  0.0015  0.7907  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8581   0.3621   0.1535   0.3407   0.0018   0.5278   0.6777
+       0.9390   0.4315   0.1574   0.3484   0.0017   0.5278   0.6855
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.9922   0.4729   0.1592   0.3581   0.0019   0.5278   0.6882
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+Epoch: 18
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.9875  0.4687  0.1587  0.3581  0.0020  0.6902  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.9875  0.4687  0.1587  0.3581  0.0020  0.6902  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.5704  0.1453  0.0652  0.3581  0.0018  0.4052  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    1.1403  0.5704  0.2094  0.3581  0.0024  0.7631  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    1.1039  0.5566  0.1871  0.3581  0.0021  0.7816  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.1353  0.6025  0.1731  0.3581  0.0017  0.8111  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.9923   0.4730   0.1592   0.3581   0.0019   0.5278   0.6882
+       0.8418   0.3400   0.1502   0.3501   0.0015   0.5278   0.6763
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8648   0.3662   0.1525   0.3443   0.0018   0.5278   0.6831
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -3.00 (win rate of -100%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+Epoch: 19
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.8607  0.3626  0.1521  0.3443  0.0018  0.6833  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.8607  0.3626  0.1521  0.3443  0.0018  0.6833  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.4901  0.0828  0.0613  0.3443  0.0017  0.4054  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    0.9813  0.4358  0.1992  0.3443  0.0019  0.7444  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.9709  0.4458  0.1790  0.3443  0.0018  0.7658  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.0006  0.4858  0.1689  0.3443  0.0016  0.8177  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8648   0.3661   0.1525   0.3443   0.0018   0.5278   0.6831
+       0.8498   0.3565   0.1535   0.3379   0.0019   0.5278   0.6689
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8354   0.3427   0.1501   0.3412   0.0014   0.5278   0.6808
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.00 (win rate of 0%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+Epoch: 20
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.8324  0.3408  0.1490  0.3412  0.0014  0.6818  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.8324  0.3408  0.1490  0.3412  0.0014  0.6818  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.4794  0.0770  0.0597  0.3412  0.0015  0.4077  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    0.9420  0.4036  0.1955  0.3412  0.0016  0.7516  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.9441  0.4256  0.1758  0.3412  0.0014  0.7689  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    0.9641  0.4568  0.1649  0.3412  0.0012  0.7988  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8353   0.3426   0.1501   0.3412   0.0014   0.5278   0.6808
+       0.9218   0.4179   0.1571   0.3449   0.0019   0.5278   0.6803
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8270   0.3255   0.1486   0.3514   0.0014   0.5278   0.6768
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -2.00 (win rate of -50%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.01 (win rate of -51%), redundancy: 2.9%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -2.80 (win rate of -90%), redundancy: 2.7%
+
+Epoch: 21
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.8229  0.3219  0.1482  0.3514  0.0014  0.6767  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.8229  0.3219  0.1482  0.3514  0.0014  0.6767  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.4860  0.0734  0.0597  0.3514  0.0015  0.3982  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    0.9298  0.3812  0.1955  0.3514  0.0016  0.7451  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.9266  0.3994  0.1743  0.3514  0.0014  0.7654  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    0.9493  0.4335  0.1632  0.3514  0.0012  0.7980  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8269   0.3254   0.1486   0.3514   0.0014   0.5278   0.6768
+       0.8277   0.3352   0.1491   0.3418   0.0016   0.5278   0.6735
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8835   0.3741   0.1507   0.3569   0.0018   0.5278   0.6724
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+Epoch: 22
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.8791  0.3702  0.1503  0.3569  0.0017  0.6692  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.8791  0.3702  0.1503  0.3569  0.0017  0.6692  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.5172  0.0978  0.0606  0.3569  0.0019  0.4091  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    0.9873  0.4300  0.1984  0.3569  0.0020  0.7505  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.9818  0.4467  0.1764  0.3569  0.0018  0.7489  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    1.0303  0.5062  0.1658  0.3569  0.0014  0.7682  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8833   0.3739   0.1507   0.3569   0.0018   0.5278   0.6724
+       0.8485   0.3429   0.1491   0.3549   0.0016   0.5278   0.6647
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -2.00 (win rate of -50%), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.7744   0.2884   0.1445   0.3402   0.0012   0.5278   0.6610
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.00 (win rate of 0%), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+Epoch: 23
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.7718  0.2863  0.1441  0.3402  0.0012  0.6607  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.7718  0.2863  0.1441  0.3402  0.0012  0.6607  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.4601  0.0605  0.0583  0.3402  0.0011  0.3925  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    0.8737  0.3420  0.1901  0.3402  0.0014  0.7306  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.8685  0.3578  0.1691  0.3402  0.0013  0.7494  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    0.8848  0.3848  0.1586  0.3402  0.0012  0.7699  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.7743   0.2884   0.1445   0.3402   0.0012   0.5278   0.6610
+       0.9056   0.4076   0.1554   0.3388   0.0037   0.5278   0.6825
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8104   0.3223   0.1451   0.3415   0.0015   0.5278   0.6683
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+Epoch: 24
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.8074  0.3204  0.1440  0.3415  0.0015  0.6708  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.8074  0.3204  0.1440  0.3415  0.0015  0.6708  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.4865  0.0856  0.0580  0.3415  0.0014  0.4000  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    0.9116  0.3778  0.1906  0.3415  0.0016  0.7382  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.9138  0.4011  0.1696  0.3415  0.0016  0.7587  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    0.9176  0.4171  0.1576  0.3415  0.0014  0.7863  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8102   0.3222   0.1451   0.3415   0.0015   0.5278   0.6683
+       0.8345   0.3492   0.1461   0.3376   0.0016   0.5278   0.6700
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +0.00 (win rate of 50%), redundancy: 2.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.7996   0.3144   0.1426   0.3412   0.0014   0.5278   0.6709
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.00 (win rate of 0%), redundancy: 1.9%
+    
+    Optimizing the loss
+    
+Epoch: 25
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.7982  0.3130  0.1426  0.3412  0.0014  0.6715  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.7982  0.3130  0.1426  0.3412  0.0014  0.6715  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.4690  0.0687  0.0578  0.3412  0.0013  0.4009  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    0.9000  0.3686  0.1884  0.3412  0.0018  0.7431  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.9008  0.3906  0.1675  0.3412  0.0015  0.7558  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    0.9230  0.4240  0.1568  0.3412  0.0011  0.7864  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.7995   0.3142   0.1426   0.3412   0.0014   0.5278   0.6709
+       0.8853   0.3829   0.1490   0.3517   0.0016   0.5278   0.6747
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: -1.00 (win rate of 0%), redundancy: 3.8%
+    
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8184   0.3111   0.1447   0.3611   0.0014   0.5278   0.6658
+    
+    Launching a checkpoint evaluation
+    
+      Average reward: +1.00 (win rate of 100%, network replaced), redundancy: 0.9%
+    
+    Optimizing the loss
+    
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.12 (win rate of -56%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -2.79 (win rate of -89%), redundancy: 2.7%
+
+Epoch: 26
+
+  Memory Analysis
+  
+      Loss      Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    0.8143  0.3080  0.1437  0.3611  0.0015  0.6643  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    0.8143  0.3080  0.1437  0.3611  0.0015  0.6643  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    0.4909  0.0701  0.0583  0.3611  0.0013  0.3999  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    0.9223  0.3699  0.1896  0.3611  0.0017  0.7342  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    0.9164  0.3853  0.1684  0.3611  0.0016  0.7492  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    0.9278  0.4069  0.1584  0.3611  0.0014  0.7739  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+       0.8183   0.3110   0.1447   0.3611   0.0014   0.5278   0.6658
