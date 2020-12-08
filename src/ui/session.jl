@@ -712,10 +712,10 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
       plot_benchmark(env.params, reports, outdir)
     end
 
+    # Save the neural network
+    serialize(joinpath(outdir, "memnn.data"), env.curnn)
+
     # Increment the epoch counter
     epoch += 1
   end
-
-  # Save the final network
-  serialize(joinpath(outdir, "finalnn.data"), env.curnn)
 end
