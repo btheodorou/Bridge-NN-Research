@@ -1980,5 +1980,3 @@ Starting iteration 38
   
     Average reward: -2.67 (win rate of -83%), redundancy: 2.7%
 
-
-
