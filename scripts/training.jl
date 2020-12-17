@@ -14,6 +14,7 @@ using .SelectedGame: Game, Training
 
 SESSION_DIR = "sessions/$GAME"
 
-label = "defaultAgent"
-
-AlphaZero.UserInterface.train_and_monitor(Game, SESSION_DIR, label, 100, Training.benchmark, Training.params, Training.netparams)
+include("trials/params.jl")
+for trial in trials
+    AlphaZero.UserInterface.train_and_monitor(Game, SESSION_DIR, trial.label, 100, Training.benchmark, trial.params, trial.netparams)
+end

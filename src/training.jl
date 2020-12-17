@@ -208,6 +208,48 @@ function learning_step!(env::Env, handler)
   return report
 end
 
+function single_network_learning_step!(env::Env, handler)
+  ap = env.params.arena
+  lp = env.params.learning
+  checkpoints = Report.Checkpoint[]
+  losses = Float32[]
+  tloss, teval, ttrain = 0., 0., 0.
+  experience = get_experience(env.memory)
+  if env.params.use_symmetries
+    experience = augment_with_symmetries(GameType(env), experience)
+  end
+  trainer, tconvert = @timed Trainer(env.curnn, experience, lp)
+  init_status = learning_status(trainer)
+  Handlers.learning_started(handler, init_status)
+  # Compute the number of batches between each checkpoint
+  nbatches = lp.max_batches_per_checkpoint
+  if !iszero(lp.min_checkpoints_per_epoch)
+    ntotal = num_batches_total(trainer)
+    nbatches = min(nbatches, ntotal ÷ lp.min_checkpoints_per_epoch)
+  end
+  # Loop state variables
+  best_evalz = ap.update_threshold
+  nn_replaced = false
+
+  for k in 1:lp.num_checkpoints
+    # Execute a series of batch updates
+    Handlers.updates_started(handler)
+    dlosses, dttrain = @timed batch_updates!(trainer, nbatches)
+    status, dtloss = @timed learning_status(trainer)
+    Handlers.updates_finished(handler, status)
+    tloss += dtloss
+    ttrain += dttrain
+    append!(losses, dlosses)
+    env.curnn = get_trained_network(trainer)
+  end
+
+  report = Report.Learning(
+    tconvert, tloss, ttrain, teval,
+    init_status, losses, checkpoints, nn_replaced)
+  Handlers.learning_finished(handler, report)
+  return report
+end
+
 function simple_memory_stats(env)
   mem = get_experience(env)
   nsamples = length(mem)

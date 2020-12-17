@@ -668,22 +668,7 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
   mem_file = joinpath(session_dir, MEM_FILE)
   experience = deserialize(mem_file)
 
-  # Set the params_file and net_params_file to the default session files if they aren't passed in
-  # if isnothing(net_params_file)
-  #   net_params_file = joinpath(session_dir, NET_PARAMS_FILE)
-  # end
-  # if isnothing(params_file)
-  #   params_file = joinpath(session_dir, PARAMS_FILE)
-  # end
-  # Load the params
-  # params = open(params_file, "r") do io
-  #   JSON3.read(io, Params)
-  # end
-  # TODO read in params https://github.com/jonathan-laurent/AlphaZero.jl/issues/3
-
   # Instantiate the network
-  # TODO read in netparams
-  # network = load_network(Logger(), "", net_params_file)
   network = ResNet{G}(netparams)
   
   # Initialize variables for the training loop
@@ -700,10 +685,10 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
     memory_report(env, handler)
 
     # Train the network
-    learning_step!(env, handler)
+    single_network_learning_step!(env, handler)
 
-    # Every fifth epoch run the benchmarks
-    if epoch == 1 || epoch % 5 == 0
+    # Every tenth epoch run the benchmarks
+    if epoch == 1 || epoch % 10 == 0
       report = [run_duel(env, logger, duel) for duel in benchmarks]
       push!(reports, report)
       open(joinpath(outdir, BENCHMARK_FILE), "w") do io
