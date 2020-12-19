@@ -688,7 +688,7 @@ function train_and_monitor(::Type{G}, session_dir, label, maxEpochs, benchmarks,
     single_network_learning_step!(env, handler)
 
     # Every tenth epoch run the benchmarks
-    if epoch == 1 || epoch % 10 == 0
+    if epoch == 1 || epoch % 5 == 0
       report = [run_duel(env, logger, duel) for duel in benchmarks]
       push!(reports, report)
       open(joinpath(outdir, BENCHMARK_FILE), "w") do io

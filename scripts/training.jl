@@ -16,5 +16,5 @@ SESSION_DIR = "sessions/$GAME"
 
 include("trials/params.jl")
 for trial in trials
-    AlphaZero.UserInterface.train_and_monitor(Game, SESSION_DIR, trial.label, 100, Training.benchmark, trial.params, trial.netparams)
+    AlphaZero.UserInterface.train_and_monitor(Game, SESSION_DIR, trial.label, 20, Training.benchmark, trial.params, trial.netparams)
 end
