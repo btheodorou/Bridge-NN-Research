@@ -5,6 +5,7 @@
 *.jl.mem
 *~
 *mem.data
+*memnn.data
 
 /docs/build/
 /docs/site/
