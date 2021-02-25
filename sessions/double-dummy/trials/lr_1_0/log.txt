@@ -1,0 +1,53 @@
+
+Starting New Trial: lr_1_0
+
+Epoch: 1
+
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+    24.1157  21.7329  1.3244  0.1375  0.9209  0.6541  0.5278  1,040,000  1,039,968  1,040,000  all samples
+    24.1157  21.7329  1.3244  0.1375  0.9209  0.6541  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+    13.7655  12.2637  0.4023  0.1375  0.9620  0.3542  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    22.7748  20.5448  1.1656  0.1375  0.9268  0.7164  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    28.6722  26.0696  1.5553  0.1375  0.9098  0.7414  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    31.2484  28.0512  2.1749  0.1375  0.8848  0.8045  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      10.3806   8.4865   0.8336   0.1375   0.9230   0.5278   0.8670
+          NaN      NaN   0.4762      NaN   0.9378   0.5278   1.0225
+  
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -5.51 (win rate of -225%), redundancy: 2.6%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -4.91 (win rate of -195%), redundancy: 2.6%
+
+Epoch: 2
+
+  Memory Analysis
+  
+    Loss   Lv      Lp  Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+     NaN  NaN  0.4759   NaN  0.9378  1.0225  0.5278  1,040,000  1,039,968  1,040,000  all samples
+     NaN  NaN  0.4759   NaN  0.9378  1.0225  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+     NaN  NaN  0.1728   NaN  0.9753  0.4952  0.3456    260,000    259,968    260,000  1 to 13 turns left
+     NaN  NaN  0.5438   NaN  0.9488  1.0669  0.5485    260,000    260,000    260,000  14 to 26 turns left
+     NaN  NaN  0.5808   NaN  0.9280  1.1781  0.5878    260,000    260,000    260,000  27 to 39 turns left
+     NaN  NaN  0.6063   NaN  0.8991  1.3497  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+          NaN      NaN   0.4762      NaN   0.9378   0.5278   1.0225
+          NaN      NaN   0.4759      NaN   0.9380   0.5278   1.0213
+
+Epoch: 3
+

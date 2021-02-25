@@ -82,7 +82,7 @@ baseline_learning = LearningParams(
   use_gpu=true,
   use_position_averaging=true,
   samples_weighing_policy=LOG_WEIGHT,
-  batch_size=256,
+  batch_size=128,
   loss_computation_batch_size=256,
   optimiser=CyclicNesterov(
     lr_base=0.0075,
@@ -100,7 +100,7 @@ lr_1_0 = LearningParams(
   use_gpu=true,
   use_position_averaging=true,
   samples_weighing_policy=LOG_WEIGHT,
-  batch_size=256,
+  batch_size=128,
   loss_computation_batch_size=256,
   optimiser=CyclicNesterov(
     lr_base=0.5,
@@ -118,7 +118,7 @@ lr_0_5 = LearningParams(
   use_gpu=true,
   use_position_averaging=true,
   samples_weighing_policy=LOG_WEIGHT,
-  batch_size=256,
+  batch_size=128,
   loss_computation_batch_size=256,
   optimiser=CyclicNesterov(
     lr_base=0.25,
@@ -136,7 +136,7 @@ lr_0_25 = LearningParams(
   use_gpu=true,
   use_position_averaging=true,
   samples_weighing_policy=LOG_WEIGHT,
-  batch_size=256,
+  batch_size=128,
   loss_computation_batch_size=256,
   optimiser=CyclicNesterov(
     lr_base=0.125,
@@ -154,7 +154,7 @@ lr_0_1 = LearningParams(
   use_gpu=true,
   use_position_averaging=true,
   samples_weighing_policy=LOG_WEIGHT,
-  batch_size=256,
+  batch_size=128,
   loss_computation_batch_size=256,
   optimiser=CyclicNesterov(
     lr_base=0.05,
@@ -270,7 +270,7 @@ lr_0_1_params = Params(
 #####
 
 optimal_network = ResNetHP(
-  num_filters=512,
+  num_filters=256,
   num_blocks=25,
   conv_kernel_size=(3, 3),
   num_policy_head_filters=128,
@@ -278,8 +278,8 @@ optimal_network = ResNetHP(
   batch_norm_momentum=0.1)
 
 trials = []
-push!(trials, (label="lr_baseline", params=baseline_params, netparams=optimal_network))
-push!(trials, (label="lr_1_0", params=lr_1_0_params, netparams=optimal_network))
-push!(trials, (label="lr_0_5", params=lr_0_5_params, netparams=optimal_network))
-push!(trials, (label="lr_0_25", params=lr_0_25_params, netparams=optimal_network))
+# push!(trials, (label="lr_baseline", params=baseline_params, netparams=optimal_network))
+# push!(trials, (label="lr_1_0", params=lr_1_0_params, netparams=optimal_network))
+#push!(trials, (label="lr_0_5", params=lr_0_5_params, netparams=optimal_network))
+#push!(trials, (label="lr_0_25", params=lr_0_25_params, netparams=optimal_network))
 push!(trials, (label="lr_0_1", params=lr_0_1_params, netparams=optimal_network))

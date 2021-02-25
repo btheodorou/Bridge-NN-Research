@@ -1,0 +1,157 @@
+
+Starting New Trial: lr_0_5
+
+Epoch: 1
+
+  Memory Analysis
+  
+       Loss       Lv      Lp    Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+     9.9407   8.0083  0.8704  0.1375  0.9244  0.8328  0.5278  1,040,000  1,039,968  1,040,000  all samples
+     9.9407   8.0083  0.8704  0.1375  0.9244  0.8328  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+     4.6797   3.3008  0.2765  0.1375  0.9649  0.4234  0.3456    260,000    259,968    260,000  1 to 13 turns left
+    10.7514   8.8514  0.8313  0.1375  0.9312  0.8912  0.5485    260,000    260,000    260,000  14 to 26 turns left
+    12.4297  10.3406  1.0382  0.1375  0.9133  0.9566  0.5878    260,000    260,000    260,000  27 to 39 turns left
+    11.9028   9.5412  1.3358  0.1375  0.8884  1.0601  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+      10.1378   8.3015   0.7742   0.1375   0.9246   0.5278   0.9047
+          Inf   7.8564   0.3531      Inf   0.0619   0.5278   0.8012
+  
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -2.35 (win rate of -67%), redundancy: 3.1%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.72 (win rate of -136%), redundancy: 2.7%
+
+Epoch: 2
+
+  Memory Analysis
+  
+    Loss       Lv      Lp  Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+     Inf   7.8563  0.3520   Inf  0.0621  0.8022  0.5278  1,040,000  1,039,968  1,040,000  all samples
+     Inf   7.8563  0.3520   Inf  0.0621  0.8022  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+     Inf   3.1311  0.1521   Inf  0.0383  0.4259  0.3456    260,000    259,968    260,000  1 to 13 turns left
+     Inf   8.7276  0.4314   Inf  0.0744  0.8873  0.5485    260,000    260,000    260,000  14 to 26 turns left
+     Inf  10.1712  0.4267   Inf  0.0772  0.9328  0.5878    260,000    260,000    260,000  27 to 39 turns left
+     Inf   9.3955  0.3979   Inf  0.0584  0.9628  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+          Inf   7.8564   0.3531      Inf   0.0619   0.5278   0.8013
+          Inf   7.8172   0.3366      Inf   0.0451   0.5278   0.8015
+
+Epoch: 3
+
+  Memory Analysis
+  
+    Loss       Lv      Lp  Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+     Inf   7.8169  0.3360   Inf  0.0455  0.8043  0.5278  1,040,000  1,039,968  1,040,000  all samples
+     Inf   7.8169  0.3360   Inf  0.0455  0.8043  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+     Inf   3.0583  0.1410   Inf  0.0256  0.4390  0.3456    260,000    259,968    260,000  1 to 13 turns left
+     Inf   8.7139  0.4135   Inf  0.0518  0.9054  0.5485    260,000    260,000    260,000  14 to 26 turns left
+     Inf  10.1208  0.4109   Inf  0.0572  0.9359  0.5878    260,000    260,000    260,000  27 to 39 turns left
+     Inf   9.3748  0.3786   Inf  0.0474  0.9368  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+          Inf   7.8170   0.3366      Inf   0.0451   0.5278   0.8015
+          Inf   7.8210   0.3305      Inf   0.0371   0.5278   0.7818
+
+Epoch: 4
+
+  Memory Analysis
+  
+    Loss       Lv      Lp  Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+     Inf   7.8210  0.3304   Inf  0.0410  0.7832  0.5278  1,040,000  1,039,968  1,040,000  all samples
+     Inf   7.8210  0.3304   Inf  0.0410  0.7832  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+     Inf   3.0725  0.1403   Inf  0.0257  0.4354  0.3456    260,000    259,968    260,000  1 to 13 turns left
+     Inf   8.7102  0.4056   Inf  0.0469  0.8855  0.5485    260,000    260,000    260,000  14 to 26 turns left
+     Inf  10.1286  0.4023   Inf  0.0508  0.9056  0.5878    260,000    260,000    260,000  27 to 39 turns left
+     Inf   9.3727  0.3735   Inf  0.0405  0.9064  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+          Inf   7.8210   0.3305      Inf   0.0371   0.5278   0.7818
+          Inf   7.8174   0.3223      Inf   0.0338   0.5278   0.7851
+
+Epoch: 5
+
+  Memory Analysis
+  
+    Loss       Lv      Lp  Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+     Inf   7.8174  0.3216   Inf  0.0370  0.7860  0.5278  1,040,000  1,039,968  1,040,000  all samples
+     Inf   7.8174  0.3216   Inf  0.0370  0.7860  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+     Inf   3.0549  0.1388   Inf  0.0231  0.4323  0.3456    260,000    259,968    260,000  1 to 13 turns left
+     Inf   8.7178  0.3974   Inf  0.0419  0.8822  0.5485    260,000    260,000    260,000  14 to 26 turns left
+     Inf  10.1207  0.3908   Inf  0.0455  0.9104  0.5878    260,000    260,000    260,000  27 to 39 turns left
+     Inf   9.3774  0.3593   Inf  0.0375  0.9190  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+          Inf   7.8174   0.3223      Inf   0.0338   0.5278   0.7851
+          Inf   7.8192   0.3192      Inf   0.0320   0.5278   0.7814
+  
+  Running benchmark: AlphaZero against Perfect Player (0% random)
+  
+    Average reward: -3.03 (win rate of -101%), redundancy: 3.0%
+  
+  Running benchmark: Network Only against Perfect Player (0% random)
+  
+    Average reward: -3.59 (win rate of -129%), redundancy: 2.7%
+
+Epoch: 6
+
+  Memory Analysis
+  
+    Loss       Lv      Lp  Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+     Inf   7.8193  0.3211   Inf  0.0382  0.7816  0.5278  1,040,000  1,039,968  1,040,000  all samples
+     Inf   7.8193  0.3211   Inf  0.0382  0.7816  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+     Inf   3.0516  0.1380   Inf  0.0257  0.4297  0.3456    260,000    259,968    260,000  1 to 13 turns left
+     Inf   8.7232  0.3962   Inf  0.0437  0.8762  0.5485    260,000    260,000    260,000  14 to 26 turns left
+     Inf  10.1204  0.3886   Inf  0.0463  0.9065  0.5878    260,000    260,000    260,000  27 to 39 turns left
+     Inf   9.3807  0.3616   Inf  0.0373  0.9139  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+          Inf   7.8193   0.3192      Inf   0.0320   0.5278   0.7814
+          Inf   7.8179   0.3196      Inf   0.0305   0.5278   0.7812
+
+Epoch: 7
+
+  Memory Analysis
+  
+    Loss       Lv      Lp  Lreg    Linv   Hpnet      Hp       Wtot         Nb         Ns
+     Inf   7.8179  0.3240   Inf  0.0383  0.7847  0.5278  1,040,000  1,039,968  1,040,000  all samples
+     Inf   7.8179  0.3240   Inf  0.0383  0.7847  0.5278  1,040,000  1,039,968  1,040,000  latest batch
+     Inf   3.0537  0.1407   Inf  0.0228  0.4311  0.3456    260,000    259,968    260,000  1 to 13 turns left
+     Inf   8.7181  0.3985   Inf  0.0421  0.8842  0.5485    260,000    260,000    260,000  14 to 26 turns left
+     Inf  10.1202  0.3920   Inf  0.0467  0.9126  0.5878    260,000    260,000    260,000  27 to 39 turns left
+     Inf   9.3779  0.3649   Inf  0.0415  0.9109  0.6295    260,000    260,000    260,000  40 to 52 turns left
+  
+  Starting learning
+  
+    Optimizing the loss
+    
+         Loss       Lv       Lp     Lreg     Linv       Hp    Hpnet
+          Inf   7.8179   0.3196      Inf   0.0305   0.5278   0.7811
