@@ -96,16 +96,70 @@ baseline_learning = LearningParams(
   max_batches_per_checkpoint=25000,
   num_checkpoints=1)
 
-lr_1_0 = LearningParams(
+mom_99 = LearningParams(
   use_gpu=true,
   use_position_averaging=true,
   samples_weighing_policy=LOG_WEIGHT,
   batch_size=128,
   loss_computation_batch_size=256,
   optimiser=CyclicNesterov(
-    lr_base=0.5,
-    lr_high=1.0,
-    lr_low=0.1,
+    lr_base=0.0075,
+    lr_high=0.05,
+    lr_low=0.0025,
+    momentum_high=0.99,
+    momentum_low=0.8),
+  l2_regularization=1e-5,
+  nonvalidity_penalty=1.,
+  min_checkpoints_per_epoch=1,
+  max_batches_per_checkpoint=25000,
+  num_checkpoints=1)
+
+mom_97 = LearningParams(
+  use_gpu=true,
+  use_position_averaging=true,
+  samples_weighing_policy=LOG_WEIGHT,
+  batch_size=128,
+  loss_computation_batch_size=256,
+  optimiser=CyclicNesterov(
+    lr_base=0.0075,
+    lr_high=0.05,
+    lr_low=0.0025,
+    momentum_high=0.97,
+    momentum_low=0.8),
+  l2_regularization=1e-5,
+  nonvalidity_penalty=1.,
+  min_checkpoints_per_epoch=1,
+  max_batches_per_checkpoint=25000,
+  num_checkpoints=1)
+
+mom_95 = LearningParams(
+  use_gpu=true,
+  use_position_averaging=true,
+  samples_weighing_policy=LOG_WEIGHT,
+  batch_size=128,
+  loss_computation_batch_size=256,
+  optimiser=CyclicNesterov(
+    lr_base=0.0075,
+    lr_high=0.05,
+    lr_low=0.0025,
+    momentum_high=0.95,
+    momentum_low=0.8),
+  l2_regularization=1e-5,
+  nonvalidity_penalty=1.,
+  min_checkpoints_per_epoch=1,
+  max_batches_per_checkpoint=25000,
+  num_checkpoints=1)
+
+mom_9 = LearningParams(
+  use_gpu=true,
+  use_position_averaging=true,
+  samples_weighing_policy=LOG_WEIGHT,
+  batch_size=128,
+  loss_computation_batch_size=256,
+  optimiser=CyclicNesterov(
+    lr_base=0.0075,
+    lr_high=0.05,
+    lr_low=0.0025,
     momentum_high=0.9,
     momentum_low=0.8),
   l2_regularization=1e-5,
@@ -114,59 +168,77 @@ lr_1_0 = LearningParams(
   max_batches_per_checkpoint=25000,
   num_checkpoints=1)
 
-lr_0_5 = LearningParams(
-  use_gpu=true,
-  use_position_averaging=true,
-  samples_weighing_policy=LOG_WEIGHT,
-  batch_size=128,
-  loss_computation_batch_size=256,
-  optimiser=CyclicNesterov(
-    lr_base=0.25,
-    lr_high=0.5,
-    lr_low=0.05,
-    momentum_high=0.9,
-    momentum_low=0.8),
-  l2_regularization=1e-5,
-  nonvalidity_penalty=1.,
-  min_checkpoints_per_epoch=1,
-  max_batches_per_checkpoint=25000,
-  num_checkpoints=1)
+# lr_1_0 = LearningParams(
+#   use_gpu=true,
+#   use_position_averaging=true,
+#   samples_weighing_policy=LOG_WEIGHT,
+#   batch_size=128,
+#   loss_computation_batch_size=256,
+#   optimiser=CyclicNesterov(
+#     lr_base=0.5,
+#     lr_high=1.0,
+#     lr_low=0.1,
+#     momentum_high=0.9,
+#     momentum_low=0.8),
+#   l2_regularization=1e-5,
+#   nonvalidity_penalty=1.,
+#   min_checkpoints_per_epoch=1,
+#   max_batches_per_checkpoint=25000,
+#   num_checkpoints=1)
 
-lr_0_25 = LearningParams(
-  use_gpu=true,
-  use_position_averaging=true,
-  samples_weighing_policy=LOG_WEIGHT,
-  batch_size=128,
-  loss_computation_batch_size=256,
-  optimiser=CyclicNesterov(
-    lr_base=0.125,
-    lr_high=0.25,
-    lr_low=0.025,
-    momentum_high=0.9,
-    momentum_low=0.8),
-  l2_regularization=1e-5,
-  nonvalidity_penalty=1.,
-  min_checkpoints_per_epoch=1,
-  max_batches_per_checkpoint=25000,
-  num_checkpoints=1)
+# lr_0_5 = LearningParams(
+#   use_gpu=true,
+#   use_position_averaging=true,
+#   samples_weighing_policy=LOG_WEIGHT,
+#   batch_size=128,
+#   loss_computation_batch_size=256,
+#   optimiser=CyclicNesterov(
+#     lr_base=0.25,
+#     lr_high=0.5,
+#     lr_low=0.05,
+#     momentum_high=0.9,
+#     momentum_low=0.8),
+#   l2_regularization=1e-5,
+#   nonvalidity_penalty=1.,
+#   min_checkpoints_per_epoch=1,
+#   max_batches_per_checkpoint=25000,
+#   num_checkpoints=1)
 
-lr_0_1 = LearningParams(
-  use_gpu=true,
-  use_position_averaging=true,
-  samples_weighing_policy=LOG_WEIGHT,
-  batch_size=128,
-  loss_computation_batch_size=256,
-  optimiser=CyclicNesterov(
-    lr_base=0.05,
-    lr_high=0.1,
-    lr_low=0.01,
-    momentum_high=0.9,
-    momentum_low=0.8),
-  l2_regularization=1e-5,
-  nonvalidity_penalty=1.,
-  min_checkpoints_per_epoch=1,
-  max_batches_per_checkpoint=25000,
-  num_checkpoints=1)
+# lr_0_25 = LearningParams(
+#   use_gpu=true,
+#   use_position_averaging=true,
+#   samples_weighing_policy=LOG_WEIGHT,
+#   batch_size=128,
+#   loss_computation_batch_size=256,
+#   optimiser=CyclicNesterov(
+#     lr_base=0.125,
+#     lr_high=0.25,
+#     lr_low=0.025,
+#     momentum_high=0.9,
+#     momentum_low=0.8),
+#   l2_regularization=1e-5,
+#   nonvalidity_penalty=1.,
+#   min_checkpoints_per_epoch=1,
+#   max_batches_per_checkpoint=25000,
+#   num_checkpoints=1)
+
+# lr_0_1 = LearningParams(
+#   use_gpu=true,
+#   use_position_averaging=true,
+#   samples_weighing_policy=LOG_WEIGHT,
+#   batch_size=128,
+#   loss_computation_batch_size=256,
+#   optimiser=CyclicNesterov(
+#     lr_base=0.05,
+#     lr_high=0.1,
+#     lr_low=0.01,
+#     momentum_high=0.9,
+#     momentum_low=0.8),
+#   l2_regularization=1e-5,
+#   nonvalidity_penalty=1.,
+#   min_checkpoints_per_epoch=1,
+#   max_batches_per_checkpoint=25000,
+#   num_checkpoints=1)
 
 #####
 ##### Other Params
@@ -213,10 +285,10 @@ baseline_params = Params(
   [      5,        57],
   [208_000, 1_560_000]))
 
-lr_1_0_params = Params(
+mom_99_params = Params(
   arena=arena,
   self_play=self_play,
-  learning=lr_1_0,
+  learning=mom_97,
   num_iters=100,
   ternary_rewards=false,
   use_symmetries=true,
@@ -226,10 +298,10 @@ lr_1_0_params = Params(
   [      5,        57],
   [208_000, 1_560_000]))
 
-lr_0_5_params = Params(
+mom_97_params = Params(
   arena=arena,
   self_play=self_play,
-  learning=lr_0_5,
+  learning=mom_99,
   num_iters=100,
   ternary_rewards=false,
   use_symmetries=true,
@@ -239,10 +311,10 @@ lr_0_5_params = Params(
   [      5,        57],
   [208_000, 1_560_000]))
 
-lr_0_25_params = Params(
+mom_95_params = Params(
   arena=arena,
   self_play=self_play,
-  learning=lr_0_25,
+  learning=mom_95,
   num_iters=100,
   ternary_rewards=false,
   use_symmetries=true,
@@ -252,10 +324,10 @@ lr_0_25_params = Params(
   [      5,        57],
   [208_000, 1_560_000]))
 
-lr_0_1_params = Params(
+mom_9_params = Params(
   arena=arena,
   self_play=self_play,
-  learning=lr_0_1,
+  learning=mom_9,
   num_iters=100,
   ternary_rewards=false,
   use_symmetries=true,
@@ -264,6 +336,58 @@ lr_0_1_params = Params(
   mem_buffer_size=PLSchedule(
   [      5,        57],
   [208_000, 1_560_000]))
+
+# lr_1_0_params = Params(
+#   arena=arena,
+#   self_play=self_play,
+#   learning=lr_1_0,
+#   num_iters=100,
+#   ternary_rewards=false,
+#   use_symmetries=true,
+#   memory_analysis=MemAnalysisParams(
+#     num_game_stages=4),
+#   mem_buffer_size=PLSchedule(
+#   [      5,        57],
+#   [208_000, 1_560_000]))
+
+# lr_0_5_params = Params(
+#   arena=arena,
+#   self_play=self_play,
+#   learning=lr_0_5,
+#   num_iters=100,
+#   ternary_rewards=false,
+#   use_symmetries=true,
+#   memory_analysis=MemAnalysisParams(
+#     num_game_stages=4),
+#   mem_buffer_size=PLSchedule(
+#   [      5,        57],
+#   [208_000, 1_560_000]))
+
+# lr_0_25_params = Params(
+#   arena=arena,
+#   self_play=self_play,
+#   learning=lr_0_25,
+#   num_iters=100,
+#   ternary_rewards=false,
+#   use_symmetries=true,
+#   memory_analysis=MemAnalysisParams(
+#     num_game_stages=4),
+#   mem_buffer_size=PLSchedule(
+#   [      5,        57],
+#   [208_000, 1_560_000]))
+
+# lr_0_1_params = Params(
+#   arena=arena,
+#   self_play=self_play,
+#   learning=lr_0_1,
+#   num_iters=100,
+#   ternary_rewards=false,
+#   use_symmetries=true,
+#   memory_analysis=MemAnalysisParams(
+#     num_game_stages=4),
+#   mem_buffer_size=PLSchedule(
+#   [      5,        57],
+#   [208_000, 1_560_000]))
 
 #####
 ##### Trials
@@ -278,8 +402,7 @@ optimal_network = ResNetHP(
   batch_norm_momentum=0.1)
 
 trials = []
-# push!(trials, (label="lr_baseline", params=baseline_params, netparams=optimal_network))
-# push!(trials, (label="lr_1_0", params=lr_1_0_params, netparams=optimal_network))
-#push!(trials, (label="lr_0_5", params=lr_0_5_params, netparams=optimal_network))
-#push!(trials, (label="lr_0_25", params=lr_0_25_params, netparams=optimal_network))
-push!(trials, (label="lr_0_1", params=lr_0_1_params, netparams=optimal_network))
+push!(trials, (label="mom_99", params=mom_99_params, netparams=optimal_network))
+push!(trials, (label="mom_97", params=mom_97_params, netparams=optimal_network))
+push!(trials, (label="mom_95", params=mom_95_params, netparams=optimal_network))
+push!(trials, (label="mom_9", params=mom_9_params, netparams=optimal_network))
