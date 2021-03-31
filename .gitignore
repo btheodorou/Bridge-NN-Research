@@ -6,6 +6,7 @@
 *~
 *mem.data
 *memnn.data
+*.npz
 
 /docs/build/
 /docs/site/
