@@ -1980,3 +1980,10 @@ Starting iteration 38
   
     Average reward: -2.67 (win rate of -83%), redundancy: 2.7%
 
+
+Loading environment
+
+  Loading network from: sessions/double-dummy/bestnn.data
+  Loading network from: sessions/double-dummy/curnn.data
+  Loading memory from: sessions/double-dummy/mem.data
+  Loaded iteration counter from: sessions/double-dummy/iter.txt
