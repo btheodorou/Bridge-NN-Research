@@ -4,11 +4,11 @@
 Network = ResNet
 
 netparams = ResNetHP(
-  num_filters=128,
-  num_blocks=20,
+  num_filters=256,
+  num_blocks=25,
   conv_kernel_size=(3, 3),
-  num_policy_head_filters=64,
-  num_value_head_filters=64,
+  num_policy_head_filters=128,
+  num_value_head_filters=128,
   batch_norm_momentum=0.1)
 
 self_play = SelfPlayParams(
@@ -39,15 +39,15 @@ learning = LearningParams(
   use_gpu=true,
   use_position_averaging=true,
   samples_weighing_policy=LOG_WEIGHT,
-  batch_size=64,
+  batch_size=128,
   loss_computation_batch_size=256,
   optimiser=CyclicNesterov(
     lr_base=0.0075,
     lr_high=0.05,
     lr_low=0.0025,
-    momentum_high=0.9,
+    momentum_high=0.95,
     momentum_low=0.8),
-  l2_regularization=1e-4,
+  l2_regularization=1e-5,
   nonvalidity_penalty=1.,
   min_checkpoints_per_epoch=1,
   max_batches_per_checkpoint=25000,
