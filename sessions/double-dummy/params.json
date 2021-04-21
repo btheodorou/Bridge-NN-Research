@@ -36,15 +36,15 @@
                                                                  "lr_high": 0.05,
                                                                   "lr_low": 0.0025,
                                                             "momentum_low": 0.8,
-                                                           "momentum_high": 0.9
+                                                           "momentum_high": 0.95
                                                         },
-                                   "l2_regularization": 0.0001,
+                                   "l2_regularization": 0.00001,
                                  "nonvalidity_penalty": 1,
-                                          "batch_size": 64,
+                                          "batch_size": 128,
                          "loss_computation_batch_size": 256,
                            "min_checkpoints_per_epoch": 1,
                           "max_batches_per_checkpoint": 25000,
-                                     "num_checkpoints": 2
+                                     "num_checkpoints": 1
                       },
              "arena": {
                                 "num_games": 2,
